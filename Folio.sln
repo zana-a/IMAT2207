@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolioBack", "FolioBack\FolioBack.csproj", "{9FDEB049-441B-4AB4-8C2E-C32CC912D5C9}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FolioFront(1)", "FolioFront\", "{680D4A70-E24B-4722-AB58-DC74FD6B48ED}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_2671"
+		Debug.AspNetCompiler.PhysicalPath = "FolioFront\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2671\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_2671"
+		Release.AspNetCompiler.PhysicalPath = "FolioFront\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2671\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2671"
+		SlnRelativePath = "FolioFront\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolioClasses", "FolioClasses\FolioClasses.csproj", "{78ECFDA7-207A-4B9C-9D81-025BF1FCF568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FolioTesting", "FolioTesting\FolioTesting.csproj", "{BA2CF176-604D-4759-94D6-12E899F9F138}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FDEB049-441B-4AB4-8C2E-C32CC912D5C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDEB049-441B-4AB4-8C2E-C32CC912D5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDEB049-441B-4AB4-8C2E-C32CC912D5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDEB049-441B-4AB4-8C2E-C32CC912D5C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680D4A70-E24B-4722-AB58-DC74FD6B48ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680D4A70-E24B-4722-AB58-DC74FD6B48ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680D4A70-E24B-4722-AB58-DC74FD6B48ED}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{680D4A70-E24B-4722-AB58-DC74FD6B48ED}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{78ECFDA7-207A-4B9C-9D81-025BF1FCF568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78ECFDA7-207A-4B9C-9D81-025BF1FCF568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78ECFDA7-207A-4B9C-9D81-025BF1FCF568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78ECFDA7-207A-4B9C-9D81-025BF1FCF568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA2CF176-604D-4759-94D6-12E899F9F138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA2CF176-604D-4759-94D6-12E899F9F138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA2CF176-604D-4759-94D6-12E899F9F138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA2CF176-604D-4759-94D6-12E899F9F138}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD2AB927-5CC2-4A1A-A47E-8B61EA6FA38C}
+	EndGlobalSection
+EndGlobal
