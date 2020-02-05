@@ -10,10 +10,11 @@ Folio consists of four systems that allocated between four people. These system 
 
 This system is run by Zana who will be creating the following functionality:
 
-1. Front-end User Log-in
-2. Front-end User Sign-up
-3. Backend User addition, deletion, filtration and modification, listing, validation.
-4. Front-end user sign up and login validation and authentication.
+1. Front-end User Log-in. This includes validation.
+2. Front-end User Sign-up. This includes validation.
+3. Backend User addition, deletion, filtration and modification, listing and validation.
+4. Front-end user sign up and login
+5. Front-end user information update.
 
 ### User Schema
 
