@@ -46,36 +46,8 @@ It will look something like this.
 ^^ country code
 ```
 
+When a user is authenticated through the front-end, the rest of the application is handled by the other systems.
+
 ## Book Management System
 
-
-
 ## Order & Record System
-
-
-*NEW* System Specification
-Back End
-Zana
-	•	User management system
-	•	Creating new user accounts
-	•	Customer
-	•	Deleting and editing existing accounts
-Thomas
-	•	Book management system – Only accessible by admin.
-	•	Creating new entries
-	•	Deleting and editing existing
-Hugh
-	•	Author and Publisher table
-	•	Author and publisher data
-Emmanuel
-	•	Order record system
-	•	Record of previous orders
-
-Front End
-	•	Search System
-	•	Search book or author
-	•	Maybe - Basket System
-	•	Keep orders
-
-
-
