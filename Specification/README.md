@@ -37,17 +37,11 @@ Then these data will be sent to the server to be validated. An email also will b
 | user_last_name         | String `varchar(255)` |             |
 | user_dob               | Date `date`           |             |
 | user_email             | String `varchar(255)` |             |
-| user_tel               | Integer `bigint`      |             |
+| user_tel               | String `varchar(13)`  |             |
+| user_no_books_bought   | Integer (int)         |             |
 | user_is_email_verified | Boolean `bit`         |             |
 
-For the telephone number attribute, we thought that it would be best to have the data type as a `bigint` rather than a `varchar` as each character of a varchar is a byte where as `bigint` is only 8 bytes for 20 digits; this will be cut down to a max of 13 digits (for those countries who have 3 digit country codes such as Finland with 358).
-
-It will look something like this.
-
-```
-447712345678
-^^ country code
-```
+With every purchase, we will increment the `user_no_books_bought` field to keep record of how many books each individual has bought. This may come in handy to see how popular the website as a whole is.
 
 When a user is authenticated through the front-end, the rest of the application is handled by the other systems.
 
