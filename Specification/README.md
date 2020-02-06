@@ -38,7 +38,7 @@ Then these data will be sent to the server to be validated. An email also will b
 | user_dob               | Date `date`           |             |
 | user_email             | String `varchar(255)` |             |
 | user_tel               | String `varchar(13)`  |             |
-| user_no_books_bought   | Integer (int)         |             |
+| user_no_books_bought   | Integer `int`         |             |
 | user_is_email_verified | Boolean `bit`         |             |
 
 With every purchase, we will increment the `user_no_books_bought` field to keep record of how many books each individual has bought. This may come in handy to see how popular the website as a whole is.
