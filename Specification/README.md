@@ -12,11 +12,13 @@ Pre-defined SQL queries will be designed to instantly output relevant data for e
 
 This system is run by Zana who will be creating the following functionality:
 
-1. Front-end User Log-in. This includes validation.
-2. Front-end User Sign-up. This includes validation.
-3. Backend User addition, deletion, filtration and modification, listing and validation.
-4. Front-end user sign up and login
-5. Front-end user information update.
+1. Frontend User Log-in. This page will consist of a form asking for email address and password which will validate and authenticate the user. If it was correct then they are redirected to homepage.
+
+2. Frontend User Sign-up. This page will consist of a form that will ask for first and last name (which will be combined in the database as `user_fullname`), date of birth, email address and telephone number.
+
+3. Backend User addition, deletion, filtration and modification, listing and validation. This will be done on the windows form. It will have commands that will popup windows. For example, if you wanted to add a new user, the backend code will take the data from the forms of the popup window and add them to the database directly.
+
+4. Frontend user information update. There will be a frontend page where the user can update their details if they wish to do so.
 
 ### User Schema
 
@@ -30,20 +32,20 @@ Below is the schema for a user. On the register page they would have to provide 
 
 Then these data will be sent to the server to be validated. An email also will be sent to the user to verify their information which is essential if they want to buy an e-book so that we know that they will receive an email for the receipt and the pdf of the desired book.
 
-| Attribute              | Type (`datatype`)     | Key         |
-| ---------------------- | --------------------- | ----------- |
-| user_id                | String `varchar(25)`  | Private Key |
-| user_firstName         | String `varchar(255)` |             |
-| user_last_name         | String `varchar(255)` |             |
-| user_dob               | Date `date`           |             |
-| user_email             | String `varchar(255)` |             |
-| user_tel               | String `varchar(13)`  |             |
-| user_no_books_bought   | Integer `int`         |             |
-| user_is_email_verified | Boolean `bit`         |             |
+| Attribute               | Type (`datatype`)     | Key         |
+| ----------------------- | --------------------- | ----------- |
+| user_id                 | String `varchar(25)`  | Private Key |
+| user_fullname           | String `varchar(255)` |             |
+| user_password           | String `varchar(255)` |             |
+| user_dob                | Date `date`           |             |
+| user_email              | String `varchar(255)` |             |
+| user_tel                | String `varchar(13)`  |             |
+| user_numof_books_bought | Integer `int`         |             |
+| user_is_email_verified  | Boolean `bit`         |             |
 
-With every purchase, we will increment the `user_no_books_bought` field to keep record of how many books each individual has bought. This may come in handy to see how popular the website as a whole is.
+With every purchase, we will increment the `user_numof_books_bought` field to keep record of how many books each individual has bought. This may come in handy to see how popular the website as a whole is.
 
-When a user is authenticated through the front-end, the rest of the application is handled by the other systems.
+When a user is authenticated whether through the frontend or backend, the rest of the application is handled by the other systems.
 
 ## Book Management System
 
