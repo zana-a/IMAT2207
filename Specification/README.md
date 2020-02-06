@@ -12,13 +12,13 @@ Pre-defined SQL queries will be designed to instantly output relevant data for e
 
 This system is run by Zana who will be creating the following functionality:
 
-1. Frontend User Log-in. This page will consist of a form asking for email address and password which will validate and authenticate the user. If it was correct then they are redirected to homepage.
+1. Frontend user login. This page will consist of a form asking for email address and password which will validate and authenticate the user. If it was correct then they are redirected to homepage.
 
-2. Frontend User Sign-up. This page will consist of a form that will ask for first and last name (which will be combined in the database as `user_fullname`), date of birth, email address and telephone number.
+2. Frontend user register. This page will consist of a form that will ask for first and last name (which will be combined in the database as `user_fullname`), date of birth, email address and telephone number.
 
 3. Backend User addition, deletion, filtration and modification, listing and validation. This will be done on the windows form. It will have commands that will popup windows. For example, if you wanted to add a new user, the backend code will take the data from the forms of the popup window and add them to the database directly.
 
-4. Frontend user information update. There will be a frontend page where the user can update their details if they wish to do so.
+4. Frontend user information update. There will be a frontend page where the user can update their details if they wish to do so. This data will also be validated the same way it would have been when they registered.
 
 ### User Schema
 
