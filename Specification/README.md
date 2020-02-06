@@ -32,6 +32,8 @@ Below is the schema for a user. On the register page they would have to provide 
 
 Then these data will be sent to the server to be validated. An email also will be sent to the user to verify their information which is essential if they want to buy an e-book so that we know that they will receive an email for the receipt and the pdf of the desired book.
 
+Table: User Schema Table
+
 | Attribute               | Type (`datatype`)     | Key         |
 | ----------------------- | --------------------- | ----------- |
 | user_id                 | String `varchar(25)`  | Private Key |
