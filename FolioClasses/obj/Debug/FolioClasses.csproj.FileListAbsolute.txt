@@ -1,5 +1,0 @@
-E:\VisCode_Centre\IMAT2207-VisCode\FolioClasses\bin\Debug\FolioClasses.dll
-E:\VisCode_Centre\IMAT2207-VisCode\FolioClasses\bin\Debug\FolioClasses.pdb
-E:\VisCode_Centre\IMAT2207-VisCode\FolioClasses\obj\Debug\FolioClasses.csprojAssemblyReference.cache
-E:\VisCode_Centre\IMAT2207-VisCode\FolioClasses\obj\Debug\FolioClasses.dll
-E:\VisCode_Centre\IMAT2207-VisCode\FolioClasses\obj\Debug\FolioClasses.pdb
