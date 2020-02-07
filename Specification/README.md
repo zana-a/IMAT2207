@@ -1,6 +1,29 @@
-# System Specification - Folio
+<!-- ---
+papersize: a4
+linestretch: 1
+toc: true
+lot: true
+classoption: oneside
+header-includes: |
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead[CO,CE]{}
+    \fancyfoot[CO,CE]{}
+    \fancyfoot[LE,RO]{\thepage}
+geometry: a4paper, portrait, margin=1.25in
 
-Folio is a website for users to buy and download e-books. Users have the option to search for an e-book using an author name or a title of a book. The homepage will present the user with various books that are randomly chosen. There will also be a browse page to look for a book via publisher, date of publication, author or genre.
+title: Folio
+subtitle: An Ebook Retailer
+author:
+    - Zana Ahmad
+    - Hugh Alun-Jones
+    - Thomas Akers
+    - Emmanuel Adedeji
+--- -->
+
+# System Specification
+
+Folio is a website for users to buy and download e-books. Users have the option to search for an e-book using an author name or a title of a book. The homepage will present the user with various books that are randomly chosen. There will also be a browse page to look for a book via publisher, date of publication, author or genre. The project itself consists of 3 systems. Please see the relevant subsections to find out more.
 
 Other pages that would be included within the website include the login and register pages where the user will be asked to enter their details to either register or login. Once this is completed, they can buy a book they would like which then gets added to the Order System for recording who has bought what. Folio consists of four systems that are allocated between four people. More details of each system are shown below under each subsection.
 
@@ -12,13 +35,25 @@ Pre-defined SQL queries will be designed to instantly output relevant data for e
 
 This system is run by Zana who will be creating the following functionality:
 
-1. Frontend user login. This page will consist of a form asking for email address and password which will validate and authenticate the user. If it was correct then they are redirected to homepage.
+As mentioned before, this system will consist of two parts; a backend facing windows form application and a frontend website.
 
-2. Frontend user register. This page will consist of a form that will ask for first and last name (which will be combined in the database as `user_fullname`), date of birth, email address and telephone number.
+It will carry out functions such as:
 
-3. Backend User addition, deletion, filtration and modification, listing and validation. This will be done on the windows form. It will have commands that will popup windows. For example, if you wanted to add a new user, the backend code will take the data from the forms of the popup window and add them to the database directly.
+- **Adding a user:** for the backend facing form, an admin can add a user by a form that has been provided for them that consists of the same fields as the frontend page will. It will ask for information such as first name, last name, date of birth, email and telephone number.
 
-4. Frontend user information update. There will be a frontend page where the user can update their details if they wish to do so. This data will also be validated the same way it would have been when they registered.
+- **Editing a user:** at the backend, the admin will be able to search for a user and then bring up all the editable fields that were provided and modify them as they please as long as it can be validated. On the frontend, the user can do the same thing but only for their own account.
+
+- **Deleting a user:** the admin can search for a user and completely delete the record. At the frontend the user can choose to delete their own record.
+
+- **Listing users or a single user:** on the backend, an admin can choose to see all the users or search for specific ones. Once this has been done, they can then view the details of that user. A user on the frontend can see their own details on their profile page.
+
+- **Finding users:** an admin can find another user at the backend. This will not be possible as of yet for the frontend. Although it may be an extra feature that could be useful if enough time was allocated.
+
+- **Filtering users:** an admin can use the windows form at the backend to filter out only the users they require to see. For example, an admin can ask the database to retrieve data from a user that is born on April 8^th^ and that they have bought 32 books.
+
+- **Validating users:** any information should be validated that are going into the database. For example, a user should be at least at minimum age range, possibly at 16 which ensures a user legally can make a purchase. Validation is going to be done at the backend of the application that talks to the database. However, the frontend user will still be notified if something goes wrong such as too few characters for a password.
+
+It is worth mentioning that the windows form will not have a login form for admins. We expect that the machine will be kept secure by providing a password for their machine.
 
 ### User Schema
 
@@ -51,4 +86,34 @@ When a user is authenticated whether through the frontend or backend, the rest o
 
 ## Book Management System
 
+
 ## Order & Record System
+
+This system will be run by Emmanuel, creating the following functionality:
+
+1. Frontend user order/record table `My Orders`. This page will consist of pulled previous-order information related to the particular `UserID` attempting to access the order records and displays this for each user. The information will be accessed from the larger order-record table which holds the orders of all customers. Each order will have a download button beside it, allowing the user to download the particular book related to the `OrderID`.
+
+2. Backend order addition, deletion, filtration and modification, listing and validation.
+
+3. Frontend user order confirmation. This page will provide each user with an order-number (`OrderID`) and itinerary confirming the details of the book they have purchased and redirection link to the `My Orders` page where they can download their book.
+
+### Order & Record Schema
+
+On the table below, the template for each user order on the `My Orders` is shown.
+
+On the user order page, each customer will have the opportunity to enter an integer between 1-5 representing their level of satisfaction of the order. Helping gauge the popularity of each book, particularly in identifying the sites best sellers.
+
+Table: Order & Record Schema Table
+
+| Attribute      | Type (`DataType`)     | Key         |
+| -------------- | --------------------- | ----------- |
+| OrderID        | Integer `int`         | Primary Key |
+| UserID         | String `varchar(25)`  | Foreign Key |
+| BookID         | String `varchar(255)` | Foreign Key |
+| DateOfPurchase | Date `date`           |             |
+| isClaimed      | Boolean `bit`         |             |
+| Satisfaction   | Integer `int`         |             |
+
+Simultaneous to every additional order in the system, there will be an increment in the `OrderID` value.
+
+There is a `one to zero or many` and `one to one (mandatory)` relationship between `UserID` and `OrderID`.
