@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsBook.cs" />
+    <Compile Include="clsAuthor.cs" />
     <Compile Include="ClsDataConnection.cs" />
+    <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

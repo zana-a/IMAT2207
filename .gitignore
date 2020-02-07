@@ -1,2 +1,14 @@
 .vs/
 packages/
+
+FolioBack/obj/
+FolioBack/bin/
+
+FolioClasses/obj/
+FolioClasses/bin/
+
+FolioFront/obj/
+FolioFront/bin/
+
+FolioTesting/obj/
+FolioTesting/bin/
