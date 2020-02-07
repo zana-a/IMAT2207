@@ -1,0 +1,6 @@
+H:\Desktop\local\IMAT2207 Agile Team Development\IMAT2207\FolioClasses\bin\Debug\FolioClasses.dll
+H:\Desktop\local\IMAT2207 Agile Team Development\IMAT2207\FolioClasses\bin\Debug\FolioClasses.pdb
+H:\Desktop\local\IMAT2207 Agile Team Development\IMAT2207\FolioClasses\obj\Debug\FolioClasses.csprojAssemblyReference.cache
+H:\Desktop\local\IMAT2207 Agile Team Development\IMAT2207\FolioClasses\obj\Debug\FolioClasses.csproj.CoreCompileInputs.cache
+H:\Desktop\local\IMAT2207 Agile Team Development\IMAT2207\FolioClasses\obj\Debug\FolioClasses.dll
+H:\Desktop\local\IMAT2207 Agile Team Development\IMAT2207\FolioClasses\obj\Debug\FolioClasses.pdb
