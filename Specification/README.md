@@ -21,7 +21,7 @@ author:
     - Emmanuel Adedeji
 --- -->
 
-# System Specification - Folio
+# System Specification
 
 Folio is a website for users to buy and download e-books. Users have the option to search for an e-book using an author name or a title of a book. The homepage will present the user with various books that are randomly chosen. There will also be a browse page to look for a book via publisher, date of publication, author or genre. The project itself consists of 3 systems. Please see the relevant subsections to find out more.
 
