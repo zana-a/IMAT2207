@@ -37,8 +37,8 @@ Table: User Schema Table
 | Attribute               | Type (`datatype`)     | Key         |
 | ----------------------- | --------------------- | ----------- |
 | user_id                 | String `varchar(25)`  | Private Key |
-| user_fullname           | String `varchar(255)` |             |
-| user_password           | String `varchar(255)` |             |
+| user_fullname           | String `varchar(50)`  |             |
+| user_password           | String `varchar(50)`  |             |
 | user_dob                | Date `date`           |             |
 | user_email              | String `varchar(255)` |             |
 | user_tel                | String `varchar(13)`  |             |
