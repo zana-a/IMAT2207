@@ -1,5 +1,0 @@
-C:\IMAT2207NEW\FolioClasses\bin\Debug\FolioClasses.dll
-C:\IMAT2207NEW\FolioClasses\bin\Debug\FolioClasses.pdb
-C:\IMAT2207NEW\FolioClasses\obj\Debug\FolioClasses.csprojAssemblyReference.cache
-C:\IMAT2207NEW\FolioClasses\obj\Debug\FolioClasses.dll
-C:\IMAT2207NEW\FolioClasses\obj\Debug\FolioClasses.pdb
