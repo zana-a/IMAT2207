@@ -90,7 +90,7 @@ When a user is authenticated whether through the frontend or backend, the rest o
 
 This system will be run by Hugh, who will be creating the following functionality:
 
-1. Frontend author/publisher tables. These pages will consist of information stored about publishers and authors. The user will be able to access data on an author, or a publisher, which will be displayed using the respective `AuthorID` or `PublisherID`. On an author page there will be a short description of the author along with a date of birth and a list of all other books related to them. The publisher page will have a similar design.
+- **Frontend author/publisher tables:** these pages will consist of information stored about publishers and authors. The user will be able to access data on an author, or a publisher, which will be displayed using the respective `AuthorID` or `PublisherID`. On an author page there will be a short description of the author along with a date of birth and a list of all other books related to them. The publisher page will have a similar design.
 
 - **Adding an author/publisher:** authors and publisher will be added using the backend form. This form will consist of the same fields that the front end provides. Information included on an author will be name, date of birth, whether or not they are deceased and a short description of them. Publisher name and website will be asked for.
 
