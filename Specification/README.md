@@ -125,7 +125,7 @@ Table: Publisher Schema Table
 | BookID         | Integer `int`         | Foreign Key |
 | PublisherName  | String `varchar(50)`  |             |
 | DateFounded    | Date `date`           |             |
-| Website        | String `varchar(255)  |             |
+| Website        | String `varchar(255)` |             |
 
 ## Order & Record System
 
