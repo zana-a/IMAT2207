@@ -86,6 +86,46 @@ When a user is authenticated whether through the frontend or backend, the rest o
 
 ## Book Management System
 
+## Author & Publisher System
+
+This system will be run by Hugh, who will be creating the following functionality:
+
+1. Frontend author/publisher tables. These pages will consist of information stored about publishers and authors. The user will be able to access data on an author, or a publisher, which will be displayed using the respective `AuthorID` or `PublisherID`. On an author page there will be a short description of the author along with a date of birth and a list of all other books related to them. The publisher page will have a similar design.
+
+- **Adding an author/publisher:** authors and publisher will be added using the backend form. This form will consist of the same fields that the front end provides. Information included on an author will be name, date of birth, whether or not they are deceased and a short description of them. Publisher name and website will be asked for.
+
+- **Editing an author/publisher:** admins will be able to find author and publisher records and edit them as needed. Users will not have this functionality
+
+- **Deleting an author/publisher:** an admin will be able to search and find an author or publisher record and delete it. Users will not have this functionality.
+
+- **Listing an authors/publishers or a single author/publisher:** admins will be able to list all records of authors or publishers or a specific one at the backend, including fields hidden from users. Users will be able to find information available to them by using the search functionality. 
+
+- **Filtering authors/publishers:** admins will be able to filter author/publisher records at the backend to find records they wish to see. For example, they may wish to only filter via deceased authors. Users will be able to use this functionality on the front end.
+
+### Author & Publisher Schema
+
+Below is a table schema for both the author and publisher tables. Additions to these tables will be made in the backend.
+
+Table: Author Schema Table
+
+| Attribute      | Type (`DataType`)     | Key         |
+| -------------- | --------------------- | ----------- |
+| AuthorID       | Integer `int`         | Primary Key |
+| BookID         | String `varchar(255)` | Foreign Key |
+| FullName       | String `varchar(50)`  |             |
+| DateOfBirth    | Date `date`           |             |
+| isDeceased     | Boolean `bit`         |             |
+
+Table: Publisher Schema Table
+
+| Attribute      | Type (`DataType`)     | Key         |
+| -------------- | --------------------- | ----------- |
+| PublisherID    | Integer `int`         | Primary Key |
+| AuthorID       | Integer `int`         | Foreign Key |
+| BookID         | Integer `int`         | Foreign Key |
+| PublisherName  | String `varchar(50)`  |             |
+| DateFounded    | Date `date`           |             |
+| Website        | String `varchar(255)  |             |
 
 ## Order & Record System
 
@@ -117,3 +157,5 @@ Table: Order & Record Schema Table
 Simultaneous to every additional order in the system, there will be an increment in the `OrderID` value.
 
 There is a `one to zero or many` and `one to one (mandatory)` relationship between `UserID` and `OrderID`.
+
+
