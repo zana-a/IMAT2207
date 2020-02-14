@@ -108,24 +108,24 @@ Below is a table schema for both the author and publisher tables. Additions to t
 
 Table: Author Schema Table
 
-| Attribute      | Type (`DataType`)     | Key         |
-| -------------- | --------------------- | ----------- |
-| AuthorID       | Integer `int`         | Primary Key |
-| BookID         | String `varchar(255)` | Foreign Key |
-| FullName       | String `varchar(50)`  |             |
-| DateOfBirth    | Date `date`           |             |
-| isDeceased     | Boolean `bit`         |             |
+| Attribute   | Type (`DataType`)     | Key         |
+| ----------- | --------------------- | ----------- |
+| AuthorID    | Integer `int`         | Primary Key |
+| BookID      | String `varchar(255)` | Foreign Key |
+| FullName    | String `varchar(50)`  |             |
+| DateOfBirth | Date `date`           |             |
+| isDeceased  | Boolean `bit`         |             |
 
 Table: Publisher Schema Table
 
-| Attribute      | Type (`DataType`)     | Key         |
-| -------------- | --------------------- | ----------- |
-| PublisherID    | Integer `int`         | Primary Key |
-| AuthorID       | Integer `int`         | Foreign Key |
-| BookID         | Integer `int`         | Foreign Key |
-| PublisherName  | String `varchar(50)`  |             |
-| DateFounded    | Date `date`           |             |
-| Website        | String `varchar(255)` |             |
+| Attribute     | Type (`DataType`)     | Key         |
+| ------------- | --------------------- | ----------- |
+| PublisherID   | Integer `int`         | Primary Key |
+| AuthorID      | Integer `int`         | Foreign Key |
+| BookID        | Integer `int`         | Foreign Key |
+| PublisherName | String `varchar(50)`  |             |
+| DateFounded   | Date `date`           |             |
+| Website       | String `varchar(255)` |             |
 
 ## Order & Record System
 
@@ -158,4 +158,4 @@ Simultaneous to every additional order in the system, there will be an increment
 
 There is a `one to zero or many` and `one to one (mandatory)` relationship between `UserID` and `OrderID`.
 
-
+----------
