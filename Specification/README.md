@@ -157,5 +157,3 @@ Table: Order & Record Schema Table
 Simultaneous to every additional order in the system, there will be an increment in the `OrderID` value.
 
 There is a `one to zero or many` and `one to one (mandatory)` relationship between `UserID` and `OrderID`.
-
-----------
