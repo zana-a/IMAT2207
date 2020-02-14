@@ -104,17 +104,17 @@ My table will be heavily linked with the Publisher and Author Table as the books
 
 ### Book Schema
 
-| Attribute      | Type (`DataType`)     | Key         |
-| -------------- | --------------------- | ----------- |
-| book_id        | Integer `int`         | Primary Key |
-| author_id      | Integer `int`         | Foreign Key |
-| book_title     | String `varchar(50)`  |             |
-| book_price     | Float `float`         |             |
-| book_type      | String `varchar(15)`  |             |
-| book_genre     | String `varchar(15)`  |             |
-| book_type      | String `varchar(15)`  |             |
-| book_pubdate   | Date `date`           |             |
-| book_first_ed  | Boolean `bit`         |             |
+| Attribute     | Type (`DataType`)    | Key         |
+| ------------- | -------------------- | ----------- |
+| book_id       | Integer `int`        | Primary Key |
+| author_id     | Integer `int`        | Foreign Key |
+| book_title    | String `varchar(50)` |             |
+| book_price    | Float `float`        |             |
+| book_type     | String `varchar(15)` |             |
+| book_genre    | String `varchar(15)` |             |
+| book_type     | String `varchar(15)` |             |
+| book_pubdate  | Date `date`          |             |
+| book_first_ed | Boolean `bit`        |             |
 
 The `book_id` variable will be changing constantly when a new book is added automatically allowing for easy organization of the Book Management System and will help all backend and front end systems in finding a specific book.
 
@@ -130,7 +130,7 @@ This system will be run by Hugh, who will be creating the following functionalit
 
 - **Deleting an author/publisher:** an admin will be able to search and find an author or publisher record and delete it. Users will not have this functionality.
 
-- **Listing an authors/publishers or a single author/publisher:** admins will be able to list all records of authors or publishers or a specific one at the backend, including fields hidden from users. Users will be able to find information available to them by using the search functionality. 
+- **Listing an authors/publishers or a single author/publisher:** admins will be able to list all records of authors or publishers or a specific one at the backend, including fields hidden from users. Users will be able to find information available to them by using the search functionality.
 
 - **Filtering authors/publishers:** admins will be able to filter author/publisher records at the backend to find records they wish to see. For example, they may wish to only filter via deceased authors. Users will be able to use this functionality on the front end.
 
@@ -177,14 +177,14 @@ On the user order page, each customer will have the opportunity to enter an inte
 
 Table: Order & Record Schema Table
 
-| Attribute      | Type (`DataType`)     | Key         |
-| -------------- | --------------------- | ----------- |
-| order_id        | Integer `int`         | Primary Key |
-| user_id         | String `varchar(25)`  | Foreign Key |
-| book_id         | String `varchar(255)` | Foreign Key |
+| Attribute              | Type (`DataType`)     | Key         |
+| ---------------------- | --------------------- | ----------- |
+| order_id               | Integer `int`         | Primary Key |
+| user_id                | String `varchar(25)`  | Foreign Key |
+| book_id                | String `varchar(255)` | Foreign Key |
 | order_date_of_purchase | Date `date`           |             |
-| order_is_claimed      | Boolean `bit`         |             |
-| order_satisfaction   | Integer `int`         |             |
+| order_is_claimed       | Boolean `bit`         |             |
+| order_satisfaction     | Integer `int`         |             |
 
 Simultaneous to every additional order in the system, there will be an increment in the `order_id` value.
 
