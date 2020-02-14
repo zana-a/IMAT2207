@@ -86,6 +86,38 @@ When a user is authenticated whether through the frontend or backend, the rest o
 
 ## Book Management System
 
+This system is run by Thomas who will be creating the following:
+
+The work I have been allocated is the creation of the book management system, this system contains all information regarding all books including their title, price and type. All the data in this table will be in the backend of the system and will only be used by the front end for fetching the required information. This record will allow for adding, editing, deleting, listing and filtering.
+
+- **Adding:** This will be for adding the information on the book to be used as a listing later. Examples of the data added would be `book_title`, `book_price` and `book_type`.
+
+- **Editing:** This will be used for editing existing records. This would be used in instances where the price or book title would have to be changed.
+
+- **Deleting:** An instance of this would be if a book is no longer available on our site and would apply to all variables in the table on that book.
+
+- **Listing:** This will be used to show the books and their information within the record, this will be used mainly within the search engine but also within the general layout of the website when a selection of books will be shown to the user.
+
+- **Filtering:** This will be used mainly through the backend system for system admins to find specific books for editing, deleting or adding.
+
+My table will be heavily linked with the Publisher and Author Table as the books would need to be linked to their individual author/publisher. This will also link inn with the front end of the website for the search engine.
+
+### Book Schema
+
+| Attribute      | Type (`DataType`)     | Key         |
+| -------------- | --------------------- | ----------- |
+| book_id        | Integer `int`         | Primary Key |
+| author_id      | Integer `int`         | Foreign Key |
+| book_title     | String `varchar(50)`  |             |
+| book_price     | Float `float`         |             |
+| book_type      | String `varchar(15)`  |             |
+| book_genre     | String `varchar(15)`  |             |
+| book_type      | String `varchar(15)`  |             |
+| book_pubdate   | Date `date`           |             |
+| book_first_ed  | Boolean `bit`         |             |
+
+The `book_id` variable will be changing constantly when a new book is added automatically allowing for easy organization of the Book Management System and will help all backend and front end systems in finding a specific book.
+
 ## Author & Publisher System
 
 This system will be run by Hugh, who will be creating the following functionality:
