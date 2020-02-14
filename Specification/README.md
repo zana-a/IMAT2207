@@ -131,11 +131,11 @@ Table: Publisher Schema Table
 
 This system will be run by Emmanuel, creating the following functionality:
 
-1. Frontend user order/record table `My Orders`. This page will consist of pulled previous-order information related to the particular `UserID` attempting to access the order records and displays this for each user. The information will be accessed from the larger order-record table which holds the orders of all customers. Each order will have a download button beside it, allowing the user to download the particular book related to the `OrderID`.
+1. Frontend user order/record table `My Orders`. This page will consist of pulled previous-order information related to the particular `UserID` attempting to access the order records and displays this for each user. The information will be accessed from the larger order-record table which holds the orders of all customers. Each order will have a download button beside it, allowing the user to download the particular book related to the `order_id`.
 
 2. Backend order addition, deletion, filtration and modification, listing and validation.
 
-3. Frontend user order confirmation. This page will provide each user with an order-number (`OrderID`) and itinerary confirming the details of the book they have purchased and redirection link to the `My Orders` page where they can download their book.
+3. Frontend user order confirmation. This page will provide each user with an order-number (`order_id`) and itinerary confirming the details of the book they have purchased and redirection link to the `My Orders` page where they can download their book.
 
 ### Order & Record Schema
 
@@ -147,13 +147,13 @@ Table: Order & Record Schema Table
 
 | Attribute      | Type (`DataType`)     | Key         |
 | -------------- | --------------------- | ----------- |
-| OrderID        | Integer `int`         | Primary Key |
-| UserID         | String `varchar(25)`  | Foreign Key |
-| BookID         | String `varchar(255)` | Foreign Key |
-| DateOfPurchase | Date `date`           |             |
-| isClaimed      | Boolean `bit`         |             |
-| Satisfaction   | Integer `int`         |             |
+| order_id        | Integer `int`         | Primary Key |
+| user_id         | String `varchar(25)`  | Foreign Key |
+| book_id         | String `varchar(255)` | Foreign Key |
+| order_date_of_purchase | Date `date`           |             |
+| order_is_claimed      | Boolean `bit`         |             |
+| order_satisfaction   | Integer `int`         |             |
 
-Simultaneous to every additional order in the system, there will be an increment in the `OrderID` value.
+Simultaneous to every additional order in the system, there will be an increment in the `order_id` value.
 
-There is a `one to zero or many` and `one to one (mandatory)` relationship between `UserID` and `OrderID`.
+There is a `one to zero or many` and `one to one (mandatory)` relationship between `user_id` and `order_id`.
