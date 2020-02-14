@@ -110,22 +110,22 @@ Table: Author Schema Table
 
 | Attribute      | Type (`DataType`)     | Key         |
 | -------------- | --------------------- | ----------- |
-| AuthorID       | Integer `int`         | Primary Key |
-| BookID         | String `varchar(255)` | Foreign Key |
-| FullName       | String `varchar(50)`  |             |
-| DateOfBirth    | Date `date`           |             |
-| isDeceased     | Boolean `bit`         |             |
+| author_id      | Integer `int`         | Primary Key |
+| book_id        | String `varchar(255)` | Foreign Key |
+| author_name    | String `varchar(50)`  |             |
+| author_dob     | Date `date`           |             |
+| author_isalive | Boolean `bit`         |             |
 
 Table: Publisher Schema Table
 
-| Attribute      | Type (`DataType`)     | Key         |
-| -------------- | --------------------- | ----------- |
-| PublisherID    | Integer `int`         | Primary Key |
-| AuthorID       | Integer `int`         | Foreign Key |
-| BookID         | Integer `int`         | Foreign Key |
-| PublisherName  | String `varchar(50)`  |             |
-| DateFounded    | Date `date`           |             |
-| Website        | String `varchar(255)` |             |
+| Attribute             | Type (`DataType`)     | Key         |
+| --------------------- | --------------------- | ----------- |
+| publisher_id          | Integer `int`         | Primary Key |
+| author_id             | Integer `int`         | Foreign Key |
+| book_id               | Integer `int`         | Foreign Key |
+| publisher_name        | String `varchar(50)`  |             |
+| publisher_datefounded | Date `date`           |             |
+| publisher_website     | String `varchar(255)` |             |
 
 ## Order & Record System
 
