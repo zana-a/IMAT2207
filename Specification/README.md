@@ -84,6 +84,105 @@ With every purchase, we will increment the `user_numof_books_bought` field to ke
 
 When a user is authenticated whether through the frontend or backend, the rest of the application is handled by the other systems.
 
+### Usecases
+
+Table: Add User
+
+| Usecase Name                  | Add User |
+| ----------------------------- | -------- |
+| Usecase Description           |          |
+| Usecase Author                |          |
+| Usecase Actor                 |          |
+| Usecase Location              |          |
+| Usecase Primary Pathway       |          |
+| Usecase Alternate Pathways(s) |          |
+| Usecase Exception Pathway(s)  |          |
+
+Table: Edit User
+
+| Usecase Name                  | Edit User |
+| ----------------------------- | --------- |
+| Usecase Description           |           |
+| Usecase Author                |           |
+| Usecase Actor                 |           |
+| Usecase Location              |           |
+| Usecase Primary Pathway       |           |
+| Usecase Alternate Pathways(s) |           |
+| Usecase Exception Pathway(s)  |           |
+
+Table: Update User
+
+| Usecase Name                  | Update User |
+| ----------------------------- | ----------- |
+| Usecase Description           |             |
+| Usecase Author                |             |
+| Usecase Actor                 |             |
+| Usecase Location              |             |
+| Usecase Primary Pathway       |             |
+| Usecase Alternate Pathways(s) |             |
+| Usecase Exception Pathway(s)  |             |
+
+Table: Delete User
+
+| Usecase Name                  | Delete User |
+| ----------------------------- | ----------- |
+| Usecase Description           |             |
+| Usecase Author                |             |
+| Usecase Actor                 |             |
+| Usecase Location              |             |
+| Usecase Primary Pathway       |             |
+| Usecase Alternate Pathways(s) |             |
+| Usecase Exception Pathway(s)  |             |
+
+Table: List User
+
+| Usecase Name                  | List User |
+| ----------------------------- | --------- |
+| Usecase Description           |           |
+| Usecase Author                |           |
+| Usecase Actor                 |           |
+| Usecase Location              |           |
+| Usecase Primary Pathway       |           |
+| Usecase Alternate Pathways(s) |           |
+| Usecase Exception Pathway(s)  |           |
+
+Table: Find User
+
+| Usecase Name                  | Find User |
+| ----------------------------- | --------- |
+| Usecase Description           |           |
+| Usecase Author                |           |
+| Usecase Actor                 |           |
+| Usecase Location              |           |
+| Usecase Primary Pathway       |           |
+| Usecase Alternate Pathways(s) |           |
+| Usecase Exception Pathway(s)  |           |
+
+Table: Filter User
+
+| Usecase Name                  | Filter User |
+| ----------------------------- | ----------- |
+| Usecase Description           |             |
+| Usecase Author                |             |
+| Usecase Actor                 |             |
+| Usecase Location              |             |
+| Usecase Primary Pathway       |             |
+| Usecase Alternate Pathways(s) |             |
+| Usecase Exception Pathway(s)  |             |
+
+Table: Validate User
+
+| Usecase Name                  | Validate User |
+| ----------------------------- | ------------- |
+| Usecase Description           |               |
+| Usecase Author                |               |
+| Usecase Actor                 |               |
+| Usecase Location              |               |
+| Usecase Primary Pathway       |               |
+| Usecase Alternate Pathways(s) |               |
+| Usecase Exception Pathway(s)  |               |
+
+
 ## Book Management System
 
 This system is run by Thomas who will be creating the following:
