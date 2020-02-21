@@ -35,6 +35,8 @@ Pre-defined SQL queries will be designed to instantly output relevant data for e
 
 This system is run by Zana who will be creating the following functionality:
 
+*Please note that the abreviation UMS is used to repersent the 'User Management System'*
+
 As mentioned before, this system will consist of two parts; a backend facing windows form application and a frontend website.
 
 It will carry out functions such as:
@@ -86,7 +88,7 @@ When a user is authenticated whether through the frontend or backend, the rest o
 
 ### Usecases
 
-Table: Admin Add User
+Table: (UMS Usecase) Admin Add User
 
 | Usecase                       | Usecase Name                                                                                                                                                         |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -99,12 +101,12 @@ Table: Admin Add User
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                  |
 | Usecase Exception Pathway(s)  | Database refuses to connect. In this case, admin or user cannot access the relevant data.                                                                            |
 
-Table: Admin Edit User
+Table: (UMS Usecase) Admin Edit User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Usecase Name                  | Admin Edit User                                                                                                                                                                                                                                                                             |
-| Usecase Description           | The admin edits an exisiting user information.                                                                                                                                                                                                                                              |
+| Usecase Description           | The admin edits an existing user information.                                                                                                                                                                                                                                               |
 | Usecase Author                | Zana                                                                                                                                                                                                                                                                                        |
 | Usecase Actor                 | Admin                                                                                                                                                                                                                                                                                       |
 | Usecase Location              | Backend                                                                                                                                                                                                                                                                                     |
@@ -112,20 +114,20 @@ Table: Admin Edit User
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                                                                                         |
 | Usecase Exception Pathway(s)  | User does not exist anymore. Since the user can delete the entry, the admin may not able to find the user. In cases where a user was deleted during the edit phase by the admin, when an admin submits, the user may not exist. An error should be presented rather than readding the user. |
 
-Table: User Edit User
+Table: (UMS Usecase) User Edit User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                                  |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Usecase Name                  | User Edit User                                                                                                                                                                                                                                                |
-| Usecase Description           | The user edits thier own user information.                                                                                                                                                                                                                    |
+| Usecase Description           | The user edits their own user information.                                                                                                                                                                                                                    |
 | Usecase Author                | Zana                                                                                                                                                                                                                                                          |
 | Usecase Actor                 | User                                                                                                                                                                                                                                                          |
 | Usecase Location              | Frontend                                                                                                                                                                                                                                                      |
-| Usecase Primary Pathway       | The user will see an edit button on thier page. Once clicked, they will be redirected to an edit form containing thier information. From there they have options to edit whatever data they want. Also a delete button (Please see User Delete User usecase). |
+| Usecase Primary Pathway       | The user will see an edit button on their page. Once clicked, they will be redirected to an edit form containing their information. From there they have options to edit whatever data they want. Also a delete button (Please see User Delete User usecase). |
 | Usecase Alternate Pathways(s) | Users should not be able to access data on other users. If some pages are not limited, they will have access to other peoples data.                                                                                                                           |
 | Usecase Exception Pathway(s)  | Admin may have deleted a users account so a user cannot login anymore so they cannot access any of their data to see or edit. Admin may also have changed the users details which could cause login issues.                                                   |
 
-Table: Admin Update User
+Table: (UMS Usecase) Admin Update User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                        |
 | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -136,14 +138,14 @@ Table: Admin Update User
 | Usecase Location              | Backend                                                                                                                                                                                             |
 | Usecase Primary Pathway       | After edits have been made, admin will click the update button to confirm changes.                                                                                                                  |
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                 |
-| Usecase Exception Pathway(s)  | The forms will have some validation so that they information comply with the input specification. In this case, errors will be shown and if data is sensative, they will be required to type again. |
+| Usecase Exception Pathway(s)  | The forms will have some validation so that they information comply with the input specification. In this case, errors will be shown and if data is sensitive, they will be required to type again. |
 
-Table: User Update User
+Table: (UMS Usecase) User Update User
 
 | Usecase                       | Usecase Name                                                                                                                    |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
 | Usecase Name                  | User Update User                                                                                                                |
-| Usecase Description           | A user updates thier own information                                                                                            |
+| Usecase Description           | A user updates their own information                                                                                            |
 | Usecase Author                | Zana                                                                                                                            |
 | Usecase Actor                 | User                                                                                                                            |
 | Usecase Location              | Frontend                                                                                                                        |
@@ -151,20 +153,20 @@ Table: User Update User
 | Usecase Alternate Pathways(s) | A direct request to the update link should redirect to the user's edit page.                                                    |
 | Usecase Exception Pathway(s)  | User may have been deleted by the admin at the time of a user updates. This case, the user should be logged out with a message. |
 
-Table: Admin Delete User
+Table: (UMS Usecase) Admin Delete User
 
-| Usecase                       | Usecase Name                                                                                                                                                             |
-| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Usecase Name                  | Admin Delete User                                                                                                                                                        |
-| Usecase Description           | An admin deletes a specified user.                                                                                                                                       |
-| Usecase Author                | Zana                                                                                                                                                                     |
-| Usecase Actor                 | Admin                                                                                                                                                                    |
-| Usecase Location              | Backend                                                                                                                                                                  |
-| Usecase Primary Pathway       | Admin, on the edit page will be presented with a delete button. This way, no accidental deletetions are made. A message will also appear before a deletion is confirmed. |
-| Usecase Alternate Pathways(s) | N/a                                                                                                                                                                      |
-| Usecase Exception Pathway(s)  | The database connection may be lost. In this case, a message should be shown to the admin and the deletion to fail.                                                      |
+| Usecase                       | Usecase Name                                                                                                                                                           |
+| :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Usecase Name                  | Admin Delete User                                                                                                                                                      |
+| Usecase Description           | An admin deletes a specified user.                                                                                                                                     |
+| Usecase Author                | Zana                                                                                                                                                                   |
+| Usecase Actor                 | Admin                                                                                                                                                                  |
+| Usecase Location              | Backend                                                                                                                                                                |
+| Usecase Primary Pathway       | Admin, on the edit page will be presented with a delete button. This way, no accidental deletions are made. A message will also appear before a deletion is confirmed. |
+| Usecase Alternate Pathways(s) | N/a                                                                                                                                                                    |
+| Usecase Exception Pathway(s)  | The database connection may be lost. In this case, a message should be shown to the admin and the deletion to fail.                                                    |
 
-Table: User Delete User
+Table: (UMS Usecase) User Delete User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                |
 | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -173,11 +175,11 @@ Table: User Delete User
 | Usecase Author                | Zana                                                                                                                                                                                                                        |
 | Usecase Actor                 | User                                                                                                                                                                                                                        |
 | Usecase Location              | Frontend                                                                                                                                                                                                                    |
-| Usecase Primary Pathway       | User, on the edit page, will be given a red delete button which will show a popup to confirm deletion. This can only be done if they type in thier password.                                                                |
+| Usecase Primary Pathway       | User, on the edit page, will be given a red delete button which will show a popup to confirm deletion. This can only be done if they type in their password.                                                                |
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                         |
 | Usecase Exception Pathway(s)  | The system might throw a null pointer exception if the user was already deleted by the admin. Instead, they should be redirected to a register page and with a relevant message to tell the user their account was deleted. |
 
-Table: List User
+Table: (UMS Usecase) List User
 
 | Usecase                       | Usecase Name                                                                                                                                            |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -190,12 +192,12 @@ Table: List User
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                     |
 | Usecase Exception Pathway(s)  | Once the button is clicked, it is possible that the database contains no users. In this case, a message should tell the admins that there are no users. |
 
-Table: Find User
+Table: (UMS Usecase) Find User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                              |
 | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Usecase Name                  | Find User                                                                                                                                                                                                                                                 |
-| Usecase Description           | Admin finds a user based on the information the users gave during registeration. Please see the user schema table for more details on the available fields.                                                                                               |
+| Usecase Description           | Admin finds a user based on the information the users gave during registration. Please see the user schema table for more details on the available fields.                                                                                                |
 | Usecase Author                | Zana                                                                                                                                                                                                                                                      |
 | Usecase Actor                 | Admin                                                                                                                                                                                                                                                     |
 | Usecase Location              | Backend                                                                                                                                                                                                                                                   |
@@ -203,7 +205,7 @@ Table: Find User
 | Usecase Alternate Pathways(s) | The same user may match if the other input fields were filled in. They admin has to clear the form to ensure that the system only takes the id as a search query.                                                                                         |
 | Usecase Exception Pathway(s)  | A search query might show no results due to no matching user in the database. In this case, a message would be useful to show that there was no return search result..                                                                                    |
 
-Table: Filter User
+Table: (UMS Usecase) Filter User
 
 | Usecase                       | Usecase Name                                                                                                                                                                              |
 | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -216,7 +218,7 @@ Table: Filter User
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                       |
 | Usecase Exception Pathway(s)  | A search query might show no results due to no matching **users** in the database. In this case, a message would be useful to show that there was no return search result.                |
 
-Table: Admin Validate User
+Table: (UMS Usecase) Admin Validate User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                                 |
 | :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -229,18 +231,18 @@ Table: Admin Validate User
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                                                                                                          |
 | Usecase Exception Pathway(s)  | If no data is sent, the admin should be able to get the relevant messages back as well as an option to cancel the form so that if they change their mind, they can just exit safely without changing any data.                                                                                               |
 
-Table: User Validate User
+Table: (UMS Usecase) User Validate User
 
-| Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Usecase Name                  | User Validate User                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Usecase Description           | The user, when they register or they edit their information will have their request data to be validated and checked before the information is submited to the database similar to Admin Validate User usecase except this will be available for user login too.                                                                                                                                                                                                                                        |
-| Usecase Author                | Zana                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Usecase Actor                 | User                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Usecase Location              | Frontend                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Usecase Primary Pathway       | There are 3 primary paths. <ul><li>When a user tries to login, data will be sent to be checked for malicious intent and check if the users email is an email format.</li><li>When a new user is registering, it will do the same thing as above, except it will do it for all the fields. So if telephone number is not a in the right format, validation for it will fail.</li><li>When a user tries to update thier information, they will have to go through the same validation as above.</li></ul> |
-| Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Usecase Exception Pathway(s)  | N/a (besides the normal expected error from the failed validation)                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Usecase Name                  | User Validate User                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Usecase Description           | The user, when they register or they edit their information will have their request data to be validated and checked before the information is submitted to the database similar to Admin Validate User usecase except this will be available for user login too.                                                                                                                                                                                                   |
+| Usecase Author                | Zana                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Usecase Actor                 | User                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Usecase Location              | Frontend                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Usecase Primary Pathway       | There are 3 primary paths. When a user tries to login, data will be sent to be checked for malicious intent and check if the users email is an email format.When a new user is registering, it will do the same thing as above, except it will do it for all the fields. So if telephone number is not a in the right format, validation for it will fail.When a user tries to update their information, they will have to go through the same validation as above. |
+| Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Usecase Exception Pathway(s)  | N/a (besides the normal expected error from the failed validation)                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ## Book Management System
 
