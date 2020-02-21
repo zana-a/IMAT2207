@@ -86,31 +86,31 @@ When a user is authenticated whether through the frontend or backend, the rest o
 
 ### Usecases
 
-Table: Add User
+Table: Admin Add User
 
-| Usecase                       | Usecase Name |
-| :---------------------------- | :----------- |
-| Usecase Name                  | Add User     |
-| Usecase Description           |              |
-| Usecase Author                |              |
-| Usecase Actor                 |              |
-| Usecase Location              |              |
-| Usecase Primary Pathway       |              |
-| Usecase Alternate Pathways(s) |              |
-| Usecase Exception Pathway(s)  |              |
+| Usecase                       | Usecase Name                                                                                                                                                         |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Usecase Name                  | Admin Add User                                                                                                                                                       |
+| Usecase Description           | The admin adds a user from the backend application.                                                                                                                  |
+| Usecase Author                | Zana                                                                                                                                                                 |
+| Usecase Actor                 | Admin                                                                                                                                                                |
+| Usecase Location              | Backend                                                                                                                                                              |
+| Usecase Primary Pathway       | Admin will have the option on the GUI to add a new user. Once clicked on the button, a form will be presented and the admin will be able to input the relevant data. |
+| Usecase Alternate Pathways(s) | N/a                                                                                                                                                                  |
+| Usecase Exception Pathway(s)  | Database refuses to connect. In this case, admin or user cannot access the relevant data.                                                                            |
 
-Table: Edit User
+Table: Admin Edit User
 
-| Usecase                       | Usecase Name |
-| :---------------------------- | :----------- |
-| Usecase Name                  | Edit User    |
-| Usecase Description           |              |
-| Usecase Author                |              |
-| Usecase Actor                 |              |
-| Usecase Location              |              |
-| Usecase Primary Pathway       |              |
-| Usecase Alternate Pathways(s) |              |
-| Usecase Exception Pathway(s)  |              |
+| Usecase                       | Usecase Name                                                                                                                                                                                                                                              |
+| :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Usecase Name                  | Admin Edit User                                                                                                                                                                                                                                           |
+| Usecase Description           | The admin edits an exisiting user information.                                                                                                                                                                                                            |
+| Usecase Author                | Zana                                                                                                                                                                                                                                                      |
+| Usecase Actor                 | Admin                                                                                                                                                                                                                                                     |
+| Usecase Location              | Backend                                                                                                                                                                                                                                                   |
+| Usecase Primary Pathway       | Admin will first have to find a user. Once selected, a button will be available to press and access the data of the selected user. A form, similar to add user will be present. Only difference is, it will most likely already be populated.             |
+| Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                                                       |
+| Usecase Exception Pathway(s)  | User does not exist anymore. Since the user can delete the entry, the admin may not able to find the user. In cases where a user was deleted during the edit phase by the admin, on submit, the user may not exist as the may have deleted their account. |
 
 Table: Update User
 
