@@ -89,7 +89,6 @@ When a user is authenticated whether through the frontend or backend, the rest o
 Table: Add User
 
 | Usecase Name                  | Add User |
-| ----------------------------- | -------- |
 | Usecase Description           |          |
 | Usecase Author                |          |
 | Usecase Actor                 |          |
@@ -101,7 +100,6 @@ Table: Add User
 Table: Edit User
 
 | Usecase Name                  | Edit User |
-| ----------------------------- | --------- |
 | Usecase Description           |           |
 | Usecase Author                |           |
 | Usecase Actor                 |           |
@@ -113,7 +111,6 @@ Table: Edit User
 Table: Update User
 
 | Usecase Name                  | Update User |
-| ----------------------------- | ----------- |
 | Usecase Description           |             |
 | Usecase Author                |             |
 | Usecase Actor                 |             |
@@ -125,7 +122,6 @@ Table: Update User
 Table: Delete User
 
 | Usecase Name                  | Delete User |
-| ----------------------------- | ----------- |
 | Usecase Description           |             |
 | Usecase Author                |             |
 | Usecase Actor                 |             |
@@ -137,7 +133,6 @@ Table: Delete User
 Table: List User
 
 | Usecase Name                  | List User |
-| ----------------------------- | --------- |
 | Usecase Description           |           |
 | Usecase Author                |           |
 | Usecase Actor                 |           |
@@ -149,7 +144,6 @@ Table: List User
 Table: Find User
 
 | Usecase Name                  | Find User |
-| ----------------------------- | --------- |
 | Usecase Description           |           |
 | Usecase Author                |           |
 | Usecase Actor                 |           |
@@ -161,7 +155,6 @@ Table: Find User
 Table: Filter User
 
 | Usecase Name                  | Filter User |
-| ----------------------------- | ----------- |
 | Usecase Description           |             |
 | Usecase Author                |             |
 | Usecase Actor                 |             |
@@ -173,7 +166,6 @@ Table: Filter User
 Table: Validate User
 
 | Usecase Name                  | Validate User |
-| ----------------------------- | ------------- |
 | Usecase Description           |               |
 | Usecase Author                |               |
 | Usecase Actor                 |               |
