@@ -164,7 +164,6 @@ Table: Admin Delete User
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                      |
 | Usecase Exception Pathway(s)  | The database connection may be lost. In this case, a message should be shown to the admin and the deletion to fail.                                                      |
 
-
 Table: User Delete User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                |
@@ -180,55 +179,68 @@ Table: User Delete User
 
 Table: List User
 
-| Usecase                       | Usecase Name |
-| :---------------------------- | :----------- |
-| Usecase Name                  | List User    |
-| Usecase Description           |              |
-| Usecase Author                |              |
-| Usecase Actor                 |              |
-| Usecase Location              |              |
-| Usecase Primary Pathway       |              |
-| Usecase Alternate Pathways(s) |              |
-| Usecase Exception Pathway(s)  |              |
+| Usecase                       | Usecase Name                                                                                                                                            |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Usecase Name                  | List User                                                                                                                                               |
+| Usecase Description           | Admin lists the users                                                                                                                                   |
+| Usecase Author                | Zana                                                                                                                                                    |
+| Usecase Actor                 | Admin                                                                                                                                                   |
+| Usecase Location              | Backend                                                                                                                                                 |
+| Usecase Primary Pathway       | Admin will be presented with all the users once they click "see users" on the backend homepage application                                              |
+| Usecase Alternate Pathways(s) | N/a                                                                                                                                                     |
+| Usecase Exception Pathway(s)  | Once the button is clicked, it is possible that the database contains no users. In this case, a message should tell the admins that there are no users. |
 
 Table: Find User
 
-| Usecase                       | Usecase Name |
-| :---------------------------- | :----------- |
-| Usecase Name                  | Find User    |
-| Usecase Description           |              |
-| Usecase Author                |              |
-| Usecase Actor                 |              |
-| Usecase Location              |              |
-| Usecase Primary Pathway       |              |
-| Usecase Alternate Pathways(s) |              |
-| Usecase Exception Pathway(s)  |              |
+| Usecase                       | Usecase Name                                                                                                                                                                                                                                              |
+| :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Usecase Name                  | Find User                                                                                                                                                                                                                                                 |
+| Usecase Description           | Admin finds a user based on the information the users gave during registeration. Please see the user schema table for more details on the available fields.                                                                                               |
+| Usecase Author                | Zana                                                                                                                                                                                                                                                      |
+| Usecase Actor                 | Admin                                                                                                                                                                                                                                                     |
+| Usecase Location              | Backend                                                                                                                                                                                                                                                   |
+| Usecase Primary Pathway       | User will be given options on the "see users" page on the backend. Once they are in that part of the application, they will be listed with all the users and a few fields such as inputs to search for users. To find a specific user, we can use the id. |
+| Usecase Alternate Pathways(s) | The same user may match if the other input fields were filled in. They admin has to clear the form to ensure that the system only takes the id as a search query.                                                                                         |
+| Usecase Exception Pathway(s)  | A search query might show no results due to no matching user in the database. In this case, a message would be useful to show that there was no return search result..                                                                                    |
 
 Table: Filter User
 
-| Usecase                       | Usecase Name |
-| :---------------------------- | :----------- |
-| Usecase Name                  | Filter User  |
-| Usecase Description           |              |
-| Usecase Author                |              |
-| Usecase Actor                 |              |
-| Usecase Location              |              |
-| Usecase Primary Pathway       |              |
-| Usecase Alternate Pathways(s) |              |
-| Usecase Exception Pathway(s)  |              |
+| Usecase                       | Usecase Name                                                                                                                                                                              |
+| :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Usecase Name                  | Filter User                                                                                                                                                                               |
+| Usecase Description           | Admin searches through all users, finding only the ones that match a specific query.                                                                                                      |
+| Usecase Author                | Zana                                                                                                                                                                                      |
+| Usecase Actor                 | Admin                                                                                                                                                                                     |
+| Usecase Location              | Backend                                                                                                                                                                                   |
+| Usecase Primary Pathway       | Forms will be provided which will be used as a search query. They will be on the same page as the listview for users. If any inputs match a user, they will be displayed in the listview. |
+| Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                       |
+| Usecase Exception Pathway(s)  | A search query might show no results due to no matching **users** in the database. In this case, a message would be useful to show that there was no return search result.                |
 
-Table: Validate User
+Table: Admin Validate User
 
-| Usecase                       | Usecase Name  |
-| :---------------------------- | :------------ |
-| Usecase Name                  | Validate User |
-| Usecase Description           |               |
-| Usecase Author                |               |
-| Usecase Actor                 |               |
-| Usecase Location              |               |
-| Usecase Primary Pathway       |               |
-| Usecase Alternate Pathways(s) |               |
-| Usecase Exception Pathway(s)  |               |
+| Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                                 |
+| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Usecase Name                  | Admin Validate User                                                                                                                                                                                                                                                                                          |
+| Usecase Description           | When a new user is being added or existing one is being edited on the backend, on submit, the data gets checked before any more action is taken.                                                                                                                                                             |
+| Usecase Author                | Zana                                                                                                                                                                                                                                                                                                         |
+| Usecase Actor                 | Admin                                                                                                                                                                                                                                                                                                        |
+| Usecase Location              | Backend                                                                                                                                                                                                                                                                                                      |
+| Usecase Primary Pathway       | On the "add user" or "edit user" forms, when submit is pressed, the request data is validated and made sure everything should be both compatible with the database and correct before it is sent to the database. If it is not, then the admin will get messages to help with resolving the issue or issues. |
+| Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                                                                                                          |
+| Usecase Exception Pathway(s)  | If no data is sent, the admin should be able to get the relevant messages back as well as an option to cancel the form so that if they change their mind, they can just exit safely without changing any data.                                                                                               |
+
+Table: User Validate User
+
+| Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Usecase Name                  | User Validate User                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Usecase Description           | The user, when they register or they edit their information will have their request data to be validated and checked before the information is submited to the database similar to Admin Validate User usecase except this will be available for user login too.                                                                                                                                                                                                                                        |
+| Usecase Author                | Zana                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Usecase Actor                 | User                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Usecase Location              | Frontend                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Usecase Primary Pathway       | There are 3 primary paths. <ul><li>When a user tries to login, data will be sent to be checked for malicious intent and check if the users email is an email format.</li><li>When a new user is registering, it will do the same thing as above, except it will do it for all the fields. So if telephone number is not a in the right format, validation for it will fail.</li><li>When a user tries to update thier information, they will have to go through the same validation as above.</li></ul> |
+| Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Usecase Exception Pathway(s)  | N/a (besides the normal expected error from the failed validation)                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 ## Book Management System
 
