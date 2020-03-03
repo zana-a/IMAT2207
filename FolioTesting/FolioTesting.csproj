@@ -52,8 +52,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstBooks.cs" />
     <Compile Include="tstOrder.cs" />
-    <Compile Include="UserManagement\TstUserManagement.cs" />
     <Compile Include="tstAuthor.cs" />
+    <Compile Include="UserManagement\TstUser.cs" />
+    <Compile Include="UserManagement\TstName.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
