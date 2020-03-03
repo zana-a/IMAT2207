@@ -1,6 +1,12 @@
-﻿namespace FolioClasses
+﻿using System;
+
+namespace FolioClasses
 {
-    public class clsUser
+    public class ClsUser
     {
+        public bool Find(int userID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
