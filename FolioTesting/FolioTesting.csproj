@@ -53,6 +53,9 @@
     <Compile Include="PublisherManagement\tstPublisher.cs" />
     <Compile Include="tstBooks.cs" />
     <Compile Include="tstOrder.cs" />
+    <Compile Include="tstAuthor.cs" />
+    <Compile Include="UserManagement\TstUser.cs" />
+    <Compile Include="UserManagement\TstName.cs" />
     <Compile Include="tstUserManagement.cs" />
     <Compile Include="AuthorManagement\tstAuthor.cs" />
   </ItemGroup>
