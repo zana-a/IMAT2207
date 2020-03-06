@@ -1,0 +1,1078 @@
+<h1 id="system-specification">System Specification</h1>
+<p>Folio is a website for users to buy and download e-books. Users have the option to search for an e-book using an author name or a title of a book. The homepage will present the user with various books that are randomly chosen. There will also be a browse page to look for a book via publisher, date of publication, author or genre. The project itself consists of 3 systems. Please see the relevant subsections to find out more.</p>
+<p>Other pages that would be included within the website include the login and register pages where the user will be asked to enter their details to either register or login. Once this is completed, they can buy a book they would like which then gets added to the Order System for recording who has bought what. Folio consists of four systems that are allocated between four people. More details of each system are shown below under each subsection.</p>
+<p>At the backend, we have access to the database so we will directly access data and do all the relevant actions such as addition, deletion, filtration and modification, listing and validation. A form will be designed to take in input for example for adding a new book entry.</p>
+<p>Pre-defined SQL queries will be designed to instantly output relevant data for ease of use. For example, a query will be made to return all the users in the database or all books that are bought by a user. The result will return a list.</p>
+<h2 id="user-management-system">User Management System</h2>
+<p>This system is run by Zana who will be creating the following functionality:</p>
+<p><em>Please note that the abreviation UMS is used to repersent the ‘User Management System’</em></p>
+<p>As mentioned before, this system will consist of two parts; a backend facing windows form application and a frontend website.</p>
+<p>It will carry out functions such as:</p>
+<ul>
+<li><p><strong>Adding a user:</strong> for the backend facing form, an admin can add a user by a form that has been provided for them that consists of the same fields as the frontend page will. It will ask for information such as first name, last name, date of birth, email and telephone number.</p></li>
+<li><p><strong>Editing a user:</strong> at the backend, the admin will be able to search for a user and then bring up all the editable fields that were provided and modify them as they please as long as it can be validated. On the frontend, the user can do the same thing but only for their own account.</p></li>
+<li><p><strong>Deleting a user:</strong> the admin can search for a user and completely delete the record. At the frontend the user can choose to delete their own record.</p></li>
+<li><p><strong>Listing users or a single user:</strong> on the backend, an admin can choose to see all the users or search for specific ones. Once this has been done, they can then view the details of that user. A user on the frontend can see their own details on their profile page.</p></li>
+<li><p><strong>Finding users:</strong> an admin can find another user at the backend. This will not be possible as of yet for the frontend. Although it may be an extra feature that could be useful if enough time was allocated.</p></li>
+<li><p><strong>Filtering users:</strong> an admin can use the windows form at the backend to filter out only the users they require to see. For example, an admin can ask the database to retrieve data from a user that is born on April 8<sup>th</sup> and that they have bought 32 books.</p></li>
+<li><p><strong>Validating users:</strong> any information should be validated that are going into the database. For example, a user should be at least at minimum age range, possibly at 16 which ensures a user legally can make a purchase. Validation is going to be done at the backend of the application that talks to the database. However, the frontend user will still be notified if something goes wrong such as too few characters for a password.</p></li>
+</ul>
+<p>It is worth mentioning that the windows form will not have a login form for admins. We expect that the machine will be kept secure by providing a password for their machine.</p>
+<h3 id="user-schema">User Schema</h3>
+<p>Below is the schema for a user. On the register page they would have to provide the following details.</p>
+<ol type="1">
+<li>First name</li>
+<li>Last name</li>
+<li>Date of birth</li>
+<li>Email</li>
+<li>Telephone number</li>
+</ol>
+<p>Then these data will be sent to the server to be validated. An email also will be sent to the user to verify their information which is essential if they want to buy an e-book so that we know that they will receive an email for the receipt and the pdf of the desired book.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Type (<code>datatype</code>)</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>user_id</td>
+<td>String <code>varchar(25)</code></td>
+<td>Private Key</td>
+</tr>
+<tr class="even">
+<td>user_fullname</td>
+<td>String <code>varchar(50)</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>user_password</td>
+<td>String <code>varchar(50)</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>user_dob</td>
+<td>Date <code>date</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>user_email</td>
+<td>String <code>varchar(255)</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>user_tel</td>
+<td>String <code>varchar(13)</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>user_numof_books_bought</td>
+<td>Integer <code>int</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>user_is_email_verified</td>
+<td>Boolean <code>bit</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>With every purchase, we will increment the <code>user_numof_books_bought</code> field to keep record of how many books each individual has bought. This may come in handy to see how popular the website as a whole is.</p>
+<p>When a user is authenticated whether through the frontend or backend, the rest of the application is handled by the other systems.</p>
+<h3 id="usecases">Usecases</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Admin Add User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">The admin adds a user from the backend application.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">Admin will have the option on the GUI to add a new user. Once clicked on the button, a form will be presented and the admin will be able to input the relevant data.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">N/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">Database refuses to connect. In this case, admin or user cannot access the relevant data.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Admin Edit User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">The admin edits an existing user information.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">Admin will first have to find a user. Once selected, a button will be available to press and access the data of the selected user. A form, similar to add user will be present. Only difference is, it will most likely already be populated.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">N/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">User does not exist anymore. Since the user can delete the entry, the admin may not able to find the user. In cases where a user was deleted during the edit phase by the admin, when an admin submits, the user may not exist. An error should be presented rather than reading the user.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">User Edit User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">The user edits their own user information.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">User</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Frontend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">The user will see an edit button on their page. Once clicked, they will be redirected to an edit form containing their information. From there they have options to edit whatever data they want. Also a delete button (Please see User Delete User usecase).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">Users should not be able to access data on other users. If some pages are not limited, they will have access to other peoples data.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">Admin may have deleted a users account so a user cannot login anymore so they cannot access any of their data to see or edit. Admin may also have changed the users details which could cause login issues.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Admin Update User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">Admin updates a users data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">After edits have been made, admin will click the update button to confirm changes.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">N/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">The forms will have some validation so that they information comply with the input specification. In this case, errors will be shown and if data is sensitive, they will be required to type again.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">User Update User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">A user updates their own information</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">User</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Frontend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">After they have filled in the relevant fields, an update link will be provided to redirect them to a success page.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">A direct request to the update link should redirect to the user’s edit page.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">User may have been deleted by the admin at the time of a user updates. This case, the user should be logged out with a message.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Admin Delete User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">An admin deletes a specified user.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">Admin, on the edit page will be presented with a delete button. This way, no accidental deletions are made. A message will also appear before a deletion is confirmed.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">N/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">The database connection may be lost. In this case, a message should be shown to the admin and the deletion to fail.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">User Delete User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">A user deletes their account</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">User</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Frontend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">User, on the edit page, will be given a red delete button which will show a popup to confirm deletion. This can only be done if they type in their password.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">N/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">The system might throw a null pointer exception if the user was already deleted by the admin. Instead, they should be redirected to a register page and with a relevant message to tell the user their account was deleted.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">List User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">Admin lists the users</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">Admin will be presented with all the users once they click “see users” on the backend homepage application</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">N/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">Once the button is clicked, it is possible that the database contains no users. In this case, a message should tell the admins that there are no users.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Find User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">Admin finds a user based on the information the users gave during registration. Please see the user schema table for more details on the available fields.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">User will be given options on the “see users” page on the backend. Once they are in that part of the application, they will be listed with all the users and a few fields such as inputs to search for users. To find a specific user, we can use the id.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">The same user may match if the other input fields were filled in. They admin has to clear the form to ensure that the system only takes the id as a search query.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">A search query might show no results due to no matching user in the database. In this case, a message would be useful to show that there was no return search result..</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Filter User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">Admin searches through all users, finding only the ones that match a specific query.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">Forms will be provided which will be used as a search query. They will be on the same page as the listview for users. If any inputs match a user, they will be displayed in the listview.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">N/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">A search query might show no results due to no matching <strong>users</strong> in the database. In this case, a message would be useful to show that there was no return search result.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Admin Validate User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">When a new user is being added or existing one is being edited on the backend, on submit, the data gets checked before any more action is taken.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">On the “add user” or “edit user” forms, when submit is pressed, the request data is validated and made sure everything should be both compatible with the database and correct before it is sent to the database. If it is not, then the admin will get messages to help with resolving the issue or issues.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">N/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">If no data is sent, the admin should be able to get the relevant messages back as well as an option to cancel the form so that if they change their mind, they can just exit safely without changing any data.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 93%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">User Validate User</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">The user, when they register or they edit their information will have their request data to be validated and checked before the information is submitted to the database similar to Admin Validate User usecase except this will be available for user login too.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Zana</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">User</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Frontend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">There are 3 primary paths. When a user tries to login, data will be sent to be checked for malicious intent and check if the users email is an email format.When a new user is registering, it will do the same thing as above, except it will do it for all the fields. So if telephone number is not a in the right format, validation for it will fail.When a user tries to update their information, they will have to go through the same validation as above.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">N/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">N/a (besides the normal expected error from the failed validation)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="book-management-system">Book Management System</h2>
+<p>This system is run by Thomas who will be creating the following:</p>
+<p>The work I have been allocated is the creation of the book management system, this system contains all information regarding all books including their title, price and type. All the data in this table will be in the backend of the system and will only be used by the front end for fetching the required information. This record will allow for adding, editing, deleting, listing and filtering.</p>
+<ul>
+<li><p><strong>Adding:</strong> This will be for adding the information on the book to be used as a listing later. Examples of the data added would be <code>book_title</code>, <code>book_price</code> and <code>book_type</code>.</p></li>
+<li><p><strong>Editing:</strong> This will be used for editing existing records. This would be used in instances where the price or book title would have to be changed.</p></li>
+<li><p><strong>Deleting:</strong> An instance of this would be if a book is no longer available on our site and would apply to all variables in the table on that book.</p></li>
+<li><p><strong>Listing:</strong> This will be used to show the books and their information within the record, this will be used mainly within the search engine but also within the general layout of the website when a selection of books will be shown to the user.</p></li>
+<li><p><strong>Filtering:</strong> This will be used mainly through the backend system for system admins to find specific books for editing, deleting or adding.</p></li>
+</ul>
+<p>My table will be heavily linked with the Publisher and Author Table as the books would need to be linked to their individual author/publisher. This will also link inn with the front end of the website for the search engine.</p>
+<h3 id="book-schema">Book Schema</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Type (<code>DataType</code>)</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>book_id</td>
+<td>Integer <code>int</code></td>
+<td>Primary Key</td>
+</tr>
+<tr class="even">
+<td>author_id</td>
+<td>Integer <code>int</code></td>
+<td>Foreign Key</td>
+</tr>
+<tr class="odd">
+<td>book_title</td>
+<td>String <code>varchar(50)</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>book_price</td>
+<td>Float <code>float</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>book_type</td>
+<td>String <code>varchar(15)</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>book_genre</td>
+<td>String <code>varchar(15)</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>book_type</td>
+<td>String <code>varchar(15)</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>book_pubdate</td>
+<td>Date <code>date</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>book_first_ed</td>
+<td>Boolean <code>bit</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The <code>book_id</code> variable will be changing constantly when a new book is added automatically allowing for easy organization of the Book Management System and will help all backend and front end systems in finding a specific book.</p>
+<h2 id="author-publisher-system">Author &amp; Publisher System</h2>
+<p>This system will be run by Hugh, who will be creating the following functionality:</p>
+<ul>
+<li><p><strong>Frontend author/publisher tables:</strong> these pages will consist of information stored about publishers and authors. The user will be able to access data on an author, or a publisher, which will be displayed using the respective <code>AuthorID</code> or <code>PublisherID</code>. On an author page there will be a short description of the author along with a date of birth and a list of all other books related to them. The publisher page will have a similar design.</p></li>
+<li><p><strong>Adding an author/publisher:</strong> authors and publisher will be added using the backend form. This form will consist of the same fields that the front end provides. Information included on an author will be name, date of birth, whether or not they are deceased and a short description of them. Publisher name and website will be asked for.</p></li>
+<li><p><strong>Editing an author/publisher:</strong> admins will be able to find author and publisher records and edit them as needed. Users will not have this functionality</p></li>
+<li><p><strong>Deleting an author/publisher:</strong> an admin will be able to search and find an author or publisher record and delete it. Users will not have this functionality.</p></li>
+<li><p><strong>Listing an authors/publishers or a single author/publisher:</strong> admins will be able to list all records of authors or publishers or a specific one at the backend, including fields hidden from users. Users will be able to find information available to them by using the search functionality.</p></li>
+<li><p><strong>Filtering authors/publishers:</strong> admins will be able to filter author/publisher records at the backend to find records they wish to see. For example, they may wish to only filter via deceased authors. Users will be able to use this functionality on the front end.</p></li>
+</ul>
+<h3 id="author-publisher-schema">Author &amp; Publisher Schema</h3>
+<p>Below is a table schema for both the author and publisher tables. Additions to these tables will be made in the backend.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Type (<code>DataType</code>)</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>author_id</td>
+<td>Integer <code>int</code></td>
+<td>Primary Key</td>
+</tr>
+<tr class="even">
+<td>book_id</td>
+<td>String <code>varchar(255)</code></td>
+<td>Foreign Key</td>
+</tr>
+<tr class="odd">
+<td>author_name</td>
+<td>String <code>varchar(50)</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>author_dob</td>
+<td>Date <code>date</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>author_isalive</td>
+<td>Boolean <code>bit</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Type (<code>DataType</code>)</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>publisher_id</td>
+<td>Integer <code>int</code></td>
+<td>Primary Key</td>
+</tr>
+<tr class="even">
+<td>author_id</td>
+<td>Integer <code>int</code></td>
+<td>Foreign Key</td>
+</tr>
+<tr class="odd">
+<td>book_id</td>
+<td>Integer <code>int</code></td>
+<td>Foreign Key</td>
+</tr>
+<tr class="even">
+<td>publisher_name</td>
+<td>String <code>varchar(50)</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>publisher_datefounded</td>
+<td>Date <code>date</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>publisher_website</td>
+<td>String <code>varchar(255)</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="usecases-1">Usecases</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Add Author</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">An admin can add a new record for an author</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Hugh</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">Add Author. An admin enters a new record for an author, the record is created.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error. The author already exists in the system.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Edit Author</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">An admin can find an authors specific record and edit the data associated</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Hugh</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">Edit Author. An admin enters an author’s name. All data associated is displayed which can then be edited.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">The admin can search by book, find the author associated with it, then edit the record. The admin can search by publisher, find the author associated with it, then edit the record.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Delete Author</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">An admin can find an authors specific record and delete the data associated</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Hugh</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">Delete Author. An admin enters an author’s name. All data associated is displayed which can then be completely deleted.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">The admin can search by book, and find the author associated with it, then delete it. The admin can search by publisher and delete any authors associated with them. The author does not exist, so cannot be deleted.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">List Author</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">An admin can view a list of all authors in the system</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Hugh</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">List Author. A list of all authors is displayed to the admin. A user can search for all authors, a list is displayed to them.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">Admin applies a filter, a filtered list appears to the admin, admin removes the filter and the total list is displayed to them. User applies a filter, a filtered list appears to the user, user removes the filter and the total list is displayed to them. There are no authors in the system, system displays a message saying so.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Usecase</th>
+<th style="text-align: left;">Usecase Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Usecase Name</td>
+<td style="text-align: left;">Filter Author</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Description</td>
+<td style="text-align: left;">Admins will be able to use the backend to find the records that they wish to see. Users will be able to use the search function to find the same information</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Author</td>
+<td style="text-align: left;">Hugh</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Actor</td>
+<td style="text-align: left;">Admin</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Location</td>
+<td style="text-align: left;">Backend</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Primary Pathway</td>
+<td style="text-align: left;">Filter Author, user enters the authors name, a list of authors is presented to them</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Usecase Alternate Pathways(s)</td>
+<td style="text-align: left;">User enters the title of a book; the authors name is displayed alongside it. Admin filters by book; the authors name is displayed alongside it. User enters the name of a publisher; the name of the author is displayed under it. Admin filters by publisher; the authors name is displayed alongside it.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Usecase Exception Pathway(s)</td>
+<td style="text-align: left;">Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="order-record-system">Order &amp; Record System</h2>
+<p>This system will be run by Emmanuel, creating the following functionality:</p>
+<ol type="1">
+<li><p>Frontend user order/record table <code>My Orders</code>. This page will consist of pulled previous-order information related to the particular <code>UserID</code> attempting to access the order records and displays this for each user. The information will be accessed from the larger order-record table which holds the orders of all customers. Each order will have a download button beside it, allowing the user to download the particular book related to the <code>order_id</code>.</p></li>
+<li><p>Backend order addition, deletion, filtration and modification, listing and validation.</p></li>
+<li><p>Frontend user order confirmation. This page will provide each user with an order-number (<code>order_id</code>) and itinerary confirming the details of the book they have purchased and redirection link to the <code>My Orders</code> page where they can download their book.</p></li>
+</ol>
+<h3 id="order-record-schema">Order &amp; Record Schema</h3>
+<p>On the table below, the template for each user order on the <code>My Orders</code> is shown.</p>
+<p>On the user order page, each customer will have the opportunity to enter an integer between 1-5 representing their level of satisfaction of the order. Helping gauge the popularity of each book, particularly in identifying the sites best sellers.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Type (<code>DataType</code>)</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>order_id</td>
+<td>Integer <code>int</code></td>
+<td>Primary Key</td>
+</tr>
+<tr class="even">
+<td>user_id</td>
+<td>String <code>varchar(25)</code></td>
+<td>Foreign Key</td>
+</tr>
+<tr class="odd">
+<td>book_id</td>
+<td>String <code>varchar(255)</code></td>
+<td>Foreign Key</td>
+</tr>
+<tr class="even">
+<td>order_date_of_purchase</td>
+<td>Date <code>date</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>order_is_claimed</td>
+<td>Boolean <code>bit</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>order_satisfaction</td>
+<td>Integer <code>int</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Simultaneous to every additional order in the system, there will be an increment in the <code>order_id</code> value.</p>
+<p>There is a <code>one to zero or many</code> and <code>one to one (mandatory)</code> relationship between <code>user_id</code> and <code>order_id</code>.</p>
