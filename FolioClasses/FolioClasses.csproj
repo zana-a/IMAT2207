@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsBook.cs" />
-    <Compile Include="clsAuthor.cs" />
+    <Compile Include="AuthorManagement\ClsAuthor.cs" />
     <Compile Include="ClsDataConnection.cs" />
     <Compile Include="clsOrder.cs" />
     <Compile Include="clsUser.cs" />
