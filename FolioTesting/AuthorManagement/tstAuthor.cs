@@ -18,8 +18,8 @@ namespace FolioTesting.AuthorManagement
         {
             ClsAuthor AnAuthor = new ClsAuthor();
             Int32 TestData = 1;
-            AnAuthor.Id = TestData;
-            Assert.AreEqual(AnAuthor.Id, TestData);
+            AnAuthor.AuthorId = TestData;
+            Assert.AreEqual(AnAuthor.AuthorId, TestData);
         }
         [TestMethod]
         public void AuthorNameOK()
@@ -63,7 +63,7 @@ namespace FolioTesting.AuthorManagement
             Int32 AuthorNo = 1;
             Found = AnAuthor.Find(AuthorNo);
 
-            if(AnAuthor.Id != 1)
+            if(AnAuthor.AuthorId != 1)
             {
                 OK = false;
             }

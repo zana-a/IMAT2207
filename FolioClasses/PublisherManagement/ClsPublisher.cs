@@ -3,44 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FolioClasses.AuthorManagement
+namespace FolioClasses.PublisherManagement
 {
-    public class ClsAuthor
+    public class ClsPublisher
     {
-        private Int32 mAuthorId;
-        public Int32 AuthorId
+        private Int32 mPublisherId;
+        public Int32 PublisherId
         {
             get
             {
-                return mAuthorId;
+                return mPublisherId;
             }
             set
             {
-                mAuthorId = value;
+                mPublisherId = value;
             }
         }
-        private bool mIsDead;
+        private bool mIsActive;
         public bool IsDead
         {
             get
             {
-                return mIsDead;
+                return mIsActive;
             }
             set
             {
-                mIsDead = value;
+                mIsActive = value;
             }
         }
-        private DateTime mDOB;
+        private DateTime mDateFounded;
         public DateTime DOB
         {
             get
             {
-                return mDOB;
+                return mDateFounded;
             }
             set
             {
-                mDOB = value;
+                mDateFounded = value;
             }
         }
         private String mName;
@@ -55,17 +55,17 @@ namespace FolioClasses.AuthorManagement
                 mName = value;
             }
         }
-        public bool Find(int AuthorNo)
+        public bool Find(int PublisherNo)
         {
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@AuthorId", AuthorId);
-            DB.Execute("sproc_tblAuthorManage_FilterByAuthorId");
+            DB.AddParameter("@PublisherId", PublisherId);
+            DB.Execute("sproc_tblpublisherManage_FilterBypublisherId");
             if(DB.Count == 1)
             {
-                mAuthorId = Convert.ToInt32(DB.DataTable.Rows[0]["author_id"]);
-                mName = Convert.ToString(DB.DataTable.Rows[0]["author_name"]);
-                mIsDead = Convert.ToBoolean(DB.DataTable.Rows[0]["author_isalive"]);
-                mDOB = Convert.ToDateTime(DB.DataTable.Rows[0]["author_dob"]);
+                mPublisherId = Convert.ToInt32(DB.DataTable.Rows[0]["publisher_id"]);
+                mName = Convert.ToString(DB.DataTable.Rows[0]["publisher_name"]);
+                mIsActive = Convert.ToBoolean(DB.DataTable.Rows[0]["publisher_isalive"]);
+                mDateFounded = Convert.ToDateTime(DB.DataTable.Rows[0]["publisher_dob"]);
                 return true;
 
             }
