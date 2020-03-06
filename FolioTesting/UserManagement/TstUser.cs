@@ -10,174 +10,171 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void InstanceOk()
         {
-            int id = 1;
-            Name name = new Name("Steve Jobs");
-            string password = "iamgenius123";
-            string dob = "08/04/1999";
-            string email = "steve@apple.com";
-            string telephone = "007914724741";
-            int numOfBooksBought = 1;
-
-            User aUser = new User(id, name, password, dob, email, telephone, numOfBooksBought);
-
+            User aUser = new User();
             Assert.IsNotNull(aUser);
-        }
-
-        [TestMethod]
-        public void TestUserIdPropertyOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserNamePropertyOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserPasswordPropertyOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserDobPropertyOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserEmailPropertyOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserTelPropertyOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserNumOfBooksBoughtPropertyOk()
-        {
-            throw new NotImplementedException();
-        }
-
-
-        [TestMethod]
-        public void TestUserSetNameOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserSetPasswordOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserSetDobOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserSetEmailOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserSetTelOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserGetId()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserGetNameOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserGetPasswordOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserGetDobOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserGetEmailOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserGetTelOk()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserIdFound()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserNameFound()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserPasswordFound()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserDobFound()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserEmailFound()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserTelFound()
-        {
-            throw new NotImplementedException();
-        }
-
-        [TestMethod]
-        public void TestUserNumOfBooksBoughtFound()
-        {
-            throw new NotImplementedException();
         }
 
         [TestMethod]
         public void FindMethodOk()
         {
-            throw new NotImplementedException();
+            User aUser = new User();
+            bool found = false;
+            int id = 1;
+            found = aUser.Find(id);
+            Assert.IsTrue(found);
+        }
+
+ 
+        [TestMethod]
+        public void TestUserFound()
+        {
+            User aUser = new User();
+
+            bool found = false;
+            int id = 1;
+            bool ok = true;
+
+            found = aUser.Find(id);
+
+            if (aUser.Id != 1)
+            {
+                ok = false;
+            }
+
+            Assert.IsTrue(ok);
+        }
+
+        [TestMethod]
+        public void TestUserNameFound()
+        {
+            User aUser = new User();
+
+            bool found = false;
+            int id = 1;
+            bool ok = true;
+
+            found = aUser.Find(id);
+
+            if (aUser.Name != "Barry Bones")
+            {
+                ok = false;
+            }
+
+            Assert.IsTrue(ok);
+        }
+
+        [TestMethod]
+        public void TestUserPasswordFound()
+        {
+            User aUser = new User();
+
+            bool found = false;
+            int id = 1;
+            bool ok = true;
+
+            found = aUser.Find(id);
+
+            if (aUser.Password != "pass123")
+            {
+                ok = false;
+            }
+
+            Assert.IsTrue(ok);
+        }
+
+        [TestMethod]
+        public void TestUserDobFound()
+        {
+            User aUser = new User();
+
+            bool found = false;
+            int id = 1;
+            bool ok = true;
+
+            found = aUser.Find(id);
+
+            if (aUser.Dob != Convert.ToDateTime("08/04/1999"))
+            {
+                ok = false;
+            }
+
+            Assert.IsTrue(ok);
+        }
+
+        [TestMethod]
+        public void TestUserEmailFound()
+        {
+            User aUser = new User();
+
+            bool found = false;
+            int id = 1;
+            bool ok = true;
+
+            found = aUser.Find(id);
+
+            if (aUser.Email != "someone@email.com")
+            {
+                ok = false;
+            }
+
+            Assert.IsTrue(ok);
+        }
+
+        [TestMethod]
+        public void TestUserTelephoneFound()
+        {
+            User aUser = new User();
+
+            bool found = false;
+            int id = 1;
+            bool ok = true;
+
+            found = aUser.Find(id);
+
+            if (aUser.Telephone != "+447727184747")
+            {
+                ok = false;
+            }
+
+            Assert.IsTrue(ok);
+        }
+
+        [TestMethod]
+        public void TestUserNumOfBookBoughtFound()
+        {
+            User aUser = new User();
+
+            bool found = false;
+            int id = 1;
+            bool ok = true;
+
+            found = aUser.Find(id);
+
+            if (aUser.NumOfBooksBought != 123)
+            {
+                ok = false;
+            }
+
+            Assert.IsTrue(ok);
+        }
+
+        [TestMethod]
+        public void TestIsUserVerifiedFound()
+        {
+            User aUser = new User();
+
+            bool found = false;
+            int id = 1;
+            bool ok = true;
+
+            found = aUser.Find(id);
+
+            if (aUser.IsEmailVerified != true)
+            {
+                ok = false;
+            }
+
+            Assert.IsTrue(ok);
         }
     }
 }

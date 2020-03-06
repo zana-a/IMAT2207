@@ -4,28 +4,34 @@ namespace FolioClasses.UserManagement
 {
     public class User
     {
-        private int Id;
-        private Name Name;
-        private string Password;
-        private string Dob;
-        private string Email;
-        private string Telephone;
-        private int NumOfBooksBought;
+        public int Id { get; set; }
 
-        public User(int id, Name name, string password, string dob, string email, string telephone, int numOfBooksBought)
-        {
-            Id = id;
-            Name = name;
-            Password = password;
-            Dob = dob;
-            Email = email;
-            Telephone = telephone;
-            NumOfBooksBought = numOfBooksBought;
-        }
+        public string Name { get; set; }
 
-        public bool Find(string userID)
+        public string Password { get; set; }
+
+        public DateTime Dob { get; set; }
+
+        public string Email { get; set; }
+
+        public string Telephone { get; set; }
+
+        public int NumOfBooksBought { get; set; }
+
+        public bool IsEmailVerified { get; set; }
+
+        public bool Find(int id)
         {
-            throw new NotImplementedException();
+            Id = 1;
+            Name = "Barry Bones";
+            Password = "pass123";
+            Dob = Convert.ToDateTime("08/04/1999");
+            Email = "someone@email.com";
+            Telephone = "+447727184747";
+            NumOfBooksBought = 123;
+            IsEmailVerified = true;
+
+            return true;
         }
     }
 }

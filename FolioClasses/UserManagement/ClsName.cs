@@ -8,34 +8,15 @@ namespace FolioClasses.UserManagement
 {
     public class Name
     {
-        public string FirstName
-        {
-            get
-            {
-                return FirstName;
-            }
-            set
-            {
-                FirstName = value;
-            }
-        }
-        public string LastName
-        {
-            get
-            {
-                return FirstName;
-            }
-            set
-            {
-                FirstName = value;
-            }
-        }
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
 
         public string FullName
         {
             get
             {
-                return FirstName + " " + LastName;
+                return FirstName + ' ' + LastName;
             }
         }
 
