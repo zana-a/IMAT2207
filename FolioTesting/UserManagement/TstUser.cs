@@ -18,25 +18,24 @@ namespace FolioTesting.UserManagement
         public void FindMethodOk()
         {
             User aUser = new User();
-            bool found = false;
-            int id = 1;
+            Boolean found = false;
+            Int32 id = 1;
             found = aUser.Find(id);
             Assert.IsTrue(found);
         }
-
- 
+         
         [TestMethod]
         public void TestUserFound()
         {
             User aUser = new User();
 
-            bool found = false;
-            int id = 1;
-            bool ok = true;
+            Boolean found = false;
+            Int32 id = 1;
+            Boolean ok = true;
 
             found = aUser.Find(id);
 
-            if (aUser.Id != 1)
+            if (aUser.UserId != 1)
             {
                 ok = false;
             }
@@ -49,9 +48,9 @@ namespace FolioTesting.UserManagement
         {
             User aUser = new User();
 
-            bool found = false;
-            int id = 1;
-            bool ok = true;
+            Boolean found = false;
+            Int32 id = 1;
+            Boolean ok = true;
 
             found = aUser.Find(id);
 
@@ -68,9 +67,9 @@ namespace FolioTesting.UserManagement
         {
             User aUser = new User();
 
-            bool found = false;
-            int id = 1;
-            bool ok = true;
+            Boolean found = false;
+            Int32 id = 1;
+            Boolean ok = true;
 
             found = aUser.Find(id);
 
@@ -87,9 +86,9 @@ namespace FolioTesting.UserManagement
         {
             User aUser = new User();
 
-            bool found = false;
-            int id = 1;
-            bool ok = true;
+            Boolean found = false;
+            Int32 id = 1;
+            Boolean ok = true;
 
             found = aUser.Find(id);
 
@@ -106,9 +105,9 @@ namespace FolioTesting.UserManagement
         {
             User aUser = new User();
 
-            bool found = false;
-            int id = 1;
-            bool ok = true;
+            Boolean found = false;
+            Int32 id = 1;
+            Boolean ok = true;
 
             found = aUser.Find(id);
 
@@ -125,13 +124,13 @@ namespace FolioTesting.UserManagement
         {
             User aUser = new User();
 
-            bool found = false;
-            int id = 1;
-            bool ok = true;
+            Boolean found = false;
+            Int32 id = 1;
+            Boolean ok = true;
 
             found = aUser.Find(id);
 
-            if (aUser.Telephone != "+447727184747")
+            if (aUser.Telephone != "+442427184745")
             {
                 ok = false;
             }
@@ -144,9 +143,9 @@ namespace FolioTesting.UserManagement
         {
             User aUser = new User();
 
-            bool found = false;
-            int id = 1;
-            bool ok = true;
+            Boolean found = false;
+            Int32 id = 1;
+            Boolean ok = true;
 
             found = aUser.Find(id);
 
@@ -163,9 +162,9 @@ namespace FolioTesting.UserManagement
         {
             User aUser = new User();
 
-            bool found = false;
-            int id = 1;
-            bool ok = true;
+            Boolean found = false;
+            Int32 id = 1;
+            Boolean ok = true;
 
             found = aUser.Find(id);
 
