@@ -1,17 +1,7 @@
-<!-- ---
+---
 papersize: a4
-linestretch: 1
 toc: true
-lot: true
 classoption: oneside
-header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \fancyhead[CO,CE]{}
-    \fancyfoot[CO,CE]{}
-    \fancyfoot[LE,RO]{\thepage}
-geometry: a4paper, portrait, margin=1.25in
-
 title: Folio
 subtitle: An Ebook Retailer
 author:
@@ -19,7 +9,7 @@ author:
     - Hugh Alun-Jones
     - Thomas Akers
     - Emmanuel Adedeji
---- -->
+---
 
 # System Specification
 
@@ -69,8 +59,6 @@ Below is the schema for a user. On the register page they would have to provide 
 
 Then these data will be sent to the server to be validated. An email also will be sent to the user to verify their information which is essential if they want to buy an e-book so that we know that they will receive an email for the receipt and the pdf of the desired book.
 
-Table: User Schema Table
-
 | Attribute               | Type (`datatype`)     | Key         |
 | ----------------------- | --------------------- | ----------- |
 | user_id                 | String `varchar(25)`  | Private Key |
@@ -88,7 +76,6 @@ When a user is authenticated whether through the frontend or backend, the rest o
 
 ### Usecases
 
-Table: (UMS Usecase) Admin Add User
 
 | Usecase                       | Usecase Name                                                                                                                                                         |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -101,8 +88,6 @@ Table: (UMS Usecase) Admin Add User
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                  |
 | Usecase Exception Pathway(s)  | Database refuses to connect. In this case, admin or user cannot access the relevant data.                                                                            |
 
-Table: (UMS Usecase) Admin Edit User
-
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                                                               |
 | :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Usecase Name                  | Admin Edit User                                                                                                                                                                                                                                                                            |
@@ -113,8 +98,6 @@ Table: (UMS Usecase) Admin Edit User
 | Usecase Primary Pathway       | Admin will first have to find a user. Once selected, a button will be available to press and access the data of the selected user. A form, similar to add user will be present. Only difference is, it will most likely already be populated.                                              |
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                                                                                        |
 | Usecase Exception Pathway(s)  | User does not exist anymore. Since the user can delete the entry, the admin may not able to find the user. In cases where a user was deleted during the edit phase by the admin, when an admin submits, the user may not exist. An error should be presented rather than reading the user. |
-
-Table: (UMS Usecase) User Edit User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                                  |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -127,8 +110,6 @@ Table: (UMS Usecase) User Edit User
 | Usecase Alternate Pathways(s) | Users should not be able to access data on other users. If some pages are not limited, they will have access to other peoples data.                                                                                                                           |
 | Usecase Exception Pathway(s)  | Admin may have deleted a users account so a user cannot login anymore so they cannot access any of their data to see or edit. Admin may also have changed the users details which could cause login issues.                                                   |
 
-Table: (UMS Usecase) Admin Update User
-
 | Usecase                       | Usecase Name                                                                                                                                                                                        |
 | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Usecase Name                  | Admin Update User                                                                                                                                                                                   |
@@ -139,8 +120,6 @@ Table: (UMS Usecase) Admin Update User
 | Usecase Primary Pathway       | After edits have been made, admin will click the update button to confirm changes.                                                                                                                  |
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                 |
 | Usecase Exception Pathway(s)  | The forms will have some validation so that they information comply with the input specification. In this case, errors will be shown and if data is sensitive, they will be required to type again. |
-
-Table: (UMS Usecase) User Update User
 
 | Usecase                       | Usecase Name                                                                                                                    |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------ |
@@ -153,8 +132,6 @@ Table: (UMS Usecase) User Update User
 | Usecase Alternate Pathways(s) | A direct request to the update link should redirect to the user's edit page.                                                    |
 | Usecase Exception Pathway(s)  | User may have been deleted by the admin at the time of a user updates. This case, the user should be logged out with a message. |
 
-Table: (UMS Usecase) Admin Delete User
-
 | Usecase                       | Usecase Name                                                                                                                                                           |
 | :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Usecase Name                  | Admin Delete User                                                                                                                                                      |
@@ -165,8 +142,6 @@ Table: (UMS Usecase) Admin Delete User
 | Usecase Primary Pathway       | Admin, on the edit page will be presented with a delete button. This way, no accidental deletions are made. A message will also appear before a deletion is confirmed. |
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                    |
 | Usecase Exception Pathway(s)  | The database connection may be lost. In this case, a message should be shown to the admin and the deletion to fail.                                                    |
-
-Table: (UMS Usecase) User Delete User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                |
 | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -179,8 +154,6 @@ Table: (UMS Usecase) User Delete User
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                         |
 | Usecase Exception Pathway(s)  | The system might throw a null pointer exception if the user was already deleted by the admin. Instead, they should be redirected to a register page and with a relevant message to tell the user their account was deleted. |
 
-Table: (UMS Usecase) List User
-
 | Usecase                       | Usecase Name                                                                                                                                            |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Usecase Name                  | List User                                                                                                                                               |
@@ -191,8 +164,6 @@ Table: (UMS Usecase) List User
 | Usecase Primary Pathway       | Admin will be presented with all the users once they click "see users" on the backend homepage application                                              |
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                     |
 | Usecase Exception Pathway(s)  | Once the button is clicked, it is possible that the database contains no users. In this case, a message should tell the admins that there are no users. |
-
-Table: (UMS Usecase) Find User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                              |
 | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -205,8 +176,6 @@ Table: (UMS Usecase) Find User
 | Usecase Alternate Pathways(s) | The same user may match if the other input fields were filled in. They admin has to clear the form to ensure that the system only takes the id as a search query.                                                                                         |
 | Usecase Exception Pathway(s)  | A search query might show no results due to no matching user in the database. In this case, a message would be useful to show that there was no return search result..                                                                                    |
 
-Table: (UMS Usecase) Filter User
-
 | Usecase                       | Usecase Name                                                                                                                                                                              |
 | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Usecase Name                  | Filter User                                                                                                                                                                               |
@@ -218,8 +187,6 @@ Table: (UMS Usecase) Filter User
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                       |
 | Usecase Exception Pathway(s)  | A search query might show no results due to no matching **users** in the database. In this case, a message would be useful to show that there was no return search result.                |
 
-Table: (UMS Usecase) Admin Validate User
-
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                                 |
 | :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Usecase Name                  | Admin Validate User                                                                                                                                                                                                                                                                                          |
@@ -230,8 +197,6 @@ Table: (UMS Usecase) Admin Validate User
 | Usecase Primary Pathway       | On the "add user" or "edit user" forms, when submit is pressed, the request data is validated and made sure everything should be both compatible with the database and correct before it is sent to the database. If it is not, then the admin will get messages to help with resolving the issue or issues. |
 | Usecase Alternate Pathways(s) | N/a                                                                                                                                                                                                                                                                                                          |
 | Usecase Exception Pathway(s)  | If no data is sent, the admin should be able to get the relevant messages back as well as an option to cancel the form so that if they change their mind, they can just exit safely without changing any data.                                                                                               |
-
-Table: (UMS Usecase) User Validate User
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -298,8 +263,6 @@ This system will be run by Hugh, who will be creating the following functionalit
 
 Below is a table schema for both the author and publisher tables. Additions to these tables will be made in the backend.
 
-Table: Author Schema Table
-
 | Attribute      | Type (`DataType`)     | Key         |
 | -------------- | --------------------- | ----------- |
 | author_id      | Integer `int`         | Primary Key |
@@ -307,8 +270,6 @@ Table: Author Schema Table
 | author_name    | String `varchar(50)`  |             |
 | author_dob     | Date `date`           |             |
 | author_isalive | Boolean `bit`         |             |
-
-Table: Publisher Schema Table
 
 | Attribute             | Type (`DataType`)     | Key         |
 | --------------------- | --------------------- | ----------- |
@@ -321,8 +282,6 @@ Table: Publisher Schema Table
 
 ### Usecases
 
-Table: (A&P Usecase) Add Author
-
 | Usecase                       | Usecase Name                                                                                                                                                      |
 | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Usecase Name                  | Add Author                                                                                                                                                        |
@@ -333,8 +292,6 @@ Table: (A&P Usecase) Add Author
 | Usecase Primary Pathway       | Add Author. An admin enters a new record for an author, the record is created.                                                                                    |
 | Usecase Alternate Pathways(s) | n/a                                                                                                                                                               |
 | Usecase Exception Pathway(s)  | Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error.  The author already exists in the system. |
-
-Table: (A&P Usecase) Edit Author
 
 | Usecase                       | Usecase Name                                                                                                                                                                         |
 | :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -347,8 +304,6 @@ Table: (A&P Usecase) Edit Author
 | Usecase Alternate Pathways(s) | The admin can search by book, find the author associated with it, then edit the record. The admin can search by publisher, find the author associated with it, then edit the record. |
 | Usecase Exception Pathway(s)  | Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error.                                                              |
 
-Table: (A&P Usecase) Delete Author
-
 | Usecase                       | Usecase Name                                                                                                                                                                                                          |
 | :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Usecase Name                  | Delete Author                                                                                                                                                                                                         |
@@ -359,8 +314,6 @@ Table: (A&P Usecase) Delete Author
 | Usecase Primary Pathway       | Delete Author. An admin enters an author’s name. All data associated is displayed which can then be completely deleted.                                                                                               |
 | Usecase Alternate Pathways(s) | The admin can search by book, and find the author associated with it, then delete it. The admin can search by publisher and delete any authors associated with them. The author does not exist, so cannot be deleted. |
 | Usecase Exception Pathway(s)  | Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error.                                                                                               |
-
-Table: (A&P Usecase) List Author
 
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                                                          |
 | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -373,8 +326,6 @@ Table: (A&P Usecase) List Author
 | Usecase Alternate Pathways(s) | Admin applies a filter, a filtered list appears to the admin, admin removes the filter and the total list is displayed to them. User applies a filter, a filtered list appears to the user, user removes the filter and the total list is displayed to them. There are no authors in the system, system displays a message saying so. |
 | Usecase Exception Pathway(s)  | Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error.                                                                                                                                                                                                               |
 
-Table: (A&P Usecase) Filter Author
-
 | Usecase                       | Usecase Name                                                                                                                                                                                                                                                                                               |
 | :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Usecase Name                  | Filter Author                                                                                                                                                                                                                                                                                              |
@@ -385,8 +336,6 @@ Table: (A&P Usecase) Filter Author
 | Usecase Primary Pathway       | Filter Author, user enters the authors name, a list of authors is presented to them                                                                                                                                                                                                                        |
 | Usecase Alternate Pathways(s) | User enters the title of a book; the authors name is displayed alongside it. Admin filters by book; the authors name is displayed alongside it. User enters the name of a publisher; the name of the author is displayed under it. Admin filters by publisher; the authors name is displayed alongside it. |
 | Usecase Exception Pathway(s)  | Database connection fails. Error displayed to user advising of a connection problem. Admin receives a connection error.                                                                                                                                                                                    |
-
-
 
 ## Order & Record System
 
@@ -403,8 +352,6 @@ This system will be run by Emmanuel, creating the following functionality:
 On the table below, the template for each user order on the `My Orders` is shown.
 
 On the user order page, each customer will have the opportunity to enter an integer between 1-5 representing their level of satisfaction of the order. Helping gauge the popularity of each book, particularly in identifying the sites best sellers.
-
-Table: Order & Record Schema Table
 
 | Attribute              | Type (`DataType`)     | Key         |
 | ---------------------- | --------------------- | ----------- |
