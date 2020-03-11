@@ -2,11 +2,11 @@
 
 namespace FolioClasses.UserManagement
 {
-    public class User
+    public class CostumerUser
     {
         public int UserId { get; set; }
 
-        public string Name { get; set; }
+        public string Fullname { get; set; }
 
         public string Password { get; set; }
 
@@ -38,7 +38,7 @@ namespace FolioClasses.UserManagement
             if(db.Count == 1)
             {
                 UserId = Convert.ToInt32(db.DataTable.Rows[0]["user_id"]);
-                Name = Convert.ToString(db.DataTable.Rows[0]["user_fullname"]);
+                Fullname = Convert.ToString(db.DataTable.Rows[0]["user_fullname"]);
                 Password = Convert.ToString(db.DataTable.Rows[0]["user_password"]); ;
                 Dob = Convert.ToDateTime(db.DataTable.Rows[0]["user_dob"]);
                 Email = Convert.ToString(db.DataTable.Rows[0]["user_email"]);

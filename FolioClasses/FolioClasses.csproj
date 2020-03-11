@@ -45,7 +45,6 @@
     <Compile Include="AuthorManagement\ClsAuthor.cs" />
     <Compile Include="ClsDataConnection.cs" />
     <Compile Include="clsOrder.cs" />
-    <Compile Include="UserManagement\ClsName.cs" />
     <Compile Include="UserManagement\ClsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublisherManagement\ClsPublisher.cs" />
