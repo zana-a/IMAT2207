@@ -49,6 +49,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookManage\tstBookManageFind.cs" />
+    <Compile Include="BookManage\tstBooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublisherManagement\tstPublisher.cs" />
     <Compile Include="tstBooks.cs" />
