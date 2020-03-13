@@ -10,13 +10,13 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void InstanceOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             Assert.IsNotNull(ABook);
         }
         [TestMethod]
         public void BookIDOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             Int32 TestData = 1;
             ABook.BID = TestData;
             Assert.AreEqual(ABook.BID, TestData);
@@ -24,7 +24,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void AuthorIDOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             Int32 TestData = 1;
             ABook.AID = TestData;
             Assert.AreEqual(ABook.AID, TestData);
@@ -32,7 +32,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void BookTitleOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             String TestData = "";
             ABook.BT = TestData;
             Assert.AreEqual(ABook.BT, TestData);
@@ -40,7 +40,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void BookPriceOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             double TestData = 11.11;
             ABook.BP = TestData;
             Assert.AreEqual(ABook.BP, TestData);
@@ -48,7 +48,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void BookTypeOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             String TestData = "";
             ABook.BTy = TestData;
             Assert.AreEqual(ABook.BTy, TestData);
@@ -56,7 +56,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void BookGenreOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             String TestData = "";
             ABook.BG = TestData;
             Assert.AreEqual(ABook.BG, TestData);
@@ -64,7 +64,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void BookPubDateOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             DateTime TestData = DateTime.Now.Date;
             ABook.BPD = TestData;
             Assert.AreEqual(ABook.BPD, TestData);
@@ -72,7 +72,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void BookFirstEditionOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             Boolean TestData = true;
             ABook.FE = TestData;
             Assert.AreEqual(ABook.FE, TestData);
@@ -80,7 +80,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void FindMethodOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             Boolean Found = false;
             Int32 BookID = 2;
             Found = ABook.Find(BookID);
@@ -89,7 +89,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void FindBookIDOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             Boolean Found = false;
             Boolean OK = true;
             Int32 BookID = 2;
@@ -104,7 +104,7 @@ namespace FolioTesting.BookManage
         [TestMethod]
         public void FindBookPubDateOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             Boolean Found = false;
             Boolean OK = true;
             Int32 BookID = 2;
@@ -116,9 +116,9 @@ namespace FolioTesting.BookManage
             Assert.IsTrue(OK);
         }
         [TestMethod]
-        public void FinDBookFirstEditionOK()
+        public void FindBookFirstEditionOK()
         {
-            clsBook ABook = new clsBook();
+            clsBookDatabase ABook = new clsBookDatabase();
             Boolean Found = false;
             Boolean OK = true;
             Int32 BookID = 2;
