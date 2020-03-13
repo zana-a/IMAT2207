@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookManage\clsBook.cs" />
-    <Compile Include="clsBook.cs" />
     <Compile Include="AuthorManagement\ClsAuthor.cs" />
     <Compile Include="ClsDataConnection.cs" />
     <Compile Include="clsOrder.cs" />
