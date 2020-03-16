@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FolioFront.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="FolioFront._default" %>
 
 <!DOCTYPE html>
 
@@ -7,6 +7,6 @@
     <title></title>
 </head>
 <body>
-    hi
+    <h1>Default Page</h1>
 </body>
 </html>

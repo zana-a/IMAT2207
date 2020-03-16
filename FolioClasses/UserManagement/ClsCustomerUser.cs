@@ -131,5 +131,18 @@ namespace FolioClasses.UserManagement
                 return false;
             }
         }
+
+        // string isEmailVerified missing
+        // string userId handled by data layer
+        public string Valid(
+            string fullname,
+            string password,
+            string dob,
+            string email,
+            string telephone,
+            string numOfBooksBought)
+        {
+            return "";
+        }
     }
 }

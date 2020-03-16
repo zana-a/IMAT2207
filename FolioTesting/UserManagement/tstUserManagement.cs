@@ -7,6 +7,15 @@ namespace FolioTesting.UserManagement
     [TestClass]
     public class TstCustomerUser
     {
+        // Good Test Data
+        // Some test data to pass to the valid method
+        string fullname = "Barry Bones";
+        string password = "pass123";
+        string dob = Convert.ToDateTime("08/04/1999").ToString();
+        string email = "someone@email.com";
+        string telephone = "+447900000000";
+        string numOfBooksBought = "123";
+
         [TestMethod]
         public void InstanceOk()
         {
@@ -237,6 +246,16 @@ namespace FolioTesting.UserManagement
             Int32 userId = 5;
             found = aCustomerUser.Find(userId);
             Assert.IsTrue(found);
+        }
+
+        [TestMethod]
+        public void ValidMethodOk()
+        {
+            CustomerUser aCustomerUser = new CustomerUser();
+            String error = "";
+            error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
+
+            Assert.AreEqual(error, "");
         }
     }
 }

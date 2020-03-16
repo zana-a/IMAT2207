@@ -10,6 +10,6 @@
 namespace FolioFront {
     
     
-    public partial class Default {
+    public partial class _default {
     }
 }
