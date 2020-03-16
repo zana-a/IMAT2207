@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FolioFront.Default" %>
 
 <!DOCTYPE html>
 
@@ -7,10 +7,6 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            hi
-        </div>
-    </form>
+    hi
 </body>
 </html>
