@@ -5,97 +5,97 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FolioTesting.UserManagement
 {
     [TestClass]
-    public class TstCostumerUser
+    public class TstCustomerUser
     {
         [TestMethod]
         public void InstanceOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
-            Assert.IsNotNull(aCostumerUser);
+            CustomerUser aCustomerUser = new CustomerUser();
+            Assert.IsNotNull(aCustomerUser);
         }
 
         [TestMethod]
         public void UserIdOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Int32 testData = 1;
-            aCostumerUser.UserId = testData;
-            Assert.AreEqual(aCostumerUser.UserId, testData);
+            aCustomerUser.UserId = testData;
+            Assert.AreEqual(aCustomerUser.UserId, testData);
         }
 
         [TestMethod]
         public void NameOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             String testData = "Barry Bones";
-            aCostumerUser.Fullname = testData;
-            Assert.AreEqual(aCostumerUser.Fullname, testData);
+            aCustomerUser.Fullname = testData;
+            Assert.AreEqual(aCustomerUser.Fullname, testData);
         }
 
         [TestMethod]
         public void PasswordOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             String testData = "pass123";
-            aCostumerUser.Password = testData;
-            Assert.AreEqual(aCostumerUser.Password, testData);
+            aCustomerUser.Password = testData;
+            Assert.AreEqual(aCustomerUser.Password, testData);
         }
 
         [TestMethod]
         public void DobOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             DateTime testData = Convert.ToDateTime("08/04/1999");
-            aCostumerUser.Dob = testData;
-            Assert.AreEqual(aCostumerUser.Dob, testData);
+            aCustomerUser.Dob = testData;
+            Assert.AreEqual(aCustomerUser.Dob, testData);
         }
 
         [TestMethod]
         public void EmailOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             String testData = "someone@email.com";
-            aCostumerUser.Email = testData;
-            Assert.AreEqual(aCostumerUser.Email, testData);
+            aCustomerUser.Email = testData;
+            Assert.AreEqual(aCustomerUser.Email, testData);
         }
 
         [TestMethod]
         public void TelephoneOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             String testData = "+447900000000";
-            aCostumerUser.Telephone = testData;
-            Assert.AreEqual(aCostumerUser.Telephone, testData);
+            aCustomerUser.Telephone = testData;
+            Assert.AreEqual(aCustomerUser.Telephone, testData);
         }
 
         [TestMethod]
         public void NumOfBooksBoughtOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Int32 testData = 123;
-            aCostumerUser.NumOfBooksBought = testData;
-            Assert.AreEqual(aCostumerUser.NumOfBooksBought, testData);
+            aCustomerUser.NumOfBooksBought = testData;
+            Assert.AreEqual(aCustomerUser.NumOfBooksBought, testData);
         }
 
         [TestMethod]
         public void IsEmailVerifiedOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             String testData = "someone@email.com";
-            aCostumerUser.Email = testData;
-            Assert.AreEqual(aCostumerUser.Email, testData);
+            aCustomerUser.Email = testData;
+            Assert.AreEqual(aCustomerUser.Email, testData);
         }
 
         [TestMethod]
         public void FindUserIdOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Boolean found = false;
             Boolean ok = true;
-            Int32 userId = 1;
-            found = aCostumerUser.Find(userId);
+            Int32 userId = 5;
+            found = aCustomerUser.Find(userId);
 
-            if (aCostumerUser.UserId != userId)
+            if (aCustomerUser.UserId != userId)
             {
                 ok = false;
             }
@@ -106,14 +106,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindFullnameOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Boolean found = false;
             Boolean ok = true;
-            Int32 userId = 1;
+            Int32 userId = 5;
             String fullname = "Barry Bones";
-            found = aCostumerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aCostumerUser.Email != fullname)
+            if (aCustomerUser.Fullname != fullname)
             {
                 ok = false;
             }
@@ -124,14 +124,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindPasswordOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Boolean found = false;
             Boolean ok = true;
-            Int32 userId = 1;
+            Int32 userId = 5;
             String password = "pass123";
-            found = aCostumerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aCostumerUser.Password != password)
+            if (aCustomerUser.Password != password)
             {
                 ok = false;
             }
@@ -142,14 +142,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindDobOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Boolean found = false;
             Boolean ok = true;
-            Int32 userId = 1;
+            Int32 userId = 5;
             DateTime dob = Convert.ToDateTime("08/04/1999");
-            found = aCostumerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aCostumerUser.Dob != dob)
+            if (aCustomerUser.Dob != dob)
             {
                 ok = false;
             }
@@ -160,14 +160,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindEmailOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Boolean found = false;
             Boolean ok = true;
-            Int32 userId = 1;
+            Int32 userId = 5;
             String email = "someone@email.com";
-            found = aCostumerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aCostumerUser.Email != email)
+            if (aCustomerUser.Email != email)
             {
                 ok = false;
             }
@@ -178,14 +178,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindTelephoneOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Boolean found = false;
             Boolean ok = true;
-            Int32 userId = 1;
+            Int32 userId = 5;
             String telephone = "+447900000000";
-            found = aCostumerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aCostumerUser.Telephone != telephone)
+            if (aCustomerUser.Telephone != telephone)
             {
                 ok = false;
             }
@@ -196,14 +196,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindNumOfBooksBoughtOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Boolean found = false;
             Boolean ok = true;
-            Int32 userId = 1;
+            Int32 userId = 5;
             Int32 numOfBooksBought = 123;
-            found = aCostumerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aCostumerUser.NumOfBooksBought != numOfBooksBought)
+            if (aCustomerUser.NumOfBooksBought != numOfBooksBought)
             {
                 ok = false;
             }
@@ -214,14 +214,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindIsEmailVerifiedOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Boolean found = false;
             Boolean ok = true;
-            Int32 userId = 1;
+            Int32 userId = 5;
             Boolean isVerified = true;
-            found = aCostumerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aCostumerUser.IsEmailVerified != isVerified)
+            if (aCustomerUser.IsEmailVerified != isVerified)
             {
                 ok = false;
             }
@@ -232,10 +232,10 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindMethodOk()
         {
-            CostumerUser aCostumerUser = new CostumerUser();
+            CustomerUser aCustomerUser = new CustomerUser();
             Boolean found = false;
-            Int32 userId = 1;
-            found = aCostumerUser.Find(userId);
+            Int32 userId = 5;
+            found = aCustomerUser.Find(userId);
             Assert.IsTrue(found);
         }
     }
