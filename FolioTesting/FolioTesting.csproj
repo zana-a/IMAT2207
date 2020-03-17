@@ -55,7 +55,9 @@
     <Compile Include="PublisherManagement\tstPublisher.cs" />
     <Compile Include="tstOrder.cs" />
     <Compile Include="AuthorManagement\tstAuthor.cs" />
-    <Compile Include="UserManagement\tstUserManagement.cs" />
+    <Compile Include="UserManagement\tstCustomerUserFind.cs" />
+    <Compile Include="UserManagement\tstCustomerUserInstance.cs" />
+    <Compile Include="UserManagement\tstCustomerUserValidate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

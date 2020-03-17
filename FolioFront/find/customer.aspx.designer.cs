@@ -22,15 +22,6 @@ namespace FolioFront {
         protected global::System.Web.UI.HtmlControls.HtmlForm formCustomerUserFind;
         
         /// <summary>
-        /// lblUserId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserId;
-        
-        /// <summary>
         /// txtUserId control.
         /// </summary>
         /// <remarks>
@@ -38,15 +29,6 @@ namespace FolioFront {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUserId;
-        
-        /// <summary>
-        /// lblFullName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFullName;
         
         /// <summary>
         /// txtFullName control.
@@ -58,15 +40,6 @@ namespace FolioFront {
         protected global::System.Web.UI.WebControls.TextBox txtFullName;
         
         /// <summary>
-        /// lblPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPassword;
-        
-        /// <summary>
         /// txtPassword control.
         /// </summary>
         /// <remarks>
@@ -74,15 +47,6 @@ namespace FolioFront {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-        
-        /// <summary>
-        /// lblDob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDob;
         
         /// <summary>
         /// txtDob control.
@@ -94,13 +58,13 @@ namespace FolioFront {
         protected global::System.Web.UI.WebControls.TextBox txtDob;
         
         /// <summary>
-        /// lblEmail control.
+        /// txtTelephone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtTelephone;
         
         /// <summary>
         /// txtEmail control.
@@ -112,33 +76,6 @@ namespace FolioFront {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// lblTelephone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTelephone;
-        
-        /// <summary>
-        /// txtTelephone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelephone;
-        
-        /// <summary>
-        /// lblNumOfBooksBought control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumOfBooksBought;
-        
-        /// <summary>
         /// txtNumOfBooksBought control.
         /// </summary>
         /// <remarks>
@@ -146,15 +83,6 @@ namespace FolioFront {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNumOfBooksBought;
-        
-        /// <summary>
-        /// lblUserIsEmailVerified control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserIsEmailVerified;
         
         /// <summary>
         /// txtUserIsEmailVerified control.

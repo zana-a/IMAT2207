@@ -17,7 +17,7 @@ namespace FolioFront
 
         protected void btnFindCustomer_Click(object sender, EventArgs e)
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Int32 userId;
             Boolean found = false;
             userId = Convert.ToInt32(txtUserId.Text);
@@ -32,7 +32,14 @@ namespace FolioFront
                 txtEmail.Text = aCustomerUser.Email;
                 txtTelephone.Text = aCustomerUser.Telephone;
                 txtNumOfBooksBought.Text = aCustomerUser.NumOfBooksBought.ToString();
-                txtUserIsEmailVerified.Text = aCustomerUser.IsEmailVerified.ToString();
+
+                if (aCustomerUser.IsEmailVerified == true)
+                {
+                    txtUserIsEmailVerified.Checked = true;
+                } else
+                {
+                    txtUserIsEmailVerified.Checked = false;
+                }
             }
         }
     }

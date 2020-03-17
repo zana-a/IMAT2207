@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace FolioFront
+namespace FolioFront.find
 {
     public partial class _default : System.Web.UI.Page
     {
