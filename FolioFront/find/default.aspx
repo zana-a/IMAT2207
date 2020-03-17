@@ -3,8 +3,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="server">
-    <div class="Subhead">
-      <div class="Subhead-heading">Find</div>
+    <div class="container-lg">
+        <h1>Folio</h1>
     </div>
-    <p>Click on a link to take you to the find method.</p>
 </asp:Content>

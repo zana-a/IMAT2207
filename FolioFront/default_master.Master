@@ -3,16 +3,57 @@
 <!DOCTYPE html>
 
 <html>
-    <head runat="server">
-        <title></title>
-        <asp:ContentPlaceHolder ID="cphHead" runat="server">
-        </asp:ContentPlaceHolder>
-        <link href="/assets/css/primer.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container-lg">
-            <asp:ContentPlaceHolder ID="cphContent" runat="server">
-            </asp:ContentPlaceHolder>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="/assets/css/primer.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="bg-gray-8">
+            <div class="container-lg">
+                <div class="Header px-0" style="background-color: transparent;">
+                    <div class="Header-item">
+                        <a href="/" class="Header-link">Logo</a>
+                    </div>
+                    <!--
+                        <div class="Header-item">
+                            <a href="#" class="Header-link">About</a>
+                        </div>
+                        <div class="Header-item">
+                            <a href="#" class="Header-link">Releases</a>
+                        </div>
+                        <div class="Header-item">
+                            <a href="#" class="Header-link">Team</a>
+                        </div>
+                        -->
+                </div>
+            </div>
         </div>
-    </body>
+    </header>
+    <div>
+        <asp:ContentPlaceHolder ID="cphContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <footer class="border-top border-gray-light py-3">
+        <div class="container-lg">
+            <div>&copy; <%= DateTime.Now.Year.ToString() %> <a href="/" class="text-bold text-blue">Folio</a>.  All rights reserved.</div>
+            <div class="Header text-small px-0" style="background-color: transparent;">
+                <div class="Header-item">
+                    <a href="/" class="no-underline text-gray link-hover-blue">Terms</a>
+                </div>
+                <div class="Header-item">
+                    <a href="/" class="no-underline text-gray link-hover-blue">Privacy</a>
+                </div>
+                <div class="Header-item">
+                    <a href="/" class="no-underline text-gray link-hover-blue">Help</a>
+                </div>
+                <div class="Header-item">
+                    <a href="/" class="no-underline text-gray link-hover-blue">About</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
