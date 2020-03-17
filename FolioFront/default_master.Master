@@ -41,16 +41,16 @@
             <div>&copy; <%= DateTime.Now.Year.ToString() %> <a href="/" class="text-bold text-blue">Folio</a>.  All rights reserved.</div>
             <div class="Header text-small px-0" style="background-color: transparent;">
                 <div class="Header-item">
-                    <a href="/" class="no-underline text-gray link-hover-blue">Terms</a>
+                    <a href="/terms.aspx" class="no-underline text-gray link-hover-blue">Terms</a>
                 </div>
                 <div class="Header-item">
-                    <a href="/" class="no-underline text-gray link-hover-blue">Privacy</a>
+                    <a href="/privacy.aspx" class="no-underline text-gray link-hover-blue">Privacy</a>
                 </div>
                 <div class="Header-item">
-                    <a href="/" class="no-underline text-gray link-hover-blue">Help</a>
+                    <a href="/help.aspx" class="no-underline text-gray link-hover-blue">Help</a>
                 </div>
                 <div class="Header-item">
-                    <a href="/" class="no-underline text-gray link-hover-blue">About</a>
+                    <a href="/about.aspx" class="no-underline text-gray link-hover-blue">About</a>
                 </div>
             </div>
         </div>

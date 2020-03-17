@@ -4,6 +4,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="server">
     <div class="container-lg">
-        <h1>Folio</h1>
+        <h1>Find Page</h1>
+        <p>Select one of the links to use the find method:</p>
+
+        <ul>
+            <li><a href="/find/customer.aspx">Customer</a></li>
+        </ul>
     </div>
 </asp:Content>
