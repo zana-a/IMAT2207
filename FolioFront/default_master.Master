@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="default_master.master.cs" Inherits="FolioFront.default_master" %>
+
+<!DOCTYPE html>
+
+<html>
+    <head runat="server">
+        <title></title>
+        <asp:ContentPlaceHolder ID="cphHead" runat="server">
+        </asp:ContentPlaceHolder>
+        <link href="/assets/css/primer.css" rel="stylesheet" />
+    </head>
+    <body>
+        <asp:ContentPlaceHolder ID="cphContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </body>
+</html>

@@ -1,12 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="FolioFront._default" %>
+﻿<%@ Page MasterPageFile="~/default_master.Master" Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="FolioFront._default" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+<asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="server">
     <h1>Default Page</h1>
-</body>
-</html>
+</asp:Content>

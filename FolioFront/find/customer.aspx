@@ -1,12 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ACustomerUser.aspx.cs" Inherits="FolioFront.ACustomerUser" %>
+﻿<%@ Page MasterPageFile="~/default_master.Master" Language="C#" AutoEventWireup="true" CodeBehind="customer.aspx.cs" Inherits="FolioFront.ACustomerUser" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="server">
+    <h1>Find Customer</h1>
     <form id="formCustomerUserFind" runat="server">
         <div>
             <div>
@@ -68,5 +66,7 @@
             <asp:Button ID="btnFindCustomer" runat="server" Text="Find" OnClick="btnFindCustomer_Click" />
         </div>
     </form>
-</body>
-</html>
+</asp:Content>
+
+
+
