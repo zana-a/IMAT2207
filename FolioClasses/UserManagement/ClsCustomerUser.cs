@@ -2,7 +2,7 @@
 
 namespace FolioClasses.UserManagement
 {
-    public class CustomerUser
+    public class clsCustomerUser
     {
         private int mUserId;
         public int UserId

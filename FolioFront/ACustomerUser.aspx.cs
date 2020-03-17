@@ -17,7 +17,7 @@ namespace FolioFront
 
         protected void btnFindCustomer_Click(object sender, EventArgs e)
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Int32 userId;
             Boolean found = false;
             userId = Convert.ToInt32(txtUserId.Text);
