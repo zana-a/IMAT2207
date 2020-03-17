@@ -10,7 +10,9 @@
         <link href="/assets/css/primer.css" rel="stylesheet" />
     </head>
     <body>
-        <asp:ContentPlaceHolder ID="cphContent" runat="server">
-        </asp:ContentPlaceHolder>
+        <div class="container-lg">
+            <asp:ContentPlaceHolder ID="cphContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
     </body>
 </html>

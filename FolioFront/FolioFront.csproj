@@ -70,6 +70,7 @@
     <Content Include="assets\css\primer.css" />
     <Content Include="find\customer.aspx" />
     <Content Include="default.aspx" />
+    <Content Include="find\default.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +93,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="find\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="find\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

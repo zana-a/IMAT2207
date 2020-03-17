@@ -32,7 +32,14 @@ namespace FolioFront
                 txtEmail.Text = aCustomerUser.Email;
                 txtTelephone.Text = aCustomerUser.Telephone;
                 txtNumOfBooksBought.Text = aCustomerUser.NumOfBooksBought.ToString();
-                txtUserIsEmailVerified.Text = aCustomerUser.IsEmailVerified.ToString();
+
+                if (aCustomerUser.IsEmailVerified == true)
+                {
+                    txtUserIsEmailVerified.Checked = true;
+                } else
+                {
+                    txtUserIsEmailVerified.Checked = false;
+                }
             }
         }
     }
