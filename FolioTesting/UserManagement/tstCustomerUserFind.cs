@@ -10,13 +10,13 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindUserIdOk()
         {
-            clsCustomerUser aclsCustomerUser = new clsCustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
-            found = aclsCustomerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aclsCustomerUser.UserId != userId)
+            if (aCustomerUser.UserId != userId)
             {
                 ok = false;
             }
@@ -27,14 +27,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindFullnameOk()
         {
-            clsCustomerUser aclsCustomerUser = new clsCustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
             String fullname = "Barry Bones";
-            found = aclsCustomerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aclsCustomerUser.Fullname != fullname)
+            if (aCustomerUser.Fullname != fullname)
             {
                 ok = false;
             }
@@ -45,14 +45,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindPasswordOk()
         {
-            clsCustomerUser aclsCustomerUser = new clsCustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
             String password = "pass123";
-            found = aclsCustomerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aclsCustomerUser.Password != password)
+            if (aCustomerUser.Password != password)
             {
                 ok = false;
             }
@@ -63,14 +63,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindDobOk()
         {
-            clsCustomerUser aclsCustomerUser = new clsCustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
             DateTime dob = Convert.ToDateTime("08/04/1999");
-            found = aclsCustomerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aclsCustomerUser.Dob != dob)
+            if (aCustomerUser.Dob != dob)
             {
                 ok = false;
             }
@@ -81,14 +81,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindEmailOk()
         {
-            clsCustomerUser aclsCustomerUser = new clsCustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
             String email = "someone@email.com";
-            found = aclsCustomerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aclsCustomerUser.Email != email)
+            if (aCustomerUser.Email != email)
             {
                 ok = false;
             }
@@ -99,14 +99,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindTelephoneOk()
         {
-            clsCustomerUser aclsCustomerUser = new clsCustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
             String telephone = "+447900000000";
-            found = aclsCustomerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aclsCustomerUser.Telephone != telephone)
+            if (aCustomerUser.Telephone != telephone)
             {
                 ok = false;
             }
@@ -117,14 +117,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindNumOfBooksBoughtOk()
         {
-            clsCustomerUser aclsCustomerUser = new clsCustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
             Int32 numOfBooksBought = 123;
-            found = aclsCustomerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aclsCustomerUser.NumOfBooksBought != numOfBooksBought)
+            if (aCustomerUser.NumOfBooksBought != numOfBooksBought)
             {
                 ok = false;
             }
@@ -135,14 +135,14 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindIsEmailVerifiedOk()
         {
-            clsCustomerUser aclsCustomerUser = new clsCustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
             Boolean isVerified = true;
-            found = aclsCustomerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
 
-            if (aclsCustomerUser.IsEmailVerified != isVerified)
+            if (aCustomerUser.IsEmailVerified != isVerified)
             {
                 ok = false;
             }
@@ -153,10 +153,10 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindMethodOk()
         {
-            clsCustomerUser aclsCustomerUser = new clsCustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Int32 userId = 5;
-            found = aclsCustomerUser.Find(userId);
+            found = aCustomerUser.Find(userId);
             Assert.IsTrue(found);
         }
     }

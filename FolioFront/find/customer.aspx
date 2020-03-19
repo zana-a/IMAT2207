@@ -13,50 +13,50 @@
                 <div class="col-6 float-left p-2">
                     <label for="txtUserId">
                         Customer ID:
-                    <asp:TextBox CssClass="form-control width-full" ID="txtUserId" runat="server" />
                     </label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtUserId" runat="server" />
                 </div>
                 <div class="col-6 float-left p-2">
                     <label for="txtFullName">
                         Name:
-                    <asp:TextBox CssClass="form-control width-full" ID="txtFullName" runat="server" />
                     </label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtFullName" runat="server" />
                 </div>
                 <div class="col-6 float-left p-2">
                     <label for="txtPassword">
                         Password:
-                    <asp:TextBox CssClass="form-control width-full" ID="txtPassword" runat="server" />
                     </label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtPassword" runat="server" />
                 </div>
                 <div class="col-6 float-left p-2">
                     <label for="txtDob">
                         Date of Birth:
-                    <asp:TextBox CssClass="form-control width-full" ID="txtDob" runat="server" />
                     </label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtDob" runat="server" />
                 </div>
                 <div class="col-6 float-left p-2">
                     <label for="txtTelephone">
                         Telephone:
-                    <asp:TextBox CssClass="form-control width-full" ID="txtTelephone" runat="server" />
                     </label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtTelephone" runat="server" />
                 </div>
                 <div class="col-6 float-left p-2">
                     <label for="txtTelephone">
                         Email:
-                    <asp:TextBox CssClass="form-control width-full" ID="txtEmail" runat="server" />
                     </label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtEmail" runat="server" />
                 </div>
                 <div class="col-12 float-left p-2">
                     <label for="txtNumOfBooksBought">
                         Number of Books Bought:
-                    <asp:TextBox CssClass="form-control width-full" ID="txtNumOfBooksBought" runat="server" />
                     </label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtNumOfBooksBought" runat="server" />
                 </div>
                 <div class="col-12 float-left p-2">
                     <div class="form-checkbox">
                         <label for="txtUserIsEmailVerified">
                             Email Verified 
-                        <asp:CheckBox ID="txtUserIsEmailVerified" runat="server" />
+                            <asp:CheckBox ID="txtUserIsEmailVerified" runat="server" />
                         </label>
                     </div>
                 </div>

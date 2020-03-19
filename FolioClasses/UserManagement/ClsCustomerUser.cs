@@ -142,7 +142,17 @@ namespace FolioClasses.UserManagement
             string telephone,
             string numOfBooksBought)
         {
-            return "";
+            //create a string variable to store the error
+            String Error = "";
+            
+            //create a temporary variable to store date values
+            DateTime DateTemp;
+            
+            
+            // Validation goes here
+
+            //return any error messages
+            return Error;
         }
     }
 }
