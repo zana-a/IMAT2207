@@ -87,6 +87,13 @@
     <Compile Include="about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AuthorList.aspx.cs">
+      <DependentUpon>AuthorList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuthorList.aspx.designer.cs">
+      <DependentUpon>AuthorList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default_master.Master.cs">
       <DependentUpon>default_master.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

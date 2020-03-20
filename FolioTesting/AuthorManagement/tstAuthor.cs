@@ -8,13 +8,13 @@ namespace FolioTesting.AuthorManagement
     public class tstAuthor
     {
         [TestMethod]
-        public void InstanceOK()
+        public void Instanceok()
         {
             ClsAuthor AnAuthor = new ClsAuthor();
             Assert.IsNotNull(AnAuthor);
         }
         [TestMethod]
-        public void AuthorIdOK()
+        public void AuthorIdok()
         {
             ClsAuthor AnAuthor = new ClsAuthor();
             Int32 TestData = 1;
@@ -22,7 +22,7 @@ namespace FolioTesting.AuthorManagement
             Assert.AreEqual(AnAuthor.AuthorId, TestData);
         }
         [TestMethod]
-        public void AuthorNameOK()
+        public void AuthorNameok()
         {
             ClsAuthor AnAuthor = new ClsAuthor();
             String TestData = "";
@@ -30,7 +30,7 @@ namespace FolioTesting.AuthorManagement
             Assert.AreEqual(AnAuthor.Name, TestData);
         }
         [TestMethod]
-        public void AuthorDOBOK()
+        public void AuthorDobOK()
         {
             ClsAuthor AnAuthor = new ClsAuthor();
             DateTime TestData = DateTime.Now.Date;
@@ -38,78 +38,77 @@ namespace FolioTesting.AuthorManagement
             Assert.AreEqual(AnAuthor.DOB, TestData);
         }
         [TestMethod]
-        public void AuthorIsDeadOK()
+        public void AuthorIsAliveOK()
         {
             ClsAuthor AnAuthor = new ClsAuthor();
             Boolean TestData = true;
-            AnAuthor.IsDead = TestData;
-            Assert.AreEqual(AnAuthor.IsDead, TestData);
+            AnAuthor.IsAlive = TestData;
+            Assert.AreEqual(AnAuthor.IsAlive, TestData);
         }
         [TestMethod]
-        public void FindMethodOK()
+        public void FindAuthorIdOK()
         {
             ClsAuthor AnAuthor = new ClsAuthor();
-            Boolean Found = false;
-            Int32 AuthorNo = 1;
-            Found = AnAuthor.Find(AuthorNo);
-            Assert.IsTrue(Found);
-        }
-        [TestMethod]
-        public void FindAuthorIDOK()
-        {
-            ClsAuthor AnAuthor = new ClsAuthor();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 AuthorNo = 1;
-            Found = AnAuthor.Find(AuthorNo);
-
-            if(AnAuthor.AuthorId != 1)
+            Boolean found = false;
+            Boolean ok = true;
+            Int32 AuthorID = 7;
+            found = AnAuthor.Find(AuthorID);
+            if(AnAuthor.AuthorId != AuthorID)
             {
-                OK = false;
+                ok = false;
             }
-            Assert.IsTrue(OK);
+            Assert.IsTrue(ok);
         }
         [TestMethod]
         public void FindAuthorNameOK()
         {
             ClsAuthor AnAuthor = new ClsAuthor();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 AuthorNo = 1;
-            Found = AnAuthor.Find(AuthorNo);
-            if(AnAuthor.Name != "Philip K. Dick")
+            Boolean found = false;
+            Boolean ok = true;
+            Int32 AuthorID = 9;
+            String fullname = "J.R.R.Tolkien";
+            found = AnAuthor.Find(AuthorID);
+            if(AnAuthor.Name != fullname)
             {
-                OK = false;
+                ok = false;
             }
-            Assert.IsTrue(OK);
+            Assert.IsTrue(ok);
         }
         [TestMethod]
-        public void FindAuthorDOBOK()
+        public void FindAuthorDobOK()
         {
             ClsAuthor AnAuthor = new ClsAuthor();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 AuthorNo = 1;
-            Found = AnAuthor.Find(AuthorNo);
-            if(AnAuthor.DOB != Convert.ToDateTime("16/9/2015")){
-                OK = false;
+            Boolean found = false;
+            Boolean ok = true;
+            Int32 AuthorID = 9;
+            found = AnAuthor.Find(AuthorID);
+            if(AnAuthor.DOB != Convert.ToDateTime("03/01/1892")){
+                ok = false;
             }
-            Assert.IsTrue(OK);
+            Assert.IsTrue(ok);
         }
         [TestMethod]
-        public void FindAuthorIsDeadOK()
+        public void FindAuthorIsAliveOK()
         {
             ClsAuthor AnAuthor = new ClsAuthor();
-            Boolean Found = false;
-            Boolean OK = true;
-            Int32 AuthorNo = 1;
-            Found = AnAuthor.Find(AuthorNo);
-            if(AnAuthor.IsDead != true)
+            Boolean found = false;
+            Boolean ok = true;
+            Int32 AuthorID = 9;
+            found = AnAuthor.Find(AuthorID);
+            if(AnAuthor.IsAlive != false)
             {
-                OK = false;
+                ok = false;
             }
-            Assert.IsTrue(OK);
+            Assert.IsTrue(ok);
         }
-        
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            Boolean found = false;
+            Int32 AuthorID = 9;
+            found = AnAuthor.Find(AuthorID);
+            Assert.IsTrue(found);
+        }
     }
 }
