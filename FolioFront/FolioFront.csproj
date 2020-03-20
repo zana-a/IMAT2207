@@ -75,6 +75,8 @@
     <Content Include="help.aspx" />
     <Content Include="privacy.aspx" />
     <Content Include="terms.aspx" />
+    <Content Include="user\login.aspx" />
+    <Content Include="user\register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +93,13 @@
     </Compile>
     <Compile Include="default_master.Master.designer.cs">
       <DependentUpon>default_master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="empty_master.Master.cs">
+      <DependentUpon>empty_master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empty_master.Master.designer.cs">
+      <DependentUpon>empty_master.Master</DependentUpon>
     </Compile>
     <Compile Include="find\customer.aspx.cs">
       <DependentUpon>customer.aspx</DependentUpon>
@@ -135,9 +144,24 @@
     <Compile Include="terms.aspx.designer.cs">
       <DependentUpon>terms.aspx</DependentUpon>
     </Compile>
+    <Compile Include="user\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user\register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user\register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="default_master.Master" />
+    <Content Include="empty_master.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -152,6 +176,7 @@
       <Name>FolioClasses</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

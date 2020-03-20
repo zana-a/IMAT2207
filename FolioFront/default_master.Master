@@ -9,25 +9,22 @@
     </asp:ContentPlaceHolder>
     <link href="/assets/css/primer.css" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-gray-1">
     <header>
         <div class="bg-gray-8">
             <div class="container-lg">
                 <div class="Header px-0" style="background-color: transparent;">
-                    <div class="Header-item">
-                        <a href="/" class="Header-link">Logo</a>
+                    <div class="d-flex width-full">
+                        <div class="Header-item flex-1">
+                            <a href="/" class="Header-link">Logo</a>
+                        </div>
+                        <div class="Header-item">
+                            <a href="/user/login.aspx" class="Header-link">Login</a>
+                        </div>
+                        <div class="Header-item mr-0">
+                            <a href="/user/register.aspx" class="Header-link">Register</a>
+                        </div>
                     </div>
-                    <!--
-                        <div class="Header-item">
-                            <a href="#" class="Header-link">About</a>
-                        </div>
-                        <div class="Header-item">
-                            <a href="#" class="Header-link">Releases</a>
-                        </div>
-                        <div class="Header-item">
-                            <a href="#" class="Header-link">Team</a>
-                        </div>
-                        -->
                 </div>
             </div>
         </div>
