@@ -42,5 +42,47 @@ namespace FolioFront
                 }
             }
         }
+
+        protected void btnOk_Click(object sender, EventArgs e)
+        {
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
+            String Error = "";
+
+            String userId = txtUserId.Text;
+            String fullname = txtFullName.Text;
+            String password = txtPassword.Text;
+            String dob = txtDob.Text;
+            String email = txtEmail.Text;
+            String telephone = txtTelephone.Text;
+            String numOfBooksBought = txtNumOfBooksBought.Text;
+
+            Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
+
+            if (Error == "")
+            {
+                aCustomerUser.UserId = Convert.ToInt32(userId);
+                aCustomerUser.Fullname = fullname;
+                aCustomerUser.Password = password;
+                aCustomerUser.Dob = Convert.ToDateTime(dob);
+                aCustomerUser.Email = email;
+                aCustomerUser.Telephone = telephone;
+
+                if (txtUserIsEmailVerified.Checked == true)
+                {
+                    aCustomerUser.IsEmailVerified = true;
+                }
+                else
+                {
+                    aCustomerUser.IsEmailVerified = false;
+                }
+
+                Session["aCustomerUser"] = aCustomerUser;
+                Response.Write("find/customer.aspx");
+            }
+            else
+            {
+                lblError.Text = Error;
+            }
+        }
     }
 }

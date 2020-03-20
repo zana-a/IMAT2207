@@ -184,21 +184,28 @@ namespace FolioClasses.UserManagement
             /*
              * Dob Validation
              */
-            DateTime tempDate = DateTime.Now.Date;
-
-            if (Convert.ToDateTime(dob) < tempDate.AddYears(-100))  
+            try
             {
-                Error += "Date of Birth should not be older than 100 years.";
+                DateTime tempDate = DateTime.Now.Date;
+
+                if (Convert.ToDateTime(dob) < tempDate.AddYears(-100))
+                {
+                    Error += "Date of Birth should not be older than 100 years.";
+                }
+
+                if (Convert.ToDateTime(dob) > tempDate)
+                {
+                    Error += "Date of Birth should not exceed current date.";
+                }
+
+                if (Convert.ToDateTime(dob) > tempDate.AddYears(-18))
+                {
+                    Error += "Age restriction. Must be at last 18 years old.";
+                }
             }
-
-            if (Convert.ToDateTime(dob) > tempDate)
+            catch
             {
-                Error += "Date of Birth should not exceed current date.";
-            }
-
-            if (Convert.ToDateTime(dob) > tempDate.AddYears(-18)) 
-            {
-                Error += "Age restriction. Must be at last 18 years old.";
+                Error += "Entered Date was not a date.";
             }
 
             /*

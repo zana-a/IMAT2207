@@ -62,7 +62,13 @@
                 </div>
                 <div class="col-12 float-left pr-2">
                     <div class="clearfix">
-                        <asp:Button CssClass="btn btn-primary width-full" ID="btnFindCustomer" runat="server" Text="Find" OnClick="btnFindCustomer_Click" />
+                        <asp:Button CssClass="btn btn-primary" ID="btnFind" runat="server" Text="Find" OnClick="btnFindCustomer_Click" />
+                        <asp:Button CssClass="btn btn-primary" ID="btnOk" runat="server" Text="Ok" OnClick="btnOk_Click" />
+                    </div>
+                </div>
+                <div class="col-12 float-left pr-2">
+                    <div class="clearfix">
+                        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
                     </div>
                 </div>
             </div>
