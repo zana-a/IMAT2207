@@ -45,7 +45,7 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             //create some test data to pass to the method
-            String fullname = "a"; 
+            String fullname = "a"; // should fail
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -64,7 +64,8 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             //create some test data to pass to the method
-            String fullname = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            String fullname = "";
+            fullname = fullname.PadRight(29, 'a'); // should pass
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -159,7 +160,7 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             //create some test data to pass to the method
-            String password = "a"; //this should be ok
+            String password = "a"; //this should fail
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -197,7 +198,8 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             //create some test data to pass to the method
-            String password = "aaaaaaaaaaaaaaa"; // 15
+            String password = ""; // 30
+            password = password.PadRight(30, 'a');
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -216,7 +218,8 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             //create some test data to pass to the method
-            String password = "aaaaaaaaaaaaaaaa"; //16
+            String password = ""; //31
+            password = password.PadRight(31, 'a');
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -235,7 +238,8 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             //create some test data to pass to the method
-            String password = "aaaaaaa"; //7
+            String password = ""; //15
+            password = password.PadRight(15, 'a');
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -255,7 +259,7 @@ namespace FolioTesting.UserManagement
 
             //create some test data to pass to the method
             DateTime dob = DateTime.Now.Date;
-            dob = dob.AddYears(-100);
+            dob = DateTime.MinValue;
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
@@ -275,8 +279,7 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             //create some test data to pass to the method
-            DateTime dob = DateTime.Now.Date;
-            dob = dob.AddYears(-1);
+            DateTime dob = Convert.ToDateTime("01/01/1899");
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
@@ -296,7 +299,7 @@ namespace FolioTesting.UserManagement
 
             //create some test data to pass to the method
             DateTime dob = DateTime.Now.Date;
-            dob = dob.AddYears(-100);
+            dob.AddYears(-100);
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
@@ -336,7 +339,7 @@ namespace FolioTesting.UserManagement
 
             //create some test data to pass to the method
             DateTime dob = DateTime.Now.Date;
-            dob = dob.AddYears(99);
+            dob = dob.AddYears(-1);
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
@@ -415,7 +418,7 @@ namespace FolioTesting.UserManagement
 
             //create some test data to pass to the method
             String email = "";
-            email = email.PadRight(5, 'a');
+            email = email.PadRight(5, '@');
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -434,7 +437,7 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             String email = "";
-            email = email.PadRight(6, 'a');
+            email = email.PadRight(6, '@');
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -453,7 +456,7 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             String email = "";
-            email = email.PadRight(49, 'a');
+            email = email.PadRight(49, '@');
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -472,7 +475,7 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             String email = "";
-            email = email.PadRight(50, 'a');
+            email = email.PadRight(50, '@');
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -491,7 +494,7 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             String email = "";
-            email = email.PadRight(51, 'a');
+            email = email.PadRight(51, '@');
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -510,7 +513,7 @@ namespace FolioTesting.UserManagement
             String Error = "";
 
             String email = "";
-            email = email.PadRight(25, 'a');
+            email = email.PadRight(25, '@');
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -528,9 +531,8 @@ namespace FolioTesting.UserManagement
             //String variable to store any error message
             String Error = "";
 
-            String telephone = "";
-            // does not inclide +44. should pass if + not present and total is all numbers
-            telephone = telephone.PadRight(10, 'a'); 
+            String telephone = "+447900000";
+            //telephone = telephone.PadRight(10, 'a'); // ex. +17900000000
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -548,8 +550,8 @@ namespace FolioTesting.UserManagement
             //String variable to store any error message
             String Error = "";
 
-            String telephone = "";
-            telephone = telephone.PadRight(11, 'a'); // should error 
+            String telephone = "+4479000000";
+            //telephone = telephone.PadRight(11, 'a'); // should error 
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -567,8 +569,8 @@ namespace FolioTesting.UserManagement
             //String variable to store any error message
             String Error = "";
 
-            String telephone = "";
-            telephone = telephone.PadRight(12, 'a'); // should error
+            String telephone = "+4479000000000";
+            //telephone = telephone.PadRight(14, '+'); // should error
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -586,8 +588,8 @@ namespace FolioTesting.UserManagement
             //String variable to store any error message
             String Error = "";
 
-            String telephone = "";
-            telephone = telephone.PadRight(13, 'a'); // should pass but must inclide + at the start of the String.
+            String telephone = "+44790000000000"; //15 including +
+            //telephone = telephone.PadRight(13, 'a'); // should pass but must inclide + at the start of the String.
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -624,8 +626,8 @@ namespace FolioTesting.UserManagement
             //String variable to store any error message
             String Error = "";
 
-            String telephone = "";
-            telephone = telephone.PadRight(7, 'a'); // should error
+            String telephone = "+447900";
+            //telephone = telephone.PadRight(7, 'a'); // should error
 
             //invoke the method
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
@@ -724,23 +726,23 @@ namespace FolioTesting.UserManagement
             Assert.AreEqual(Error, "");
         }
 
-        //[TestMethod]
-        //public void NumOfBooksBoughtMaxPlusOne()
-        //{
-        //    //create an instance of the class we want to create
-        //    clsCustomerUser aCustomerUser = new clsCustomerUser();
-        //
-        //    //String variable to store any error message
-        //    String Error = "";
-        //
-        //    Int32 numOfBooksBought = Int32.MaxValue + 1; // should error
-        //
-        //    //invoke the method
-        //    Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought.ToString());
-        //
-        //    //test to see that the result is correct
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void NumOfBooksBoughtMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
+        
+            //String variable to store any error message
+            String Error = "";
+
+            String numOfBooksBought = "2147483648"; // should error
+
+            //invoke the method
+            Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
+        
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
 
         [TestMethod]
         public void NumOfBooksBoughtMid()
