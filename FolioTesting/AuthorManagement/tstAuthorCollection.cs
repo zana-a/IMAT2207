@@ -31,14 +31,6 @@ namespace FolioTesting.AuthorManagement
             Assert.AreEqual(AllAuthors.AuthorList, AuthorTestList);
         }
         [TestMethod]
-        public void CountAuthorOK()
-        {
-            ClsAuthorCollection AllAuthors = new ClsAuthorCollection();
-            Int32 SomeCount = 0;
-            AllAuthors.Count = SomeCount;
-            Assert.AreEqual(AllAuthors.Count, SomeCount);
-        }
-        [TestMethod]
         public void ThisAuthorPropertyOK()
         {
             ClsAuthorCollection AllAuthors = new ClsAuthorCollection();
@@ -63,11 +55,23 @@ namespace FolioTesting.AuthorManagement
             Assert.AreEqual(AllAuthors.Count, AuthorTestList.Count);
         }
         [TestMethod]
-        public void TwoRecordsPresent()
+        public void AddMethodOK()
         {
             ClsAuthorCollection AllAuthors = new ClsAuthorCollection();
-            Assert.AreEqual(AllAuthors.Count, 2);
+            ClsAuthor TestAuthor = new ClsAuthor();
+            Int32 PrimaryKey = 0;
+
+            TestAuthor.AuthorId = 1;
+            TestAuthor.Name = "Test Author";
+            TestAuthor.DOB = DateTime.Now.Date;
+            TestAuthor.IsAlive = true;
+            AllAuthors.ThisAuthor = TestAuthor;
+            PrimaryKey = AllAuthors.Add();
+            TestAuthor.AuthorId = PrimaryKey;
+            AllAuthors.ThisAuthor.Find(PrimaryKey);
+            Assert.AreEqual(AllAuthors.ThisAuthor, TestAuthor);
         }
+        
     }
 }
 
