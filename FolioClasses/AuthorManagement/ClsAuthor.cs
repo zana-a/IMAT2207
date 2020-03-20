@@ -7,8 +7,8 @@ namespace FolioClasses.AuthorManagement
 {
     public class ClsAuthor
     {
-        private Int32 mAuthorId;
-        public Int32 AuthorId
+        private int mAuthorId;
+        public int AuthorId
         {
             get
             {
@@ -19,16 +19,16 @@ namespace FolioClasses.AuthorManagement
                 mAuthorId = value;
             }
         }
-        private bool mIsDead;
-        public bool IsDead
+        private bool mIsAlive;
+        public bool IsAlive
         {
             get
             {
-                return mIsDead;
+                return mIsAlive;
             }
             set
             {
-                mIsDead = value;
+                mIsAlive = value;
             }
         }
         private DateTime mDOB;
@@ -55,17 +55,17 @@ namespace FolioClasses.AuthorManagement
                 mName = value;
             }
         }
-        public bool Find(int AuthorNo)
+        public bool Find(int id)
         {
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@AuthorId", AuthorId);
+            DB.AddParameter("@AuthorId", id);
             DB.Execute("sproc_tblAuthorManage_FilterByAuthorId");
             if(DB.Count == 1)
             {
                 mAuthorId = Convert.ToInt32(DB.DataTable.Rows[0]["author_id"]);
                 mName = Convert.ToString(DB.DataTable.Rows[0]["author_name"]);
-                mIsDead = Convert.ToBoolean(DB.DataTable.Rows[0]["author_isalive"]);
                 mDOB = Convert.ToDateTime(DB.DataTable.Rows[0]["author_dob"]);
+                mIsAlive = Convert.ToBoolean(DB.DataTable.Rows[0]["author_isalive"]);                
                 return true;
 
             }
