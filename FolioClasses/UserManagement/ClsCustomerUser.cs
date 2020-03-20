@@ -2,7 +2,7 @@
 
 namespace FolioClasses.UserManagement
 {
-    public class CustomerUser
+    public class clsCustomerUser
     {
         private int mUserId;
         public int UserId
@@ -130,6 +130,152 @@ namespace FolioClasses.UserManagement
             {
                 return false;
             }
+        }
+
+        // string userId handled by data layer
+        public string Valid(
+            string fullname,
+            string password,
+            string dob,
+            string email,
+            string telephone,
+            string numOfBooksBought)
+        {
+            //create a string variable to store the error
+            String Error = "";
+
+
+            /*
+             * Full Name Validation
+             */
+            if (fullname.Length == 0)
+            {
+                Error += "FullName should not be empty.";
+            }
+
+            if (fullname.Length < 4)
+            {
+                Error += "FullName should not be less than 4 characters.";
+            }
+
+            if (fullname.Length > 30)
+            {
+                Error += "FullName should not be greater than 30 characters.";
+            }
+
+            /*
+             * Password Validation
+             */
+            if (password.Length == 0)
+            {
+                Error += "Email should not be empty.";
+            }
+
+            if (password.Length < 5)
+            {
+                Error += "Password should not be less than 5 characters.";
+            }
+
+            if (password.Length > 30)
+            {
+                Error += "Password should not be greater than 30 characters.";
+            }
+
+            /*
+             * Dob Validation
+             */
+            try
+            {
+                DateTime tempDate = DateTime.Now.Date;
+
+                if (Convert.ToDateTime(dob) < tempDate.AddYears(-100))
+                {
+                    Error += "Date of Birth should not be older than 100 years.";
+                }
+
+                if (Convert.ToDateTime(dob) > tempDate)
+                {
+                    Error += "Date of Birth should not exceed current date.";
+                }
+
+                if (Convert.ToDateTime(dob) > tempDate.AddYears(-18))
+                {
+                    Error += "Age restriction. Must be at last 18 years old.";
+                }
+            }
+            catch
+            {
+                Error += "Entered Date was not a date.";
+            }
+
+            /*
+             * Email Validation
+             */
+            if (email.Length == 0)
+            {
+                Error += "Email should not be empty.";
+            }
+
+            if (email.Length < 5)
+            {
+                Error += "Password should not be less than 5 characters.";
+            }
+            
+            if (!email.Contains("@"))
+            {
+                Error += "Email is not a valid input. Must contain @.";
+            }
+
+            if (email.Length > 50)
+            {
+                Error += "Email should not be greater than 30 characters.";
+            }
+
+            /*
+             * Telephone Validation
+             */
+            if (telephone.Length == 0)
+            {
+                Error += "Telephone should not be empty.";
+            }
+
+            if (!telephone.Contains("+"))
+            {
+                Error += "Telephone input not a valid input. Must contain +.";
+            }
+
+            if (telephone.Length > 15)
+            {
+                Error += "Telephone input should not be greater than 15 characters.";
+            }
+
+            if (telephone.Length < 10)
+            {
+                Error += "Telephone input should not be greater than 15 characters.";
+            }
+
+            if (email.Length > 50)
+            {
+                Error += "Email should not be greater than 30 characters.";
+            }
+
+            /*
+             * NumOfBooksBought Validation 
+             */
+            Int32 tempNumOfBooksBought;
+
+            if (!Int32.TryParse(numOfBooksBought, out tempNumOfBooksBought))
+            {
+                Error += "Number of Books Bought field contains invalid characters or above range";
+            }
+
+            if (Int32.TryParse(numOfBooksBought, out tempNumOfBooksBought) && tempNumOfBooksBought < 0)
+            {
+                Error += "Number of Books Bought cannot be less than 0";
+            }
+
+            //return any error messages
+            return Error;
         }
     }
 }

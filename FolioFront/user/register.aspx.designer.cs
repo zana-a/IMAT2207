@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FolioFront {
+namespace FolioFront.user {
     
     
-    public partial class _default {
+    public partial class register {
     }
 }

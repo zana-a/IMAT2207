@@ -5,91 +5,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FolioTesting.UserManagement
 {
     [TestClass]
-    public class TstCustomerUser
+    public class tstCustomerUserFind
     {
-        [TestMethod]
-        public void InstanceOk()
-        {
-            CustomerUser aCustomerUser = new CustomerUser();
-            Assert.IsNotNull(aCustomerUser);
-        }
-
-        [TestMethod]
-        public void UserIdOk()
-        {
-            CustomerUser aCustomerUser = new CustomerUser();
-            Int32 testData = 1;
-            aCustomerUser.UserId = testData;
-            Assert.AreEqual(aCustomerUser.UserId, testData);
-        }
-
-        [TestMethod]
-        public void NameOk()
-        {
-            CustomerUser aCustomerUser = new CustomerUser();
-            String testData = "Barry Bones";
-            aCustomerUser.Fullname = testData;
-            Assert.AreEqual(aCustomerUser.Fullname, testData);
-        }
-
-        [TestMethod]
-        public void PasswordOk()
-        {
-            CustomerUser aCustomerUser = new CustomerUser();
-            String testData = "pass123";
-            aCustomerUser.Password = testData;
-            Assert.AreEqual(aCustomerUser.Password, testData);
-        }
-
-        [TestMethod]
-        public void DobOk()
-        {
-            CustomerUser aCustomerUser = new CustomerUser();
-            DateTime testData = Convert.ToDateTime("08/04/1999");
-            aCustomerUser.Dob = testData;
-            Assert.AreEqual(aCustomerUser.Dob, testData);
-        }
-
-        [TestMethod]
-        public void EmailOk()
-        {
-            CustomerUser aCustomerUser = new CustomerUser();
-            String testData = "someone@email.com";
-            aCustomerUser.Email = testData;
-            Assert.AreEqual(aCustomerUser.Email, testData);
-        }
-
-        [TestMethod]
-        public void TelephoneOk()
-        {
-            CustomerUser aCustomerUser = new CustomerUser();
-            String testData = "+447900000000";
-            aCustomerUser.Telephone = testData;
-            Assert.AreEqual(aCustomerUser.Telephone, testData);
-        }
-
-        [TestMethod]
-        public void NumOfBooksBoughtOk()
-        {
-            CustomerUser aCustomerUser = new CustomerUser();
-            Int32 testData = 123;
-            aCustomerUser.NumOfBooksBought = testData;
-            Assert.AreEqual(aCustomerUser.NumOfBooksBought, testData);
-        }
-
-        [TestMethod]
-        public void IsEmailVerifiedOk()
-        {
-            CustomerUser aCustomerUser = new CustomerUser();
-            String testData = "someone@email.com";
-            aCustomerUser.Email = testData;
-            Assert.AreEqual(aCustomerUser.Email, testData);
-        }
-
         [TestMethod]
         public void FindUserIdOk()
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
@@ -106,7 +27,7 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindFullnameOk()
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
@@ -124,7 +45,7 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindPasswordOk()
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
@@ -142,7 +63,7 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindDobOk()
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
@@ -160,7 +81,7 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindEmailOk()
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
@@ -178,7 +99,7 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindTelephoneOk()
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
@@ -196,7 +117,7 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindNumOfBooksBoughtOk()
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
@@ -214,7 +135,7 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindIsEmailVerifiedOk()
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Boolean ok = true;
             Int32 userId = 5;
@@ -232,7 +153,7 @@ namespace FolioTesting.UserManagement
         [TestMethod]
         public void FindMethodOk()
         {
-            CustomerUser aCustomerUser = new CustomerUser();
+            clsCustomerUser aCustomerUser = new clsCustomerUser();
             Boolean found = false;
             Int32 userId = 5;
             found = aCustomerUser.Find(userId);
