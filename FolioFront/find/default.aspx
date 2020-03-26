@@ -10,5 +10,9 @@
         <ul>
             <li><a href="/find/customer.aspx">Customer</a></li>
         </ul>
+
+        <ul>
+            <li><a href="author.aspx">Author</a></li>
+        </ul>
     </div>
 </asp:Content>
