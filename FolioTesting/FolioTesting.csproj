@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorManagement\tstAuthorCollection.cs" />
+    <Compile Include="AuthorManagement\tstAuthorValidation.cs" />
     <Compile Include="BookManage\tstBookManageFind.cs" />
     <Compile Include="BookManage\tstBooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

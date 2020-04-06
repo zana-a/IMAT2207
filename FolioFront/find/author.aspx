@@ -33,15 +33,16 @@
                 </div>
                 <div class="col-12 float-left p-2">
                     <div class="form-checkbox">
-                        <label for="txtAuthorIsAlive">
+                        <label for="cbxAuthorIsAlive">
                             Is Alive
-                            <asp:CheckBox ID="txtAuthorIsAlive" runat="server" />
+                            <asp:CheckBox ID="cbxAuthorIsAlive" runat="server" />
                         </label>
                     </div>
                 </div>
                 <div class="col-12 float-left p-2">
                     <div class="clearfix">
-                        <asp:Button CssClass="btn btn-primary" ID="btnFind" runat="server" Text="Find" OnClick="btnFindAuthor_Click" />
+                        <asp:Button CssClass="btn btn-primary" ID="btnOk" runat="server" Text="Ok" OnClick="btnOkAuthor_Click" />
+                    <asp:Button CssClass="btn btn-primary" ID="btnFind" runat="server" Text="Find" OnClick="btnFindAuthor_Click" />
                     </div>
                 </div>
             </div>

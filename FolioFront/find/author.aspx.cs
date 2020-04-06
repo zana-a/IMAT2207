@@ -14,7 +14,41 @@ namespace FolioFront
         {
 
         }
+        protected void btnOkAuthor_Click(object sender, EventArgs e)
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            string authorId = txtAuthorId.Text;
+            string authorName = txtAuthorName.Text;
+            string authorDob = txtAuthorDob.Text;
+            string authorIsAlive = cbxAuthorIsAlive.Text;
+            String Error = "";
+            lblErrorName.Text = Error;
+            lblErrorDob.Text = Error;
+            Error = AnAuthor.AuthorNameValid(authorName);
+            if(Error == "")
+            {
+                AnAuthor.Name = txtAuthorName.Text;
+                
+            }
+            else
+            {
+                lblErrorName.Text = Error;
+            }
+            Error = AnAuthor.AuthorDobValid(authorDob);
+            if (Error == "")
+            {
+                AnAuthor.DOB = Convert.ToDateTime(txtAuthorDob.Text);
+            }
+            else
+            {
+                lblErrorDob.Text = Error;
+            }
+            //AnAuthor.AuthorId = Convert.ToInt32(txtAuthorId.Text);
+            //AnAuthor.IsAlive = Convert.ToBoolean(cbxAuthorIsAlive);
+            Session["AnAuthor"] = AnAuthor;
+            // Response.Write("AuthorViewer.aspx");
 
+        }
         protected void btnFindAuthor_Click(object sender, EventArgs e)
         {
             ClsAuthor anAuthor = new ClsAuthor();
@@ -30,13 +64,14 @@ namespace FolioFront
                 txtAuthorDob.Text = anAuthor.DOB.ToString();
                 if (anAuthor.IsAlive == true)
                 {
-                    txtAuthorIsAlive.Checked = true;
+                    cbxAuthorIsAlive.Checked = true;
                 }
                 else
                 {
-                    txtAuthorIsAlive.Checked = false;
+                    cbxAuthorIsAlive.Checked = false;
                 }
             }
         }
+
     }
 }

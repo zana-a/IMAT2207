@@ -6,7 +6,7 @@ namespace FolioTesting.AuthorManagement
 {
     [TestClass]
     public class tstAuthor
-    {
+    {        
         [TestMethod]
         public void Instanceok()
         {
