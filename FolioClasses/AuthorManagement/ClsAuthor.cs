@@ -74,18 +74,36 @@ namespace FolioClasses.AuthorManagement
                 return false;
             }
         }
-        /* I have seperated my validation classes so I can
+        /* I have separated my validation classes so I can
             add errors to specific text fields more easily */
+        public string AuthorIdValid(string authorId)
+        {
+            String Error = "";
+            if(authorId.Length == 0)
+            {
+                Error += "The author ID field must not be blank";
+            }
+            if(authorId.Length > 25)
+            {
+                Error += "The author ID field must not be longer than 25 characters";
+            }
+            // Not certain if the below expression works
+            if (authorId.Contains(@"[a-zA-Z]"))
+            {
+                Error += "The author ID field must not contain letters";
+            }
+            return Error;
+        }
         public string AuthorNameValid(string authorName)
         {
             String Error = "";
             if(authorName.Length == 0)
             {
-                Error += "The author name field may not be blank ";
+                Error += "The author name field must not be blank ";
             }
             if (authorName.Length > 50)
             {
-                Error += "The author name field may not be longer than 50 characters";
+                Error += "The author name field must not be longer than 50 characters";
             }
             return Error;
         }
@@ -116,6 +134,14 @@ namespace FolioClasses.AuthorManagement
             }
             return Error;
         }
-
+        public string AuthorDescValid(string authorDesc)
+        {
+            String Error = "";
+            if(authorDesc.Length > 500)
+            {
+                Error += "The author description cannot be longer than 500 characters";
+            }
+            return Error;
+        }
     }
 }

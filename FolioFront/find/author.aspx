@@ -11,31 +11,31 @@
                     <h1>Find Author</h1>
                 </div>
                 <div class="col-6 float-left p-2">
-                    <label for="txtAuthorId">
+                    <label for="txtFindAuthorId">
                         Author ID:
                     </label>
-                    <asp:TextBox CssClass="form-control width-full" ID="txtAuthorId" runat="server" />
-                    <asp:Label ID="lblErrorId" runat="server" Text=""></asp:Label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtFindAuthorId" runat="server" />
+                    <asp:Label ID="lblErrorFindFindId" runat="server" Text=""></asp:Label>
                 </div>
                 <div class="col-6 float-left p-2">
-                    <label for="txtAuthorName">
+                    <label for="txtFindAuthorName">
                         Author Name:
                     </label>
-                    <asp:TextBox CssClass="form-control width-full" ID="txtAuthorName" runat="server" />
-                    <asp:Label ID="lblErrorName" runat="server" Text=""></asp:Label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtFindAuthorName" runat="server" />
+                    <asp:Label ID="lblErrorFindName" runat="server" Text=""></asp:Label>
                 </div>
                 <div class="col-6 float-left p-2">
-                    <label for="txtAuthorDob">
+                    <label for="txtFindAuthorDob">
                         Author DOB:
                     </label>
-                    <asp:TextBox CssClass="form-control width-full" ID="txtAuthorDob" runat="server" />
-                    <asp:Label ID="lblErrorDob" runat="server" Text=""></asp:Label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtFindAuthorDob" runat="server" />
+                    <asp:Label ID="lblErrorFindDob" runat="server" Text=""></asp:Label>
                 </div>
                 <div class="col-12 float-left p-2">
                     <div class="form-checkbox">
                         <label for="cbxAuthorIsAlive">
                             Is Alive
-                            <asp:CheckBox ID="cbxAuthorIsAlive" runat="server" />
+                            <asp:CheckBox ID="cbxFindAuthorIsAlive" runat="server" />
                         </label>
                     </div>
                 </div>

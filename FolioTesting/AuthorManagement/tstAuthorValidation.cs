@@ -7,9 +7,19 @@ namespace FolioTesting.AuthorManagement
     [TestClass]
     public class tstAuthorValidation
     {   // "Good" test data"
+        string authorId = "123";
         string authorName = "Some Author";
         string authorDob = DateTime.Now.Date.ToString();
+        string authorDesc = "A test author description";
 
+        [TestMethod]
+        public void AuthorIdValidMethodOK()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            Error = AnAuthor.AuthorIdValid(authorId);
+            Assert.AreEqual(Error, "");
+        }
         [TestMethod]
         public void AuthorNameValidMethodOK()
         {
@@ -24,6 +34,59 @@ namespace FolioTesting.AuthorManagement
             ClsAuthor AnAuthor = new ClsAuthor();
             String Error = "";
             Error = AnAuthor.AuthorDobValid(authorDob);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorDescValidMethodOK()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            Error = AnAuthor.AuthorDescValid(authorDesc);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorIdMin()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorId = "1";
+            Error = AnAuthor.AuthorIdValid(authorId);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorIdMinPlusOne()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorId = "11";
+            Error = AnAuthor.AuthorIdValid(authorId);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorIdMax()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorId = "1234567891234567891234567";
+            Error = AnAuthor.AuthorIdValid(authorId);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorIdMaxPlusOne()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorId = "12345678912345678912345678";
+            Error = AnAuthor.AuthorIdValid(authorId);
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorIdMaxLessOne()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorId = "123456789123456789123456";
+            Error = AnAuthor.AuthorIdValid(authorId);
             Assert.AreEqual(Error, "");
         }
         [TestMethod]
@@ -122,7 +185,7 @@ namespace FolioTesting.AuthorManagement
             TestDate = new DateTime(1500, 01, 01);
             string authorDob = TestDate.ToString();
             Error = AnAuthor.AuthorDobValid(authorDob);
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
         [TestMethod]
         public void AuthorDobMin()
@@ -132,7 +195,7 @@ namespace FolioTesting.AuthorManagement
             DateTime TestDate;
             TestDate = DateTime.Now.Date;
             // Going off the basis that the youngest author in the world was 4 years old.
-            TestDate = TestDate.AddYears(-5);
+            TestDate = TestDate.AddYears(-4);
             string authorDob = TestDate.ToString();
             Error = AnAuthor.AuthorDobValid(authorDob);
             Assert.AreNotEqual(Error, "");

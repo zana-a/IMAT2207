@@ -17,33 +17,33 @@ namespace FolioFront
         protected void btnOkAuthor_Click(object sender, EventArgs e)
         {
             ClsAuthor AnAuthor = new ClsAuthor();
-            string authorId = txtAuthorId.Text;
-            string authorName = txtAuthorName.Text;
-            string authorDob = txtAuthorDob.Text;
-            string authorIsAlive = cbxAuthorIsAlive.Text;
+            string authorId = txtFindAuthorId.Text;
+            string authorName = txtFindAuthorName.Text;
+            string authorDob = txtFindAuthorDob.Text;
+            string authorIsAlive = cbxFindAuthorIsAlive.Text;
             String Error = "";
-            lblErrorName.Text = Error;
-            lblErrorDob.Text = Error;
+            lblErrorFindName.Text = Error;
+            lblErrorFindDob.Text = Error;
             Error = AnAuthor.AuthorNameValid(authorName);
             if(Error == "")
             {
-                AnAuthor.Name = txtAuthorName.Text;
+                AnAuthor.Name = txtFindAuthorName.Text;
                 
             }
             else
             {
-                lblErrorName.Text = Error;
+                lblErrorFindName.Text = Error;
             }
             Error = AnAuthor.AuthorDobValid(authorDob);
             if (Error == "")
             {
-                AnAuthor.DOB = Convert.ToDateTime(txtAuthorDob.Text);
+                AnAuthor.DOB = Convert.ToDateTime(txtFindAuthorDob.Text);
             }
             else
             {
-                lblErrorDob.Text = Error;
+                lblErrorFindDob.Text = Error;
             }
-            //AnAuthor.AuthorId = Convert.ToInt32(txtAuthorId.Text);
+            //AnAuthor.AuthorId = Convert.ToInt32(txtFindAuthorId.Text);
             //AnAuthor.IsAlive = Convert.ToBoolean(cbxAuthorIsAlive);
             Session["AnAuthor"] = AnAuthor;
             // Response.Write("AuthorViewer.aspx");
@@ -54,21 +54,21 @@ namespace FolioFront
             ClsAuthor anAuthor = new ClsAuthor();
             Int32 authorId;
             Boolean found = false;
-            authorId = Convert.ToInt32(txtAuthorId.Text);
+            authorId = Convert.ToInt32(txtFindAuthorId.Text);
             found = anAuthor.Find(authorId);
 
             if (found == true)
             {
-                txtAuthorId.Text = anAuthor.AuthorId.ToString();
-                txtAuthorName.Text = anAuthor.Name;
-                txtAuthorDob.Text = anAuthor.DOB.ToString();
+                txtFindAuthorId.Text = anAuthor.AuthorId.ToString();
+                txtFindAuthorName.Text = anAuthor.Name;
+                txtFindAuthorDob.Text = anAuthor.DOB.ToString();
                 if (anAuthor.IsAlive == true)
                 {
-                    cbxAuthorIsAlive.Checked = true;
+                    cbxFindAuthorIsAlive.Checked = true;
                 }
                 else
                 {
-                    cbxAuthorIsAlive.Checked = false;
+                    cbxFindAuthorIsAlive.Checked = false;
                 }
             }
         }

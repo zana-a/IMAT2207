@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorManagement\tstAuthorAddEditDeleteUpdate.cs" />
     <Compile Include="AuthorManagement\tstAuthorCollection.cs" />
     <Compile Include="AuthorManagement\tstAuthorValidation.cs" />
     <Compile Include="BookManage\tstBookManageFind.cs" />

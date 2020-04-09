@@ -57,9 +57,6 @@ namespace FolioClasses
                 AnAuthor.IsAlive = Convert.ToBoolean(DB.DataTable.Rows[Index]["author_isalive"]);
                 mAuthorList.Add(AnAuthor);
                 Index++;
-
-
-
             }
         }
 
