@@ -14,7 +14,6 @@ namespace FolioTesting.AuthorManagement
             ClsAuthorCollection AllAuthors = new ClsAuthorCollection();
             ClsAuthor AnAuthor = new ClsAuthor();
             Int32 PrimaryKey = 0;
-            AnAuthor.AuthorId = 1;
             AnAuthor.Name = "Test Author";
             AnAuthor.DOB = new DateTime(1950, 01, 01);
             AnAuthor.IsAlive = false;
@@ -23,6 +22,23 @@ namespace FolioTesting.AuthorManagement
             AnAuthor.AuthorId = PrimaryKey;
             AllAuthors.ThisAuthor.Find(PrimaryKey);
             Assert.AreEqual(AllAuthors.ThisAuthor, AnAuthor);
+        }
+        [TestMethod]
+        public void DeleteMethodOk()
+        {
+            ClsAuthorCollection AllAuthors = new ClsAuthorCollection();
+            ClsAuthor AnAuthor = new ClsAuthor();
+            Int32 PrimaryKey = 0;
+            AnAuthor.Name = "Test Author";
+            AnAuthor.DOB = new DateTime(1950, 01, 01);
+            AnAuthor.IsAlive = false;
+            AllAuthors.ThisAuthor = AnAuthor;
+            PrimaryKey = AllAuthors.Add();
+            AnAuthor.AuthorId = PrimaryKey;
+            AllAuthors.ThisAuthor.Find(PrimaryKey);
+            AllAuthors.Delete();
+            Boolean Found = AllAuthors.ThisAuthor.Find(PrimaryKey);
+            Assert.IsFalse(Found);
         }
     }
 }

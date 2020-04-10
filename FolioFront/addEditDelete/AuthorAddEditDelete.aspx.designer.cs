@@ -24,24 +24,6 @@ namespace FolioFront
         protected global::System.Web.UI.HtmlControls.HtmlForm formAuthorFind;
 
         /// <summary>
-        /// txtAEDAuthorId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAEDAuthorId;
-
-        /// <summary>
-        /// lblErrorAEDId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorAEDId;
-
-        /// <summary>
         /// txtAEDAuthorName control.
         /// </summary>
         /// <remarks>
@@ -112,6 +94,15 @@ namespace FolioFront
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddAuthor;
+
+        /// <summary>
+        /// btnDeleteAuthor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteAuthor;
 
         /// <summary>
         /// lblErrorAED control.

@@ -63,11 +63,17 @@ namespace FolioClasses
         public int Add()
         {
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@AuthorId", mThisAuthor.AuthorId);
+           // DB.AddParameter("@AuthorId", mThisAuthor.AuthorId);
             DB.AddParameter("@Name", mThisAuthor.Name);
             DB.AddParameter("@Dob", mThisAuthor.DOB);
             DB.AddParameter("@IsAlive", mThisAuthor.IsAlive);
             return DB.Execute("sproc_tblAuthorManage_Insert");
+        }
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@AuthorId", mThisAuthor.AuthorId);
+            DB.Execute("sproc_tblAuthorManage_Delete");
         }
     }
 }

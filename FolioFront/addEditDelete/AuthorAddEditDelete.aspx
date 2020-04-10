@@ -11,13 +11,6 @@
                     <h1>Add Author</h1>
                 </div>
                 <div class="col-6 float-left p-2">
-                    <label for="txtAEDAuthorId">
-                        Author ID:
-                    </label>
-                    <asp:TextBox CssClass="form-control width-full" ID="txtAEDAuthorId" runat="server" />
-                    <asp:Label ID="lblErrorAEDId" runat="server" Text=""></asp:Label>
-                </div>
-                <div class="col-6 float-left p-2">
                     <label for="txtAEDAuthorName">
                         Author Name:
                     </label>
@@ -49,6 +42,7 @@
                 <div class="col-12 float-left p-2">
                     <div class="clearfix">
                         <asp:Button CssClass="btn btn-primary" ID="btnAddAuthor" runat="server" Text="Add" OnClick="btnAddAuthor_Click" />
+                        <asp:Button CssClass="btn btn-primary" ID="btnDeleteAuthor" runat="server" Text="Delete" OnClick="btnDeleteAuthor_Click" />
                         <asp:Label ID="lblErrorAED" runat="server" Text=""></asp:Label>
                     </div>
                 </div>
