@@ -69,14 +69,12 @@
   <ItemGroup>
     <Content Include="about.aspx" />
     <Content Include="assets\css\primer.css" />
-    <Content Include="find\customer.aspx" />
+    <Content Include="CustomerUser\CustomerUser.aspx" />
+    <Content Include="CustomerUser\CustomerUserList.aspx" />
     <Content Include="default.aspx" />
-    <Content Include="find\default.aspx" />
     <Content Include="help.aspx" />
     <Content Include="privacy.aspx" />
     <Content Include="terms.aspx" />
-    <Content Include="user\login.aspx" />
-    <Content Include="user\register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +92,13 @@
     <Compile Include="AuthorList.aspx.designer.cs">
       <DependentUpon>AuthorList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomerUser\CustomerUserList.aspx.cs">
+      <DependentUpon>CustomerUserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerUser\CustomerUserList.aspx.designer.cs">
+      <DependentUpon>CustomerUserList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default_master.Master.cs">
       <DependentUpon>default_master.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,25 +113,18 @@
     <Compile Include="empty_master.Master.designer.cs">
       <DependentUpon>empty_master.Master</DependentUpon>
     </Compile>
-    <Compile Include="find\customer.aspx.cs">
-      <DependentUpon>customer.aspx</DependentUpon>
+    <Compile Include="CustomerUser\CustomerUser.aspx.cs">
+      <DependentUpon>CustomerUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="find\customer.aspx.designer.cs">
-      <DependentUpon>customer.aspx</DependentUpon>
+    <Compile Include="CustomerUser\CustomerUser.aspx.designer.cs">
+      <DependentUpon>CustomerUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="find\default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="find\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="help.aspx.cs">
@@ -150,20 +148,6 @@
     </Compile>
     <Compile Include="terms.aspx.designer.cs">
       <DependentUpon>terms.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="user\register.aspx.cs">
-      <DependentUpon>register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="user\register.aspx.designer.cs">
-      <DependentUpon>register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

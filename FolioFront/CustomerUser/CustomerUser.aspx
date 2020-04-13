@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/default_master.Master" Language="C#" AutoEventWireup="true" CodeBehind="customer.aspx.cs" Inherits="FolioFront.ACustomerUser" %>
+﻿<%@ Page MasterPageFile="~/default_master.Master" Language="C#" AutoEventWireup="true" CodeBehind="CustomerUser.aspx.cs" Inherits="FolioFront.ACustomerUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
 </asp:Content>

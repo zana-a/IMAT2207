@@ -10,7 +10,7 @@
     <link href="/assets/css/primer.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-1">
-    <header>
+    <!--<header>
         <div class="bg-gray-8">
             <div class="container-lg">
                 <div class="Header px-0" style="background-color: transparent;">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header>-->
     <div>
         <asp:ContentPlaceHolder ID="cphContent" runat="server">
         </asp:ContentPlaceHolder>
