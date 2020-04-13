@@ -59,6 +59,7 @@
     <Compile Include="UserManagement\tstCustomerUserFind.cs" />
     <Compile Include="UserManagement\tstCustomerUserInstance.cs" />
     <Compile Include="UserManagement\tstCustomerUserValidate.cs" />
+    <Compile Include="UserManagement\tstCustomerUserCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

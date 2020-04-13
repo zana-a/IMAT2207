@@ -50,6 +50,7 @@
     <Compile Include="UserManagement\clsCustomerUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublisherManagement\ClsPublisher.cs" />
+    <Compile Include="UserManagement\clsCustomerUserCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
