@@ -24,67 +24,13 @@ namespace FolioFront
         protected global::System.Web.UI.HtmlControls.HtmlForm formAuthorFind;
 
         /// <summary>
-        /// txtAEDAuthorName control.
+        /// lstAuthors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAEDAuthorName;
-
-        /// <summary>
-        /// lblErrorAEDName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorAEDName;
-
-        /// <summary>
-        /// txtAEDAuthorDob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAEDAuthorDob;
-
-        /// <summary>
-        /// lblErrorAEDDob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorAEDDob;
-
-        /// <summary>
-        /// txtAEDAuthorDesc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAEDAuthorDesc;
-
-        /// <summary>
-        /// lblErrorAEDDesc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorAEDDesc;
-
-        /// <summary>
-        /// cbxAEDAuthorIsAlive control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbxAEDAuthorIsAlive;
+        protected global::System.Web.UI.WebControls.ListBox lstAuthors;
 
         /// <summary>
         /// btnAddAuthor control.
