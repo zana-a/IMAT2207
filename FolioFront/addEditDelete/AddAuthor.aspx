@@ -42,7 +42,9 @@
                 <div class="col-12 float-left p-2">
                     <div class="clearfix">
                         <asp:Button CssClass="btn btn-primary" ID="btnOkay" runat="server" Text="Okay" OnClick="btnOkayAdd_Click" />
-                        <asp:Button CssClass="btn btn-primary" ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancelAdd_Click" />
+                        <asp:Button CssClass="btn btn-primary" ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancelAdd_Click" />                        
+                    </div>
+                    <div class="clearfix">
                         <asp:Label ID="lblErrorOkay" runat="server" Text=""></asp:Label>
                     </div>
                 </div>

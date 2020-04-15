@@ -13,6 +13,7 @@ namespace FolioFront
         Int32 AuthorId;
         protected void Page_Load(object sender, EventArgs e)
         {
+            AuthorId = Convert.ToInt32(Session["AuthorId"]);
             if (IsPostBack == false)
             {
                 DisplayAuthors();
@@ -43,6 +44,20 @@ namespace FolioFront
             else
             {
                 lblErrorAED.Text = "Please select a record to delete from the list";
+            }
+        }
+        protected void btnEditAuthor_Click(object sender, EventArgs e)
+        {
+            Int32 AuthorId;
+            if(lstAuthors.SelectedIndex != -1)
+            {
+                AuthorId = Convert.ToInt32(lstAuthors.SelectedValue);
+                Session["AuthorId"] = AuthorId;
+                Response.Redirect("AddAuthor.aspx");
+            }
+            else
+            {
+                lblErrorAED.Text = "Please select a record to edit from the list";
             }
         }
         

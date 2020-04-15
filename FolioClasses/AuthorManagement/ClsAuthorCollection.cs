@@ -75,5 +75,13 @@ namespace FolioClasses
             DB.AddParameter("@AuthorId", mThisAuthor.AuthorId);
             DB.Execute("sproc_tblAuthorManage_Delete");
         }
+        public void Update()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Name", mThisAuthor.Name);
+            DB.AddParameter("@Dob", mThisAuthor.DOB);
+            DB.AddParameter("@IsAlive", mThisAuthor.IsAlive);
+            DB.Execute("sproc_tblAuthorManage_Update");
+        }
     }
 }
