@@ -39,7 +39,7 @@ namespace FolioFront.addEditDelete
             }
             else
             {
-                lblErrorOkay.Text = "There were issues with data entered";
+                lblErrorOkay.Text = "There were issues with data entered" + Error;
             }
 
         }
@@ -76,7 +76,6 @@ namespace FolioFront.addEditDelete
             if(AuthorId == -1)
             {
                 Add();
-                Response.Redirect("AuthorAddEditDelete.aspx");
             }
             else
             {

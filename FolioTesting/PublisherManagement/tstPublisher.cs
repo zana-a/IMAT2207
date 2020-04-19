@@ -30,20 +30,20 @@ namespace FolioTesting.PublisherManagement
             Assert.AreEqual(APublisher.Name, TestData);
         }
         [TestMethod]
-        public void PublisherDOBOK()
+        public void PublisherDateFoundedOK()
         {
             ClsPublisher APublisher = new ClsPublisher();
             DateTime TestData = DateTime.Now.Date;
-            APublisher.DOB = TestData;
-            Assert.AreEqual(APublisher.DOB, TestData);
+            APublisher.DateFounded = TestData;
+            Assert.AreEqual(APublisher.DateFounded, TestData);
         }
         [TestMethod]
-        public void PublisherIsDeadOK()
+        public void PublisherIsActiveOK()
         {
             ClsPublisher APublisher = new ClsPublisher();
             Boolean TestData = true;
-            APublisher.IsDead = TestData;
-            Assert.AreEqual(APublisher.IsDead, TestData);
+            APublisher.IsActive = TestData;
+            Assert.AreEqual(APublisher.IsActive, TestData);
         }
         [TestMethod]
         public void FindMethodOK()
@@ -84,27 +84,27 @@ namespace FolioTesting.PublisherManagement
             Assert.IsTrue(OK);
         }
         [TestMethod]
-        public void FindPublisherDOBOK()
+        public void FindPublisherDateFoundedOK()
         {
             ClsPublisher APublisher = new ClsPublisher();
             Boolean Found = false;
             Boolean OK = true;
             Int32 PublisherNo = 1;
             Found = APublisher.Find(PublisherNo);
-            if(APublisher.DOB != Convert.ToDateTime("16/9/2015")){
+            if(APublisher.DateFounded != Convert.ToDateTime("16/9/2015")){
                 OK = false;
             }
             Assert.IsTrue(OK);
         }
         [TestMethod]
-        public void FindPublisherIsDeadOK()
+        public void FindPublisherIsActiveOK()
         {
             ClsPublisher APublisher = new ClsPublisher();
             Boolean Found = false;
             Boolean OK = true;
             Int32 PublisherNo = 1;
             Found = APublisher.Find(PublisherNo);
-            if(APublisher.IsDead != true)
+            if(APublisher.IsActive != true)
             {
                 OK = false;
             }

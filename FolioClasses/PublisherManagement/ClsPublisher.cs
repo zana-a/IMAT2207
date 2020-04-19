@@ -20,7 +20,7 @@ namespace FolioClasses.PublisherManagement
             }
         }
         private bool mIsActive;
-        public bool IsDead
+        public bool IsActive
         {
             get
             {
@@ -32,7 +32,7 @@ namespace FolioClasses.PublisherManagement
             }
         }
         private DateTime mDateFounded;
-        public DateTime DOB
+        public DateTime DateFounded
         {
             get
             {
@@ -55,6 +55,18 @@ namespace FolioClasses.PublisherManagement
                 mName = value;
             }
         }
+        private String mWebsite;
+        public String Website
+        {
+            get
+            {
+                return mWebsite;
+            }
+            set
+            {
+                mWebsite = value;
+            }
+        }
         public bool Find(int PublisherNo)
         {
             clsDataConnection DB = new clsDataConnection();
@@ -64,8 +76,9 @@ namespace FolioClasses.PublisherManagement
             {
                 mPublisherId = Convert.ToInt32(DB.DataTable.Rows[0]["publisher_id"]);
                 mName = Convert.ToString(DB.DataTable.Rows[0]["publisher_name"]);
-                mIsActive = Convert.ToBoolean(DB.DataTable.Rows[0]["publisher_isalive"]);
-                mDateFounded = Convert.ToDateTime(DB.DataTable.Rows[0]["publisher_dob"]);
+                mDateFounded = Convert.ToDateTime(DB.DataTable.Rows[0]["publisher_datefounded"]);
+                mIsActive = Convert.ToBoolean(DB.DataTable.Rows[0]["publisher_isactive"]);
+                mWebsite = Convert.ToString(DB.DataTable.Rows[0]["publisher_website"]);
                 return true;
 
             }
