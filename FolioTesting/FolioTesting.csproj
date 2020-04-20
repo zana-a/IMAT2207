@@ -58,6 +58,7 @@
     <Compile Include="PublisherManagement\tstPublisher.cs" />
     <Compile Include="PublisherManagement\tstPublisherAddEditDelete.cs" />
     <Compile Include="PublisherManagement\tstPublisherCollection.cs" />
+    <Compile Include="PublisherManagement\tstPublisherValidation.cs" />
     <Compile Include="tstOrder.cs" />
     <Compile Include="AuthorManagement\tstAuthor.cs" />
     <Compile Include="UserManagement\tstCustomerUserFind.cs" />

@@ -76,6 +76,7 @@
     <Content Include="find\customer.aspx" />
     <Content Include="default.aspx" />
     <Content Include="find\default.aspx" />
+    <Content Include="find\publisher.aspx" />
     <Content Include="help.aspx" />
     <Content Include="privacy.aspx" />
     <Content Include="terms.aspx" />
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="find\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="find\publisher.aspx.cs">
+      <DependentUpon>publisher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="find\publisher.aspx.designer.cs">
+      <DependentUpon>publisher.aspx</DependentUpon>
     </Compile>
     <Compile Include="help.aspx.cs">
       <DependentUpon>help.aspx</DependentUpon>

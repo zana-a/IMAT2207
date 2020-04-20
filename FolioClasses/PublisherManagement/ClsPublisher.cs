@@ -87,5 +87,76 @@ namespace FolioClasses.PublisherManagement
                 return false;
             }
         }
+        public string PublisherIdValid(string publisherId)
+        {
+            String Error = "";
+            if (publisherId.Length == 0)
+            {
+                Error += "The publisher ID field must not be blank";
+            }
+            if (publisherId.Length > 25)
+            {
+                Error += "The publisher ID field must not be longer than 25 characters";
+            }
+            // Not certain if the below expression works
+            if (publisherId.Contains(@"[a-zA-Z]"))
+            {
+                Error += "The publisher ID field must not contain letters";
+            }
+            return Error;
+        }
+        public string PublisherNameValid(string publisherName)
+        {
+            String Error = "";
+            if (publisherName.Length == 0)
+            {
+                Error += "The publisher name field must not be blank ";
+            }
+            if (publisherName.Length > 50)
+            {
+                Error += "The publisher name field must not be longer than 50 characters";
+            }
+            return Error;
+        }
+        public string PublisherWebsiteValid(string publisherWebsite)
+        {
+            String Error = "";
+            if(publisherWebsite.Length == 0)
+            {
+                Error += "The publisher website field cannot be empty";
+            }
+            if(publisherWebsite.Length > 255)
+            {
+                Error += "The publisher website field cannot be longer than 255 characters";
+            }
+            return Error;
+        }
+        public string PublisherDateFoundedValid(string publisherDob)
+        {
+            String Error = "";
+            DateTime DateTemp;
+            try
+            {
+                DateTemp = Convert.ToDateTime(publisherDob);
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    Error += "The date cannot be in the future ";
+                }
+                if (DateTemp > DateTime.Now.Date.AddYears(-4).AddDays(-365).AddHours(-23).AddMinutes(59) && DateTemp < DateTime.Now.Date)
+                {
+                    Error += "The date cannot be less than 5 years before today";
+                }
+                if (DateTemp < new DateTime(1500, 01, 01))
+                {
+                    // Not because publishers did not exist before then, but a limit must be somewhere
+                    Error += "The publisher cannot be founded before 01/01/1500";
+                }
+            }
+            catch
+            {
+                Error += "The date entered is not a valid date";
+            }
+            return Error;
+        }
     }
 }
