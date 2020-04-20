@@ -31,7 +31,18 @@ namespace FolioClasses.UserManagement
             }
         }
 
-        public clsCustomerUser thisCustomerUser { get; set; }
+        clsCustomerUser mThisCustomerUser = new clsCustomerUser();
+        public clsCustomerUser thisCustomerUser
+        {
+            get
+            {
+                return mThisCustomerUser;
+            }
+            set
+            {
+                mThisCustomerUser = value;
+            }
+        }
 
         public clsCustomerUserCollection()
         {
@@ -59,14 +70,42 @@ namespace FolioClasses.UserManagement
             }
         }
 
-        //public int Add()
-        //{
-        //    clsDataConnection DB = new clsDataConnection();
-        //    DB.AddParameter("@AuthorId", mThisAuthor.AuthorId);
-        //    DB.AddParameter("@Name", mThisAuthor.Name);
-        //    DB.AddParameter("@Dob", mThisAuthor.DOB);
-        //    DB.AddParameter("@IsAlive", mThisAuthor.IsAlive);
-        //    return DB.Execute("sproc_tblAuthorManage_Insert");
-        //}
+        public void Update()
+        {
+            clsDataConnection db = new clsDataConnection();
+
+            db.AddParameter("@UserId", mThisCustomerUser.UserId);
+            db.AddParameter("@Fullname", mThisCustomerUser.Fullname);
+            db.AddParameter("@Password", mThisCustomerUser.Password);
+            db.AddParameter("@Dob", mThisCustomerUser.Dob);
+            db.AddParameter("@Email", mThisCustomerUser.Email);
+            db.AddParameter("@Telephone", mThisCustomerUser.Telephone);
+            db.AddParameter("@NumOfBooksBought", mThisCustomerUser.NumOfBooksBought);
+            db.AddParameter("@IsEmailVerified", mThisCustomerUser.IsEmailVerified);
+
+            db.Execute("sproc_tblCustomerUser_Update");
+        }
+
+        public void Delete()
+        {
+            clsDataConnection db = new clsDataConnection();
+            db.AddParameter("@UserId", mThisCustomerUser.UserId);
+            db.Execute("sproc_tblCustomerUser_Delete");
+        }
+
+        public int Add()
+        {
+            clsDataConnection db = new clsDataConnection();
+
+            db.AddParameter("@Fullname", mThisCustomerUser.Fullname);
+            db.AddParameter("@Password", mThisCustomerUser.Password);
+            db.AddParameter("@Dob", mThisCustomerUser.Dob);
+            db.AddParameter("@Email", mThisCustomerUser.Email);
+            db.AddParameter("@Telephone", mThisCustomerUser.Telephone);
+            db.AddParameter("@NumOfBooksBought", mThisCustomerUser.NumOfBooksBought);
+            db.AddParameter("@IsEmailVerified", mThisCustomerUser.IsEmailVerified);
+
+            return db.Execute("sproc_tblCustomerUser_Insert");
+        }
     }
 }

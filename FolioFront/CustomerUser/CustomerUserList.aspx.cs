@@ -26,5 +26,43 @@ namespace FolioFront.CustomerUser
             lstCustomerUserList.DataTextField = "Fullname";
             lstCustomerUserList.DataBind();
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Session["UserId"] = -1;
+            Response.Redirect("CustomerUser.aspx");
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            Int32 UserId;
+
+            if (lstCustomerUserList.SelectedIndex != -1)
+            {
+                UserId = Convert.ToInt32(lstCustomerUserList.SelectedValue);
+                Session["UserId"] = UserId;
+                Response.Redirect("CustomerUserDelete.aspx");
+            }
+            else
+            {
+                lblError.Text = "Please Select A Record To Delete From The List";
+            }
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            Int32 UserId;
+
+            if (lstCustomerUserList.SelectedIndex != -1)
+            {
+                UserId = Convert.ToInt32(lstCustomerUserList.SelectedValue);
+                Session["UserId"] = UserId;
+                Response.Redirect("CustomerUser.aspx");
+            }
+            else
+            {
+                lblError.Text = "Please Select A Record To Edit From The List";
+            }
+        }
     }
 }

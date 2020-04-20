@@ -10,9 +10,33 @@ namespace FolioFront
 {
     public partial class ACustomerUser : System.Web.UI.Page
     {
+        private Int32 UserId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            UserId = Convert.ToInt32(Session["UserId"]);
+            if (IsPostBack == false)
+            {
+                if (UserId != -1)
+                {
+                    DisplayAddress();
+                }
+            }
+        }
 
+        private void DisplayAddress()
+        {
+            clsCustomerUserCollection allCustomers = new clsCustomerUserCollection();
+
+            allCustomers.thisCustomerUser.Find(UserId);
+
+            txtUserId.Text = allCustomers.thisCustomerUser.UserId.ToString();
+            txtFullName.Text = allCustomers.thisCustomerUser.Fullname;
+            txtPassword.Text = allCustomers.thisCustomerUser.Password;
+            txtDob.Text = allCustomers.thisCustomerUser.Dob.ToString();
+            txtEmail.Text = allCustomers.thisCustomerUser.Email;
+            txtTelephone.Text = allCustomers.thisCustomerUser.Telephone;
+            txtNumOfBooksBought.Text = allCustomers.thisCustomerUser.NumOfBooksBought.ToString();
         }
 
         protected void btnFindCustomer_Click(object sender, EventArgs e)
@@ -46,7 +70,7 @@ namespace FolioFront
         protected void btnOk_Click(object sender, EventArgs e)
         {
             clsCustomerUser aCustomerUser = new clsCustomerUser();
-            String Error = "";
+            String error = "";
 
             String userId = txtUserId.Text;
             String fullname = txtFullName.Text;
@@ -56,9 +80,9 @@ namespace FolioFront
             String telephone = txtTelephone.Text;
             String numOfBooksBought = txtNumOfBooksBought.Text;
 
-            Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
+            error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
-            if (Error == "")
+            if (error == "")
             {
                 aCustomerUser.UserId = Convert.ToInt32(userId);
                 aCustomerUser.Fullname = fullname;
@@ -76,12 +100,24 @@ namespace FolioFront
                     aCustomerUser.IsEmailVerified = false;
                 }
 
-                Session["aCustomerUser"] = aCustomerUser;
-                Response.Write("find/customer.aspx");
+                clsCustomerUserCollection customerUserList = new clsCustomerUserCollection();
+                
+                if (UserId == -1)
+                {
+                    customerUserList.thisCustomerUser = aCustomerUser;
+                    customerUserList.Add();
+                } else
+                {
+                    customerUserList.thisCustomerUser.Find(UserId);
+                    customerUserList.thisCustomerUser = aCustomerUser;
+                    customerUserList.Update();
+                }
+
+                Response.Redirect("CustomerUserList.aspx");
             }
             else
             {
-                lblError.Text = Error;
+                lblError.Text = error;
             }
         }
     }

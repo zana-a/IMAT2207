@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="server">
     <div class="container-lg">
         <form id="formCustomerUserFind" runat="server">
-            <div class="form-group border clearfix rounded-2 p-4">
+            <div class="form-group border clearfix rounded-2 p-4 bg-white">
                 <div class="p-2 mb-2">
                     <h1>Find Customer</h1>
                 </div>
@@ -14,7 +14,7 @@
                     <label for="txtUserId">
                         Customer ID:
                     </label>
-                    <asp:TextBox CssClass="form-control width-full" ID="txtUserId" runat="server" />
+                    <asp:TextBox CssClass="form-control width-full" ID="txtUserId" runat="server"/>
                 </div>
                 <div class="col-6 float-left p-2">
                     <label for="txtFullName">

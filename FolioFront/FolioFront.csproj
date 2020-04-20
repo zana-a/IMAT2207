@@ -70,6 +70,7 @@
     <Content Include="about.aspx" />
     <Content Include="assets\css\primer.css" />
     <Content Include="CustomerUser\CustomerUser.aspx" />
+    <Content Include="CustomerUser\CustomerUserDelete.aspx" />
     <Content Include="CustomerUser\CustomerUserList.aspx" />
     <Content Include="default.aspx" />
     <Content Include="help.aspx" />
@@ -91,6 +92,13 @@
     </Compile>
     <Compile Include="AuthorList.aspx.designer.cs">
       <DependentUpon>AuthorList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerUser\CustomerUserDelete.aspx.cs">
+      <DependentUpon>CustomerUserDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerUser\CustomerUserDelete.aspx.designer.cs">
+      <DependentUpon>CustomerUserDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerUser\CustomerUserList.aspx.cs">
       <DependentUpon>CustomerUserList.aspx</DependentUpon>
