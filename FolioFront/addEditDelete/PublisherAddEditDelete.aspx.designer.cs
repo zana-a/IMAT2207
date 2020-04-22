@@ -7,65 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FolioFront
+namespace FolioFront.addEditDelete
 {
 
 
-    public partial class AuthorCollection
+    public partial class PublisherAddEditDelete
     {
 
         /// <summary>
-        /// formAuthorAED control.
+        /// formPublisherAED control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formAuthorAED;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formPublisherAED;
 
         /// <summary>
-        /// lstAuthors control.
+        /// lstPublishers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstAuthors;
+        protected global::System.Web.UI.WebControls.ListBox lstPublishers;
 
         /// <summary>
-        /// btnAddAuthor control.
+        /// btnAddPublisher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddAuthor;
+        protected global::System.Web.UI.WebControls.Button btnAddPublisher;
 
         /// <summary>
-        /// btnEditAuthor control.
+        /// btnEditPublisher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditAuthor;
+        protected global::System.Web.UI.WebControls.Button btnEditPublisher;
 
         /// <summary>
-        /// btnDeleteAuthor control.
+        /// btnDeletePublisher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteAuthor;
+        protected global::System.Web.UI.WebControls.Button btnDeletePublisher;
 
         /// <summary>
-        /// lblErrorAED control.
+        /// lblErrorPubAED control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorAED;
+        protected global::System.Web.UI.WebControls.Label lblErrorPubAED;
     }
 }

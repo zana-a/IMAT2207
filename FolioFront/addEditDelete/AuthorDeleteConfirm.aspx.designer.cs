@@ -15,13 +15,13 @@ namespace FolioFront.addEditDelete
     {
 
         /// <summary>
-        /// formAuthorDelete control.
+        /// formPublisherDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formAuthorDelete;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formPublisherDelete;
 
         /// <summary>
         /// btnDeleteYes control.

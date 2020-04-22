@@ -69,8 +69,11 @@
   <ItemGroup>
     <Content Include="about.aspx" />
     <Content Include="addEditDelete\AddAuthor.aspx" />
+    <Content Include="addEditDelete\AddPublisher.aspx" />
     <Content Include="addEditDelete\AuthorAddEditDelete.aspx" />
     <Content Include="addEditDelete\AuthorDeleteConfirm.aspx" />
+    <Content Include="addEditDelete\PublisherAddEditDelete.aspx" />
+    <Content Include="addEditDelete\PublisherDeleteConfirm.aspx" />
     <Content Include="assets\css\primer.css" />
     <Content Include="find\author.aspx" />
     <Content Include="find\customer.aspx" />
@@ -99,6 +102,13 @@
     <Compile Include="addEditDelete\AddAuthor.aspx.designer.cs">
       <DependentUpon>AddAuthor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="addEditDelete\AddPublisher.aspx.cs">
+      <DependentUpon>AddPublisher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addEditDelete\AddPublisher.aspx.designer.cs">
+      <DependentUpon>AddPublisher.aspx</DependentUpon>
+    </Compile>
     <Compile Include="addEditDelete\AuthorAddEditDelete.aspx.cs">
       <DependentUpon>AuthorAddEditDelete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -112,6 +122,20 @@
     </Compile>
     <Compile Include="addEditDelete\AuthorDeleteConfirm.aspx.designer.cs">
       <DependentUpon>AuthorDeleteConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addEditDelete\PublisherAddEditDelete.aspx.cs">
+      <DependentUpon>PublisherAddEditDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addEditDelete\PublisherAddEditDelete.aspx.designer.cs">
+      <DependentUpon>PublisherAddEditDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addEditDelete\PublisherDeleteConfirm.aspx.cs">
+      <DependentUpon>PublisherDeleteConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addEditDelete\PublisherDeleteConfirm.aspx.designer.cs">
+      <DependentUpon>PublisherDeleteConfirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="default_master.Master.cs">
       <DependentUpon>default_master.Master</DependentUpon>

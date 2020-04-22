@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="server">
     <div class="container-lg">
-        <form id="formAuthorFind" runat="server">
+        <form id="formAuthorAED" runat="server">
             <div class="form-group border clearfix rounded-2 p-4"> 
                 <div class="p-2 mb-2">
                     <asp:ListBox CssClass="form-control" Width="316px" ID="lstAuthors" runat="server" Height="234px">
