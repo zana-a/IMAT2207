@@ -8,9 +8,9 @@
         <form id="formPublisherAED" runat="server">
             <div class="form-group border clearfix rounded-2 p-4">
                 <h1>List of Publishers</h1>
+                If you wish to add an author click <a href="/addEditDelete/Author/AuthorAddEditDelete.aspx">here</a>
                 <div class="p-2 mb-2">                  
                     <asp:ListBox CssClass="form-control" Width="316px" ID="lstPublishers" runat="server" Height="234px">
-
                     </asp:ListBox>
                 </div>               
                 <div class="col-11 float-left p-2">
