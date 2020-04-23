@@ -14,5 +14,9 @@
         <ul>
             <li><a href="author.aspx">Author</a></li>
         </ul>
+
+        <ul>
+            <li><a href="publisher.aspx">Publisher</a></li>
+        </ul>
     </div>
 </asp:Content>

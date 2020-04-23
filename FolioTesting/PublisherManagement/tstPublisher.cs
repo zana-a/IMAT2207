@@ -50,7 +50,7 @@ namespace FolioTesting.PublisherManagement
         {
             ClsPublisher APublisher = new ClsPublisher();
             Boolean Found = false;
-            Int32 PublisherNo = 1;
+            Int32 PublisherNo = 5;
             Found = APublisher.Find(PublisherNo);
             Assert.IsTrue(Found);
         }
@@ -60,10 +60,10 @@ namespace FolioTesting.PublisherManagement
             ClsPublisher APublisher = new ClsPublisher();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 PublisherNo = 1;
+            Int32 PublisherNo = 5;
             Found = APublisher.Find(PublisherNo);
 
-            if(APublisher.PublisherId != 1)
+            if(APublisher.PublisherId != PublisherNo)
             {
                 OK = false;
             }
@@ -75,9 +75,9 @@ namespace FolioTesting.PublisherManagement
             ClsPublisher APublisher = new ClsPublisher();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 PublisherNo = 1;
+            Int32 PublisherNo = 5;
             Found = APublisher.Find(PublisherNo);
-            if(APublisher.Name != "Philip K. Dick")
+            if(APublisher.Name != "Penguin Books")
             {
                 OK = false;
             }
@@ -89,9 +89,9 @@ namespace FolioTesting.PublisherManagement
             ClsPublisher APublisher = new ClsPublisher();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 PublisherNo = 1;
+            Int32 PublisherNo = 5;
             Found = APublisher.Find(PublisherNo);
-            if(APublisher.DateFounded != Convert.ToDateTime("16/9/2015")){
+            if(APublisher.DateFounded != Convert.ToDateTime("01/01/1935")){
                 OK = false;
             }
             Assert.IsTrue(OK);
@@ -102,7 +102,7 @@ namespace FolioTesting.PublisherManagement
             ClsPublisher APublisher = new ClsPublisher();
             Boolean Found = false;
             Boolean OK = true;
-            Int32 PublisherNo = 1;
+            Int32 PublisherNo = 5;
             Found = APublisher.Find(PublisherNo);
             if(APublisher.IsActive != true)
             {

@@ -13,7 +13,7 @@
 
                     </asp:ListBox>
                 </div>               
-                <div class="col-12 float-left p-2">
+                <div class="col-11 float-left p-2">
                     <div class="clearfix">
                         <asp:Button CssClass="btn btn-primary" ID="btnAddPublisher" runat="server" Text="Add" OnClick="btnAddPublisher_Click" />
                         <asp:Button CssClass="btn btn-primary" ID="btnEditPublisher" runat="server" Text="Edit" OnClick="btnEditPublisher_Click" />

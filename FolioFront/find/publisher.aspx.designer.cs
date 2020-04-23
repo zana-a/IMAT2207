@@ -42,15 +42,6 @@ namespace FolioFront.find
         protected global::System.Web.UI.WebControls.Label lblErrorFindPubId;
 
         /// <summary>
-        /// btnFind control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFind;
-
-        /// <summary>
         /// txtFindPubName control.
         /// </summary>
         /// <remarks>
@@ -114,12 +105,12 @@ namespace FolioFront.find
         protected global::System.Web.UI.WebControls.Label lblErrorFindPubWebsite;
 
         /// <summary>
-        /// btnOk control.
+        /// btnFind control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOk;
+        protected global::System.Web.UI.WebControls.Button btnFind;
     }
 }

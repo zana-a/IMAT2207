@@ -78,6 +78,7 @@ namespace FolioClasses
         public void Update()
         {
             clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@AuthorId", mThisAuthor.AuthorId);
             DB.AddParameter("@Name", mThisAuthor.Name);
             DB.AddParameter("@Dob", mThisAuthor.DOB);
             DB.AddParameter("@IsAlive", mThisAuthor.IsAlive);

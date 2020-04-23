@@ -13,7 +13,7 @@ namespace FolioFront.addEditDelete
         Int32 PublisherId;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            PublisherId = Convert.ToInt32(Session["PublisherId"]);
         }
         protected void btnDeleteYes_Click(object sender, EventArgs e)
         {

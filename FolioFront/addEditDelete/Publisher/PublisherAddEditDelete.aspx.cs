@@ -27,6 +27,7 @@ namespace FolioFront.addEditDelete
         }
         protected void btnAddPublisher_Click(object sender, EventArgs e)
         {
+            Session["PublisherId"] = -1;
             Response.Redirect("AddPublisher.aspx");
         }
         protected void btnDeletePublisher_Click(object sender, EventArgs e)
@@ -45,7 +46,17 @@ namespace FolioFront.addEditDelete
         }
         protected void btnEditPublisher_Click(object sender, EventArgs e)
         {
-
+            Int32 PublisherId;
+            if(lstPublishers.SelectedIndex != -1)
+            {
+                PublisherId = Convert.ToInt32(lstPublishers.SelectedValue);
+                Session["PublisherId"] = PublisherId;
+                Response.Redirect("AddPublisher.aspx");
+            }
+            else
+            {
+                lblErrorPubAED.Text = "Please select a record to delete";
+            }
         }
     }
 }

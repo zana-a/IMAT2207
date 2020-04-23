@@ -67,11 +67,11 @@ namespace FolioClasses.PublisherManagement
                 mWebsite = value;
             }
         }
-        public bool Find(int PublisherNo)
+        public bool Find(int id)
         {
             clsDataConnection DB = new clsDataConnection();
-            DB.AddParameter("@PublisherId", PublisherId);
-            DB.Execute("sproc_tblpublisherManage_FilterBypublisherId");
+            DB.AddParameter("@PublisherId", id);
+            DB.Execute("sproc_tblPublisherManage_FilterByPublisherId");
             if(DB.Count == 1)
             {
                 mPublisherId = Convert.ToInt32(DB.DataTable.Rows[0]["publisher_id"]);
@@ -142,14 +142,14 @@ namespace FolioClasses.PublisherManagement
                 {
                     Error += "The date cannot be in the future ";
                 }
-                if (DateTemp > DateTime.Now.Date.AddYears(-4).AddDays(-365).AddHours(-23).AddMinutes(59) && DateTemp < DateTime.Now.Date)
+                if (DateTemp > DateTime.Now.Date.AddHours(-23).AddMinutes(59) && DateTemp < DateTime.Now.Date)
                 {
-                    Error += "The date cannot be less than 5 years before today";
+                    Error += "The date cannot be before today";
                 }
-                if (DateTemp < new DateTime(1500, 01, 01))
+                if (DateTemp < new DateTime(1753, 01, 01))
                 {
-                    // Not because publishers did not exist before then, but a limit must be somewhere
-                    Error += "The publisher cannot be founded before 01/01/1500";
+                    // SQL wouldn't allow a date earlier than this, or after 31/12/9999
+                    Error += "The publisher cannot be founded before 01/01/1753";
                 }
             }
             catch

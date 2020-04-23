@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/default_master.Master" Language="C#" AutoEventWireup="true" CodeBehind="AuthorDeleteConfirm.aspx.cs" Inherits="FolioFront.addEditDelete.Delete" %>
+﻿<%@ Page MasterPageFile="~/default_master.Master" Language="C#" AutoEventWireup="true" CodeBehind="PublisherDeleteConfirm.aspx.cs" Inherits="FolioFront.addEditDelete.PublisherDeleteConfirm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
 </asp:Content>

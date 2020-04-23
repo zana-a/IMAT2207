@@ -82,6 +82,7 @@ namespace FolioClasses.PublisherManagement
         public void Update()
         {
             clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@PublisherId", mThisPublisher.PublisherId);
             DB.AddParameter("@Name", mThisPublisher.Name);
             DB.AddParameter("@DateFounded", mThisPublisher.DateFounded);
             DB.AddParameter("@IsActive", mThisPublisher.IsActive);

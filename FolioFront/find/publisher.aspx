@@ -16,7 +16,7 @@
                     </label>
                     <asp:TextBox CssClass="form-control width-full" ID="txtFindPublisherId" runat="server" />
                     <asp:Label ID="lblErrorFindPubId" runat="server" Text=""></asp:Label>
-                    <asp:Button CssClass="btn btn-primary" ID="btnFind" runat="server" Text="Find" OnClick="btnFindPublisher_Click" />
+                    
                 </div>
                 <div class="col-6 float-left p-2">
                     <label for="txtFindPubName">
@@ -49,7 +49,8 @@
                 </div>
                 <div class="col-12 float-left p-2">
                     <div class="clearfix">
-                        <asp:Button CssClass="btn btn-primary" ID="btnOk" runat="server" Text="Ok" OnClick="btnOkPublisher_Click" />                    
+                        <asp:Button CssClass="btn btn-primary" ID="btnFind" runat="server" Text="Find" OnClick="btnFindPublisher_Click" />
+                                       
                     </div>
                 </div>
             </div>
