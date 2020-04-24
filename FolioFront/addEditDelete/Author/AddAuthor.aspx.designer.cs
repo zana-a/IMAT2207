@@ -42,6 +42,15 @@ namespace FolioFront.addEditDelete
         protected global::System.Web.UI.WebControls.Label lblErrorAEDName;
 
         /// <summary>
+        /// imgAEDAuthorImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload imgAEDAuthorImage;
+
+        /// <summary>
         /// txtAEDAuthorDob control.
         /// </summary>
         /// <remarks>

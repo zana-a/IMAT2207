@@ -55,6 +55,30 @@ namespace FolioClasses.AuthorManagement
                 mName = value;
             }
         }
+        private String mDescription;
+        public String Description
+        {
+            get
+            {
+                return mDescription;
+            }
+            set
+            {
+                mDescription = value;
+            }
+        }
+        private String mImagePath;
+        public String ImagePath
+        {
+            get
+            {
+                return mImagePath;
+            }
+            set
+            {
+                mImagePath = value;
+            }
+        }
         public bool Find(int id)
         {
             clsDataConnection DB = new clsDataConnection();
@@ -65,7 +89,9 @@ namespace FolioClasses.AuthorManagement
                 mAuthorId = Convert.ToInt32(DB.DataTable.Rows[0]["author_id"]);
                 mName = Convert.ToString(DB.DataTable.Rows[0]["author_name"]);
                 mDOB = Convert.ToDateTime(DB.DataTable.Rows[0]["author_dob"]);
-                mIsAlive = Convert.ToBoolean(DB.DataTable.Rows[0]["author_isalive"]);                
+                mDescription = Convert.ToString(DB.DataTable.Rows[0]["author_desc"]);
+                mIsAlive = Convert.ToBoolean(DB.DataTable.Rows[0]["author_isalive"]);
+                mImagePath = Convert.ToString(DB.DataTable.Rows[0]["author_image"]);
                 return true;
 
             }
@@ -137,9 +163,9 @@ namespace FolioClasses.AuthorManagement
         public string AuthorDescValid(string authorDesc)
         {
             String Error = "";
-            if(authorDesc.Length > 500)
+            if(authorDesc.Length > 255)
             {
-                Error += "The author description cannot be longer than 500 characters";
+                Error += "The author description cannot be longer than 255 characters";
             }
             return Error;
         }

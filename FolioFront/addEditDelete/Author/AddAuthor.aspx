@@ -17,6 +17,12 @@
                     <asp:TextBox CssClass="form-control width-full" ID="txtAEDAuthorName" runat="server" />
                     <asp:Label ID="lblErrorAEDName" runat="server" Text=""></asp:Label>
                 </div>
+                <div class="col-12 float-left p-2">
+                    <label for="imgAEDAuthorImage">
+                        Author Image:
+                    </label>
+                    <asp:FileUpload ID="imgAEDAuthorImage" runat="server" />
+                </div>
                 <div class="col-6 float-left p-2">
                     <label for="txtAEDAuthorDob">
                         Author DOB:

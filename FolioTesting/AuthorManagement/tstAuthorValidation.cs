@@ -231,5 +231,74 @@ namespace FolioTesting.AuthorManagement
             Error = AnAuthor.AuthorDobValid(authorDob);
             Assert.AreNotEqual(Error, "");
         }
+
+        [TestMethod]
+        public void AuthorDescMin()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorDesc = "";
+            Error = AnAuthor.AuthorDescValid(authorDesc);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorDescMinPlusOne()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorDesc = "aa";
+            Error = AnAuthor.AuthorDescValid(authorDesc);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorDescMax()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorDesc = "";
+            authorDesc = authorDesc.PadRight(255, 'a');
+            Error = AnAuthor.AuthorDescValid(authorDesc);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorDescMaxLessOne()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorDesc = "";
+            authorDesc = authorDesc.PadRight(254, 'a');
+            Error = AnAuthor.AuthorDescValid(authorDesc);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorDescMaxPlusOne()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorDesc = "";
+            authorDesc = authorDesc.PadRight(256, 'a');
+            Error = AnAuthor.AuthorDescValid(authorDesc);
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorDescMid()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorDesc = "";
+            authorDesc.PadRight(126, 'a');
+            Error = AnAuthor.AuthorDescValid(authorDesc);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AuthorDescExtremeMax()
+        {
+            ClsAuthor AnAuthor = new ClsAuthor();
+            String Error = "";
+            string authorDesc = "";
+            authorDesc = authorDesc.PadRight(500, 'a');
+            Error = AnAuthor.AuthorDescValid(authorDesc);
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }

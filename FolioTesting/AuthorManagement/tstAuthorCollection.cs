@@ -64,7 +64,9 @@ namespace FolioTesting.AuthorManagement
             TestAuthor.AuthorId = 1;
             TestAuthor.Name = "Test Author";
             TestAuthor.DOB = DateTime.Now.Date;
+            TestAuthor.Description = "An example description";
             TestAuthor.IsAlive = true;
+            TestAuthor.ImagePath = "~/assets/images";
             AllAuthors.ThisAuthor = TestAuthor;
             PrimaryKey = AllAuthors.Add();
             TestAuthor.AuthorId = PrimaryKey;

@@ -14,6 +14,7 @@ namespace FolioFront
         {
             txtFindAuthorName.Enabled = false;
             txtFindAuthorDob.Enabled = false;
+            txtFindAuthorDesc.Enabled = false;
             cbxFindAuthorIsAlive.Enabled = false;
         }
         protected void btnFindAuthor_Click(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace FolioFront
                 {
                     txtFindAuthorName.Text = anAuthor.Name;
                     txtFindAuthorDob.Text = anAuthor.DOB.ToString();
+                    txtFindAuthorDesc.Text = anAuthor.Description;
                     if (anAuthor.IsAlive == true)
                     {
                         cbxFindAuthorIsAlive.Checked = true;
@@ -42,6 +44,7 @@ namespace FolioFront
                     {
                         cbxFindAuthorIsAlive.Checked = false;
                     }
+                    imgFindAuthorImage.ImageUrl = anAuthor.ImagePath;
                 }
             }
         }

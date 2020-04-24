@@ -26,11 +26,24 @@
                     <asp:Label ID="lblErrorFindName" runat="server" Text=""></asp:Label>
                 </div>
                 <div class="col-6 float-left p-2">
+                    <label for="imgFindAuthorImage">
+                        Author Image:
+                    </label>
+                    <asp:Image id="imgFindAuthorImage" runat="server" ImageAlign="Left"/>
+                </div>
+                <div class="col-6 float-left p-2">
                     <label for="txtFindAuthorDob">
                         Author DOB:
                     </label>
                     <asp:TextBox CssClass="form-control width-full" ID="txtFindAuthorDob" runat="server" />
                     <asp:Label ID="lblErrorFindDob" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="col-6 float-left p-2">
+                    <label for="txtFindAuthorDesc">
+                        Author Description:
+                    </label>
+                    <asp:TextBox CssClass="form-control width-full" ID="txtFindAuthorDesc" runat="server" TextMode="MultiLine" Rows="5" />
+                    <asp:Label ID="lblErrorFindDesc" runat="server" Text=""></asp:Label>
                 </div>
                 <div class="col-12 float-left p-2">
                     <div class="form-checkbox">
