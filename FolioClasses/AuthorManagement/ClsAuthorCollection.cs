@@ -43,12 +43,17 @@ namespace FolioClasses
         }
         public ClsAuthorCollection()
         {
-            Int32 Index = 0;
-            Int32 RecordCount = 0;
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblAuthorManage_SelectAll");
+            PopulateArray(DB);
+        }
+        void PopulateArray(clsDataConnection DB)
+        {            
+            Int32 Index = 0;
+            Int32 RecordCount = 0;
             RecordCount = DB.Count;
-            while(Index < RecordCount)
+            mAuthorList = new List<ClsAuthor>();                
+            while (Index < RecordCount)
             {
                 ClsAuthor AnAuthor = new ClsAuthor();
                 AnAuthor.AuthorId = Convert.ToInt32(DB.DataTable.Rows[Index]["author_id"]);
@@ -57,7 +62,7 @@ namespace FolioClasses
                 AnAuthor.IsAlive = Convert.ToBoolean(DB.DataTable.Rows[Index]["author_isalive"]);
                 mAuthorList.Add(AnAuthor);
                 Index++;
-            }
+            }           
         }
 
         public int Add()
@@ -83,6 +88,14 @@ namespace FolioClasses
             DB.AddParameter("@Dob", mThisAuthor.DOB);
             DB.AddParameter("@IsAlive", mThisAuthor.IsAlive);
             DB.Execute("sproc_tblAuthorManage_Update");
+        }
+
+        public void ReportByName(string Name)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Name", Name);
+            DB.Execute("sproc_tblAuthorManage_FilterByName");
+            PopulateArray(DB);
         }
     }
 }

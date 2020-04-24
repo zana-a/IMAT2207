@@ -58,5 +58,24 @@ namespace FolioFront.addEditDelete
                 lblErrorPubAED.Text = "Please select a record to delete";
             }
         }
+        protected void btnApplyPubFilter_Click(object sender, EventArgs e)
+        {
+            ClsPublisherCollection Publishers = new ClsPublisherCollection();
+            Publishers.ReportByName(txtFilterPublisher.Text);
+            lstPublishers.DataSource = Publishers.PublisherList;
+            lstPublishers.DataValueField = "PublisherId";
+            lstPublishers.DataTextField = "Name";
+            lstPublishers.DataBind();
+        }
+        protected void btnClearPubFilter_Click(object sender, EventArgs e)
+        {
+            ClsPublisherCollection Publishers = new ClsPublisherCollection();
+            Publishers.ReportByName("");
+            txtFilterPublisher.Text = "";
+            lstPublishers.DataSource = Publishers.PublisherList;
+            lstPublishers.DataValueField = "PublisherId";
+            lstPublishers.DataTextField = "Name";
+            lstPublishers.DataBind();
+        }
     }
 }

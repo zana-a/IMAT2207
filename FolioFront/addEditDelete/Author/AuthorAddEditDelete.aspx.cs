@@ -60,6 +60,25 @@ namespace FolioFront
                 lblErrorAED.Text = "Please select a record to edit from the list";
             }
         }
+        protected void btnApplyAuthFilter_Click(object sender, EventArgs e)
+        {
+            ClsAuthorCollection Authors = new ClsAuthorCollection();
+            Authors.ReportByName(txtFilterAuthor.Text);
+            lstAuthors.DataSource = Authors.AuthorList;
+            lstAuthors.DataValueField = "AuthorId";
+            lstAuthors.DataTextField = "Name";
+            lstAuthors.DataBind();
+        }
+        protected void btnClearAuthFilter_Click(object sender, EventArgs e)
+        {
+            ClsAuthorCollection Authors = new ClsAuthorCollection();
+            Authors.ReportByName("");
+            txtFilterAuthor.Text = "";
+            lstAuthors.DataSource = Authors.AuthorList;
+            lstAuthors.DataValueField = "AuthorId";
+            lstAuthors.DataTextField = "Name";
+            lstAuthors.DataBind();
+        }
         
     }
 }

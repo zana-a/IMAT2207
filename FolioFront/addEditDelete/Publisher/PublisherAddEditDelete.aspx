@@ -23,6 +23,12 @@
                         <asp:Label ID="lblErrorPubAED" runat="server" Text=""></asp:Label>
                     </div>
                 </div>
+                <div class="col-12 float-left p-2">
+                    <p>Enter a name :</p>                    
+                    <asp:TextBox CssClass="form-control width-md-auto" ID="txtFilterPublisher" runat="server" />                    
+                    <asp:Button CssClass="btn btn-primary" ID="btnApplyFilter" runat="server" Text="Apply" OnClick="btnApplyPubFilter_Click" />
+                    <asp:Button CssClass="btn btn-primary" ID="btnClearFilter" runat="server" Text="Clear" OnClick="btnClearPubFilter_Click" />
+                </div>
                 
             </div>
         </form>

@@ -71,6 +71,44 @@ namespace FolioTesting.AuthorManagement
             AllAuthors.ThisAuthor.Find(PrimaryKey);
             Assert.AreEqual(AllAuthors.ThisAuthor, TestAuthor);
         }
+        [TestMethod]
+        public void ReportByNameMethodOk()
+        {
+            ClsAuthorCollection AllAuthors = new ClsAuthorCollection();
+            ClsAuthorCollection FilteredAuthors = new ClsAuthorCollection();
+            FilteredAuthors.ReportByName("");
+            Assert.AreEqual(AllAuthors.Count, FilteredAuthors.Count);
+        }
+        [TestMethod]
+        public void ReportByNameNoneFound()
+        {
+            ClsAuthorCollection FilteredAuthors = new ClsAuthorCollection();
+            FilteredAuthors.ReportByName("Xxxx");
+            Assert.AreEqual(0, FilteredAuthors.Count);
+        }
+        [TestMethod]
+        public void ReportByNameTestDataFound()
+        {
+            ClsAuthorCollection FilteredAuthors = new ClsAuthorCollection();
+            Boolean OK = true;
+            FilteredAuthors.ReportByName("Test Author");
+            if(FilteredAuthors.Count == 2)
+            {
+                if(FilteredAuthors.AuthorList[0].AuthorId != 34)
+                {
+                    OK = false;
+                }
+                if(FilteredAuthors.AuthorList[1].AuthorId != 35)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
         
     }
 }

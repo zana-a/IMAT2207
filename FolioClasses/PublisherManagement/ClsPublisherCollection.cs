@@ -46,11 +46,16 @@ namespace FolioClasses.PublisherManagement
         }
         public ClsPublisherCollection()
         {
-            Int32 Index = 0;
-            Int32 RecordCount = 0;
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblPublisherManage_SelectAll");
+            PopulateArray(DB);
+        }
+        void PopulateArray(clsDataConnection DB)
+        {
+            Int32 Index = 0;
+            Int32 RecordCount = 0;
             RecordCount = DB.Count;
+            mPublisherList = new List<ClsPublisher>();
             while (Index < RecordCount)
             {
                 ClsPublisher aPublisher = new ClsPublisher();
@@ -88,6 +93,13 @@ namespace FolioClasses.PublisherManagement
             DB.AddParameter("@IsActive", mThisPublisher.IsActive);
             DB.AddParameter("@Website", mThisPublisher.Website);
             DB.Execute("sproc_tblPublisherManage_Update");
+        }
+        public void ReportByName(string Name)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@Name", Name);
+            DB.Execute("sproc_tblPublisherManage_FilterByName");
+            PopulateArray(DB);
         }
     }
 }

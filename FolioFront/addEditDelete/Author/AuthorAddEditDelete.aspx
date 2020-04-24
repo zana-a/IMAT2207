@@ -22,7 +22,13 @@
                     <div class="clearfix">
                         <asp:Label ID="lblErrorAED" runat="server" Text=""></asp:Label>                        
                     </div>
-                </div>                
+                </div> 
+                <div class="col-12 float-left p-2">
+                    <p>Enter a name :</p>                    
+                    <asp:TextBox CssClass="form-control width-md-auto" ID="txtFilterAuthor" runat="server" />                    
+                    <asp:Button CssClass="btn btn-primary" ID="btnApplyFilter" runat="server" Text="Apply" OnClick="btnApplyAuthFilter_Click" />
+                    <asp:Button CssClass="btn btn-primary" ID="btnClearFilter" runat="server" Text="Clear" OnClick="btnClearAuthFilter_Click" />
+                </div>
             </div>            
         </form>
     </div>    
