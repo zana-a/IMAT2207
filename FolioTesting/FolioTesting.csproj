@@ -60,6 +60,10 @@
     <Compile Include="UserManagement\tstCustomerUserInstance.cs" />
     <Compile Include="UserManagement\tstCustomerUserValidate.cs" />
     <Compile Include="UserManagement\tstCustomerUserCollection.cs" />
+    <Compile Include="UserManagement\tstCustomerUserAdd.cs" />
+    <Compile Include="UserManagement\tstCustomerUserDelete.cs" />
+    <Compile Include="UserManagement\tstCustomerUserUpdate.cs" />
+    <Compile Include="UserManagement\tstCustomerUserFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

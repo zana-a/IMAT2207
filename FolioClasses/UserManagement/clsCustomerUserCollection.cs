@@ -31,18 +31,77 @@ namespace FolioClasses.UserManagement
             }
         }
 
-        public clsCustomerUser thisCustomerUser { get; set; }
+        clsCustomerUser mThisCustomerUser = new clsCustomerUser();
+        public clsCustomerUser thisCustomerUser
+        {
+            get
+            {
+                return mThisCustomerUser;
+            }
+            set
+            {
+                mThisCustomerUser = value;
+            }
+        }
 
         public clsCustomerUserCollection()
         {
-            mCustomerUserList = new List<clsCustomerUser>();
-
-            Int32 index = 0;
-            Int32 recordCount = 0;
             clsDataConnection db = new clsDataConnection();
             db.Execute("sproc_tblCustomerUser_SelectAll");
-            recordCount = db.Count;
+            PopulateArray(db);
+        }
 
+        public void Update()
+        {
+            clsDataConnection db = new clsDataConnection();
+
+            db.AddParameter("@UserId", mThisCustomerUser.UserId);
+            db.AddParameter("@Fullname", mThisCustomerUser.Fullname);
+            db.AddParameter("@Password", mThisCustomerUser.Password);
+            db.AddParameter("@Dob", mThisCustomerUser.Dob);
+            db.AddParameter("@Email", mThisCustomerUser.Email);
+            db.AddParameter("@Telephone", mThisCustomerUser.Telephone);
+            db.AddParameter("@NumOfBooksBought", mThisCustomerUser.NumOfBooksBought);
+            db.AddParameter("@IsEmailVerified", mThisCustomerUser.IsEmailVerified);
+
+            db.Execute("sproc_tblCustomerUser_Update");
+        }
+
+        public void Delete()
+        {
+            clsDataConnection db = new clsDataConnection();
+            db.AddParameter("@UserId", mThisCustomerUser.UserId);
+            db.Execute("sproc_tblCustomerUser_Delete");
+        }
+
+        public int Add()
+        {
+            clsDataConnection db = new clsDataConnection();
+
+            db.AddParameter("@Fullname", mThisCustomerUser.Fullname);
+            db.AddParameter("@Password", mThisCustomerUser.Password);
+            db.AddParameter("@Dob", mThisCustomerUser.Dob);
+            db.AddParameter("@Email", mThisCustomerUser.Email);
+            db.AddParameter("@Telephone", mThisCustomerUser.Telephone);
+            db.AddParameter("@NumOfBooksBought", mThisCustomerUser.NumOfBooksBought);
+            db.AddParameter("@IsEmailVerified", mThisCustomerUser.IsEmailVerified);
+
+            return db.Execute("sproc_tblCustomerUser_Insert");
+        }
+
+        public void ReportByFullname(string fullname)
+        {
+            clsDataConnection db = new clsDataConnection();
+            db.AddParameter("@Fullname", fullname);
+            db.Execute("sproc_tblCustomerUser_FilterByFullname");
+            PopulateArray(db);
+        }
+
+        public void PopulateArray(clsDataConnection db) {
+            Int32 index = 0;
+            Int32 recordCount;
+            recordCount = db.Count;
+            mCustomerUserList = new List<clsCustomerUser>();
             while (index < recordCount)
             {
                 clsCustomerUser aCustomerUser = new clsCustomerUser();
@@ -58,15 +117,5 @@ namespace FolioClasses.UserManagement
                 index++;
             }
         }
-
-        //public int Add()
-        //{
-        //    clsDataConnection DB = new clsDataConnection();
-        //    DB.AddParameter("@AuthorId", mThisAuthor.AuthorId);
-        //    DB.AddParameter("@Name", mThisAuthor.Name);
-        //    DB.AddParameter("@Dob", mThisAuthor.DOB);
-        //    DB.AddParameter("@IsAlive", mThisAuthor.IsAlive);
-        //    return DB.Execute("sproc_tblAuthorManage_Insert");
-        //}
     }
 }
