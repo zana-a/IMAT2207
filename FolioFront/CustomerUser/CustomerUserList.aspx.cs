@@ -64,5 +64,29 @@ namespace FolioFront.CustomerUser
                 lblError.Text = "Please Select A Record To Edit From The List";
             }
         }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            clsCustomerUserCollection customerUsers = new clsCustomerUserCollection();
+            customerUsers.ReportByFullname(txtFilter.Text);
+
+            lstCustomerUserList.DataSource = customerUsers.CustomerUserList;
+
+            lstCustomerUserList.DataValueField = "UserId";
+            lstCustomerUserList.DataTextField = "Fullname";
+            lstCustomerUserList.DataBind();
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            clsCustomerUserCollection customerUsers = new clsCustomerUserCollection();
+            customerUsers.ReportByFullname("");
+
+            lstCustomerUserList.DataSource = customerUsers.CustomerUserList;
+
+            lstCustomerUserList.DataValueField = "UserId";
+            lstCustomerUserList.DataTextField = "Fullname";
+            lstCustomerUserList.DataBind();
+        }
     }
 }

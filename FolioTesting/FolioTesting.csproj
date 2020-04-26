@@ -63,6 +63,7 @@
     <Compile Include="UserManagement\tstCustomerUserAdd.cs" />
     <Compile Include="UserManagement\tstCustomerUserDelete.cs" />
     <Compile Include="UserManagement\tstCustomerUserUpdate.cs" />
+    <Compile Include="UserManagement\tstCustomerUserFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
