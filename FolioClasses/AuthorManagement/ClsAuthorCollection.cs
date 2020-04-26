@@ -92,7 +92,7 @@ namespace FolioClasses
             DB.AddParameter("@Dob", mThisAuthor.DOB);
             DB.AddParameter("@Description", mThisAuthor.Description);
             DB.AddParameter("@IsAlive", mThisAuthor.IsAlive);
-            DB.AddParameter("@IsAlive", mThisAuthor.ImagePath);
+            DB.AddParameter("@Image", mThisAuthor.ImagePath);
             DB.Execute("sproc_tblAuthorManage_Update");
         }
 

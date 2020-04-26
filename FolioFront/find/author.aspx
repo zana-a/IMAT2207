@@ -29,7 +29,7 @@
                     <label for="imgFindAuthorImage">
                         Author Image:
                     </label>
-                    <asp:Image id="imgFindAuthorImage" runat="server" ImageAlign="Left"/>
+                    <asp:Image id="imgFindAuthorImage" runat="server" ImageAlign="Left" Height="208px" Width="153px" />
                 </div>
                 <div class="col-6 float-left p-2">
                     <label for="txtFindAuthorDob">

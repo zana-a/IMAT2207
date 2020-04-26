@@ -17,8 +17,8 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -75,6 +75,7 @@
     <Content Include="addEditDelete\Publisher\PublisherAddEditDelete.aspx" />
     <Content Include="addEditDelete\Publisher\PublisherDeleteConfirm.aspx" />
     <Content Include="assets\css\primer.css" />
+    <Content Include="assets\images\JRR-Tolkien.jpg" />
     <Content Include="find\author.aspx" />
     <Content Include="find\customer.aspx" />
     <Content Include="default.aspx" />
@@ -240,9 +241,7 @@
       <Name>FolioClasses</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

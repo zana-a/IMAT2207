@@ -168,6 +168,6 @@ namespace FolioClasses.AuthorManagement
                 Error += "The author description cannot be longer than 255 characters";
             }
             return Error;
-        }
+        }        
     }
 }
