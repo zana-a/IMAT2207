@@ -32,7 +32,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -90,7 +90,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -147,7 +147,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -166,7 +166,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -225,7 +225,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -265,7 +265,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
 
@@ -285,7 +285,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -305,7 +305,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -345,7 +345,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -364,7 +364,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -384,7 +384,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob.ToString(), email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -500,7 +500,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -614,7 +614,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -633,7 +633,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -651,7 +651,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought.ToString());
 
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -741,7 +741,7 @@ namespace FolioTesting.UserManagement
             Error = aCustomerUser.Valid(fullname, password, dob, email, telephone, numOfBooksBought);
         
             //test to see that the result is correct
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
