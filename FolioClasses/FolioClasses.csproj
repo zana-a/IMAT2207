@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookManage\clsBookCollection.cs" />
     <Compile Include="BookManage\clsBookDatabase.cs" />
     <Compile Include="BookManage\clsBook.cs" />
     <Compile Include="AuthorManagement\ClsAuthor.cs" />

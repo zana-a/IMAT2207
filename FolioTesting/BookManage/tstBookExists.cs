@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FolioTesting.BookManage
 {
     [TestClass]
-    public class tstBooks
+    public class tstBookExists
     {
         [TestMethod]
         public void InstanceOK()
